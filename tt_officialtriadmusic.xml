@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<atom:link href="https://www.tiktok.com/officialtriadmusic/rss.xml" rel="self" type="application/rss+xml"/>
+<title>officialtriadmusic RSS Feed</title>
+<link>https://www.tiktok.com/embed/officialtriadmusic</link>
+<image>
+<title>officialtriadmusic RSS Feed</title>
+<link>https://www.tiktok.com/officialtriadmusic</link>
+<url>https://images.rawpixel.com/image_png_social_square/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvdjk4Mi1kMS0wOC5wbmc.png</url>
+</image>
+<description>Feed created by TikTok2RSS script</description>
+<lastBuildDate>Wed, 09 Oct 2024 17:40:03 -0400</lastBuildDate>
+</channel>
+</rss>
