@@ -321,7 +321,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </head>
 
     <body class="" data-app-id="muckrack.django.product">
-
         
         
             <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3JWW8V"
@@ -2534,7 +2533,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
     <h4 class="news-story-title">
-        <a target="_blank" rel="noreferrer" href="https://www.bostonglobe.com/2025/09/30/metro/column-ri-robert-craven-attorney-general-arrest/">He wants to be Rhode Island attorney general. His past could haunt him - The Boston Globe</a>
+        <a target="_blank" rel="noreferrer" href="https://www.bostonglobe.com/2025/09/30/metro/column-ri-robert-craven-attorney-general-arrest/">He wants to be Rhode Island attorney general. His past could haunt him. - The Boston Globe</a>
 
         
     </h4>
@@ -2620,7 +2619,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         class="facebook js-share-button"
         data-description="State Representative Robert Craven has been thinking about running for Rhode Island attorney general for most of his adult life, so he was eerily prepared for the question I had for him Monday after he officially launched his campaign: In the early 2000s, you were charged twice in separate domestic violence incidents. What happened, and why should Rhode Island voters elect someone who has had their own run-ins with the law to be the state’s top law enforcement official?"
         data-source="bostonglobe.com"
-        data-title="He wants to be Rhode Island attorney general. His past could haunt him - The Boston Globe"
+        data-title="He wants to be Rhode Island attorney general. His past could haunt him. - The Boston Globe"
         data-url="https://muckrack.com/link/z2f6kO/he-wants-to-be-rhode-island-attorney-general-his-past-could-haunt-him-the-boston-globe"
         data-link="https://www.bostonglobe.com/2025/09/30/metro/column-ri-robert-craven-attorney-general-arrest/"
     >
@@ -2637,7 +2636,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </a>
     <a
         target="_blank"
-        href="https://twitter.com/intent/tweet?text=He%20wants%20to%20be%20Rhode%20Island%20attorney%20general.%20His%20past%20could%20haunt%20him%20-%20The%20Boston%20Globe&url=https%3A//muckrack.com/link/z2f6kO/he-wants-to-be-rhode-island-attorney-general-his-past-could-haunt-him-the-boston-globe"
+        href="https://twitter.com/intent/tweet?text=He%20wants%20to%20be%20Rhode%20Island%20attorney%20general.%20His%20past%20could%20haunt%20him.%20-%20The%20Boston%20Globe&url=https%3A//muckrack.com/link/z2f6kO/he-wants-to-be-rhode-island-attorney-general-his-past-could-haunt-him-the-boston-globe"
         class="twitter js-share-button"
     >
         <i class="fab fa-x-twitter"></i>
@@ -10756,7 +10755,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
         
-        <script id="datadog-settings" type="application/json">{"DATADOG_ENVIRONMENT": "prod", "DATADOG_RELEASE": "efa4ede96191f4751a9af8545c1199571f4fd7cf", "DATADOG_SESSION_SAMPLE_RATE": 50, "DATADOG_TRACE_SAMPLE_RATE": 2}</script>
+        <script id="datadog-settings" type="application/json">{"DATADOG_ENVIRONMENT": "prod", "DATADOG_RELEASE": "300916b66002c9e9bed0fe324ce5d6258a292af2", "DATADOG_SESSION_SAMPLE_RATE": 50, "DATADOG_TRACE_SAMPLE_RATE": 2}</script>
 
         
         <script id="permissions" type="application/json">{}</script>
@@ -10825,31 +10824,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script src="https://cdn.muckrack.com/static/bundles/8499.a58fe737.js" ></script>
 <script src="https://cdn.muckrack.com/static/bundles/5466.dd488e31.js" ></script>
 <script src="https://cdn.muckrack.com/static/bundles/9211.cd4ca417.js" ></script>
-<script src="https://cdn.muckrack.com/static/bundles/muckrack.78640671.js" ></script>
+<script src="https://cdn.muckrack.com/static/bundles/muckrack.ce2fbc5d.js" ></script>
         
 
         
+
         
             
-            <script src="https://cdn.muckrack.com/static/el-pagination/js/el-pagination.ea30f7c0.js"></script>
-            <script>
-            $(function() {
-                $.endlessPaginate({
-                    
-                    onClick: function (context) {
-                        $(document.body).trigger('pagination:pagerequest', {'context': context});
-                    },
-                    onCompleted: function (context, data) {
-                        const redirectPrefix = 'REDIRECT_URL=';
-                        if (data.startsWith(redirectPrefix)) {
-                            window.location.href = data.substring(redirectPrefix.length);
-                            return;
+                <script src="https://cdn.muckrack.com/static/el-pagination/js/el-pagination.ea30f7c0.js"></script>
+                <script>
+                $(function() {
+                    $.endlessPaginate({
+                        
+                        onClick: function (context) {
+                            $(document.body).trigger('pagination:pagerequest', {'context': context});
+                        },
+                        onCompleted: function (context, data) {
+                            const redirectPrefix = 'REDIRECT_URL=';
+                            if (data.startsWith(redirectPrefix)) {
+                                window.location.href = data.substring(redirectPrefix.length);
+                                return;
+                            }
+                            $(document.body).trigger('pagination:pageload', {'context': context, 'data': data});
                         }
-                        $(document.body).trigger('pagination:pageload', {'context': context, 'data': data});
-                    }
+                    });
                 });
-            });
-            </script>
+                </script>
+            
         
 
         
@@ -11001,5 +11002,5 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         
         <!-- muckrack -->
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98da23348c11b547',t:'MTc2MDMwOTIzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e6b26a199d37a9',t:'MTc2MDQ0MDkyNQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
