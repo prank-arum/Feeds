@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <link rel="preconnect" href="https://api.fontshare.com"/>
+    <link rel="preconnect" href="https://cdn.fontshare.com"/>
+    <link href="https://api.fontshare.com/css?f[]=satoshi@400,700,900&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+    <script src="/js/airyx.js" type="module"></script>
+
+    <title>ravynOS – Releases</title>
+  </head>
+  <body>
+    
+
+<nav class="u-container header" role="navigation" aria-label="Global">
+  <input type="checkbox" id="menu-state" class="header__menu-state">
+  <div id="header" class="header__inner">
+    
+  <ul class="nav__header">
+    <li class="nav__item nav__item--logo">
+      <a class="nav__link" href="/" rel="home" aria-label="Go To Homepage">
+        
+  <img src="/images/ravynos-mark.svg" width="40" height="40"/>
+
+      </a>
+    </li>
+    <li class="nav__item nav__item--menu">
+      <label class="menu__label" for="menu-state" aria-hidden="true">
+        <span class="menu__label__bread menu__label__bread--top"></span>
+        <span class="menu__label__bread menu__label__bread--middle"></span>
+        <span class="menu__label__bread menu__label__bread--bottom"></span>
+      </label>
+      <a id="nav-button" href="#nav" class="header__ham" title="Open Menu" aria-label="Open Menu"></a>
+    </li>
+  </ul>
+
+  <ul class="nav__menu">
+    <li class="nav__item nav__item--logo">
+      <a class="nav__link" href="/" rel="home" aria-label="Go To Homepage">
+        
+  <img src="/images/ravynos-mark.svg" width="40" height="40"/>
+
+      </a>
+    </li>
+
+    
+      
+      <li class="nav__item nav__item--overview">
+        <a href="/" class="nav__link  " >
+          Overview
+        </a>
+      </li>
+    
+      
+      <li class="nav__item nav__item--releases">
+        <a aria-current='page' class='nav__link  nav__link--active' href='/releases'>
+          Releases
+        </a>
+      </li>
+    
+      
+      <li class="nav__item nav__item--faq">
+        <a class='nav__link  ' href='/faq'>
+          FAQ
+        </a>
+      </li>
+    
+      
+      <li class="nav__item nav__item--source">
+        <a href="https://github.com/ravynsoft/ravynos" class="nav__link  " >
+          Source
+        </a>
+      </li>
+    
+      
+      <li class="nav__item nav__item--wiki">
+        <a href="https://wiki.ravynos.com" class="nav__link  " >
+          Wiki
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+</nav>
+
+
+    <main class="main" role="main">
+      
+        <header class="u-container page-header">
+          <h1 class="h2 page-header__title">Releases</h1>
+          <p class="page-header__desc">All the releases and their details like features and bug-fixes, and link to discussions.</p>
+        </header>
+      
+      
+
+
+<section class="u-container">
+  <ul id="release_list" class="releases__list">
+  </ul>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js">
+</script>
+<script type="text/javascript">
+const req = new Request(
+    "https://api.github.com/repos/ravynsoft/ravynos/releases", {
+    headers: {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+    }
+});
+fetch(req)
+    .then((response) => response.json())
+    .then((data) => {
+        const list = document.getElementById("release_list");
+        for(const rls of data) {
+            const item = document.createElement("li");
+
+            const aside = document.createElement("aside");
+            aside.setAttribute("class", "button__element");
+
+            const pubdate = new Date(rls.created_at);
+            const datespan = document.createElement("span");
+            datespan.setAttribute("class", "releases__date");
+            datespan.textContent = pubdate.toDateString();
+            aside.appendChild(datespan);
+
+            const link = document.createElement("a");
+            link.href = rls.discussion_url;
+            link.setAttribute("class", "button button--primary releases__discussion");
+            aside.appendChild(link).textContent = "Discuss";
+
+            item.appendChild(aside);
+
+            const main = document.createElement("main");
+            const rlslink = document.createElement("a");
+            rlslink.href = rls.html_url;
+            rlslink.setAttribute("class", "h4");
+            main.appendChild(rlslink).textContent = rls.name;
+
+            const notes = document.createElement("div");
+            notes.setAttribute("class", "releases__markdown");
+            const converter = new showdown.Converter();
+            notes.innerHTML = converter.makeHtml(rls.body);
+            main.appendChild(notes);
+
+            item.appendChild(main);
+            list.appendChild(item);
+        }});
+</script>
+
+</section>
+
+    </main>
+
+    <br><br>
+<footer class="footer">
+  <div class="u-container">
+    <div class="footer__inner">
+      <div class="footer__copy">
+        <span>
+          <strong>&copy; 2021&ndash;2025 · RavynSoft</strong> ·
+          <br>
+          All Rights Reserved.
+        </span>
+        <small>
+          "ravynOS" and the raven logo are trademarks. The other trademarks or
+          logos on this site are properties of their respective owners. <br />
+          Logo designs &amp; artwork by <a href="https://github.com/kevdoy">kevdoy</a> &amp; 
+          <a href="https://github.com/nayaabkhan">nayaabkhan</a>.
+        </small>
+      </div>
+      <div>
+        <a href="https://www.netlify.com">
+          <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
