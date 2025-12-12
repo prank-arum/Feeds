@@ -571,6 +571,17 @@ window._sf_async_config = Object.assign(window._sf_async_config||{}, {"uid":"231
 <script type="text/javascript" src="https://static.chartbeat.com/js/chartbeat.js" id="nexstar/chartbeat/main-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://static.chartbeat.com/js/chartbeat_mab.js" id="chartbeat/mab-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/login-registration/vendor/login-radius/LoginRadiusV2SDK.11.3.0.js?ver=11.3.0" id="nexstar/login-registration/scripts/loginradius-sdk/js-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="nexstar/login-registration/scripts/login/js-js-extra">
+/* <![CDATA[ */
+var login_registration = {"rest_urls":{"startSiteProcess":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/start-site-process","start_process":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/start-process","trusted_token_refresh":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/trusted-token-refresh","refresh_token":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/refresh-token","start_process_roku":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/start-process-roku","device":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/device","device\/token":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/device\/token","device\/validate":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/device\/validate","validateProfilename":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/validate-profilename","generateProfilename":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/generate-profilename"},"lr_api_key":"2dbf456e-d413-4246-8534-4571d5c9d35b","lr_sdk_app_name":"nexstar","app_to_app_key":"app-to-app-fHYbZC8qAqMVjvGk","cookie_name":"lr_access_token","debug_mode":"","sso_enabled":"on","sso_login_url":"https:\/\/my.nexstar.tv\/ssologin\/login","sso_set_token_url":"https:\/\/my.nexstar.tv\/ssologin\/setToken","magic_link_type":"passwordlesslogin","validation_timeout":"100","cookie_expiry_days":"90","start_site_process_nonce":"17d1fc24bd","home_url":"https:\/\/www.wpri.com","verification_url":"https:\/\/www.wpri.com","refresh_token_days_before_expiry":"7","refresh_token_enabled":"on","login_response_message_page_path":"\/login-response-message"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/login-registration/build/login-registration.44ed304643c2ba795df0.js?ver=44ed304643c2ba795df0" id="nexstar/login-registration/scripts/login/js-js" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="nexstar/login-registration/scripts/login/js-js-after">
+/* <![CDATA[ */
+window.NEXSTAR_LOGIN_REGISTRATION_SETTINGS = {"eventType":"nexstar\/login-registration\/status"};
+/* ]]> */
+</script>
 <script type="text/javascript" src="https://www.wpri.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
 <script type="text/javascript" id="wp-i18n-js-after">
@@ -601,6 +612,21 @@ window.isHtlbidEnabled = true; window.htlbid = window.htlbid || {}; window.htlbi
 <script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/blueconic.js?ver=4f8a851ad7c56d2eb0470d25b065dba6" id="blueconic_script-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/login-registration-integration.js?ver=1765357038" id="nexstar/blueconic/script-url-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/login-registration-bc-wall.js?ver=1764782377" id="nexstar/blueconic/bc-wall-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/login-registration/vendor/login-radius/LoginRadiusV2AuthUI.js?ver=11.3.0" id="nexstar/login-registration/scripts/loginradius-lib/js-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" id="nexstar/login-registration/scripts/social-login/js-js-before">
+/* <![CDATA[ */
+Object.assign(window.login_registration, {
+				social_login: {
+					buttons_template_name: "lrsocialbuttons_tmpl",
+					interface_container_selector: "lr-social-buttons-container",
+					error_container_selector: "lr-social-error-container",
+					popup_width: "450",
+					popup_height: "600",
+				}
+			});
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/login-registration/build/social-login.23acccf0a8bc19ccc87f.js?ver=23acccf0a8bc19ccc87f" id="nexstar/login-registration/scripts/social-login/js-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/search-guard/build/search-guard.e49b9e4a0bfe7b7b8ac4.js?ver=e49b9e4a0bfe7b7b8ac4" id="search-guard-js" defer="defer" data-wp-strategy="defer"></script>
 <script defer type="text/javascript" src="https://stats.wp.com/e-202550.js" id="jetpack-stats-js"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
@@ -685,14 +711,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="https://www.wpri.com/weather/" data-link-type="header-weather-widget" data-link-label="Providence">
 			<span class="site-header__weather-region">Providence</span>
 			<span class="site-header__weather-forecast">
-				<span class="site-header__weather-forecast__text">32&deg;</span>
+				<span class="site-header__weather-forecast__text">29&deg;</span>
 				<figure class="site-header__weather-forecast__icon">
-					<span class="weather-icon weather-icon-sm weather-icon-light-30"></span>
+					<span class="weather-icon weather-icon-sm weather-icon-light-31"></span>
 				</figure>
 			</span>
 		</a>
 	</div>
-									</div>
+					<section class="live-now-button no-thumb">
+	<div class="site-header__live-button">
+		<div class="site-header__live-button-desktop" data-link-category="Live Now" data-module-type="header-live-now">
+			<a href="https://www.wpri.com/watch/12-news-now-live-streaming/" data-link-position='1' data-link-type="header-live-now" data-link-label="LIVE NOW">
+				<div class="live-card">
+					<img
+						class="live-card__img"
+						src=" "
+						alt=""
+						width="132" height="85"
+						loading="eager" decoding="async"
+					/>
+					<span class="live-card__badge" aria-hidden="true">
+						<span class="live-card__badge-text"></span>
+					</span>
+				</div>
+			</a>
+			<div class="site-header__live-button-description">
+				<a title="12 News at 6:30 PM" href="https://www.wpri.com/watch/12-news-now-live-streaming/">
+					12 News at 6:30 PM				</a>
+			</div>
+		</div>
+	</div>
+</section>
+				</div>
 				<div class="site-header__logo">
 					<a href="https://www.wpri.com/" rel="home">
 						<div
@@ -722,9 +772,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="https://www.wpri.com/weather/" data-link-type="header-weather-widget" data-link-label="Providence">
 			<span class="site-header__weather-region">Providence</span>
 			<span class="site-header__weather-forecast">
-				<span class="site-header__weather-forecast__text">32&deg;</span>
+				<span class="site-header__weather-forecast__text">29&deg;</span>
 				<figure class="site-header__weather-forecast__icon">
-					<span class="weather-icon weather-icon-sm weather-icon-light-30"></span>
+					<span class="weather-icon weather-icon-sm weather-icon-light-31"></span>
 				</figure>
 			</span>
 		</a>
@@ -794,7 +844,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<li id="menu-item-2127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2127"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/enews-alerts/" data-link-type="navigation-link">Email Newsletters &#038; Alerts</a></li>
 	<li id="menu-item-2703464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2703464"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/wpri-12-tv-app/" data-link-type="navigation-link">WPRI 12+ TV app: Watch 12 News and more</a></li>
 </ul>
-</div><div class="dropnav__section dropnav__section--article-list dropnav__section--quarter"><div class="article-list article-list--top-story"><h3 class="article-list__heading">Top Stories</h3><div class="article-list__content"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article article-list__article--is-stacked article-list__article--has-thumb">
+</div><div class="dropnav__section dropnav__section--article-list dropnav__section--quarter"><div class="article-list article-list--top-story"><h3 class="article-list__heading">Top Stories</h3><div class="article-list__content"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article article-list__article--is-stacked article-list__article--has-thumb article-list__article--is-media-type">
 
 <div
 	class="article-list__article-text"
@@ -808,17 +858,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/west-bay/cranston-woman-searching-for-mothers-missing-wedding-dress/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Cranston woman searching for mother’s missing wedding dress" 			>
+			href="https://www.wpri.com/news/local-news/se-mass/drug-suspect-arrested-after-gunfire-crash-in-new-bedford/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Drug suspect arrested after gunfire, crash in New Bedford" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/west-bay/cranston-woman-searching-for-mothers-missing-wedding-dress/"
+					href="https://www.wpri.com/news/local-news/se-mass/drug-suspect-arrested-after-gunfire-crash-in-new-bedford/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Cranston woman searching for mother’s missing wedding dress" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Drug suspect arrested after gunfire, crash in New Bedford" 														>
 			
-			Cranston woman searching for mother’s missing wedding&nbsp;&hellip;
+			Drug suspect nabbed after gunfire, crash in New Bedford
 										</a>
 					</h4>
 	
@@ -831,9 +881,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/west-bay/cranston-woman-searching-for-mothers-missing-wedding-dress/"
+				href="https://www.wpri.com/news/local-news/se-mass/drug-suspect-arrested-after-gunfire-crash-in-new-bedford/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Cranston woman searching for mother’s missing wedding dress" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Drug suspect arrested after gunfire, crash in New Bedford" 											>
 		
 		<div class="article-list__article-image-wrapper">
 			
@@ -842,8 +892,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	class="image-wrapper landscape"
 >
 			<img
-			src="https://i0.wp.com/www.wpri.com/wp-content/uploads/sites/23/2025/12/1211-UGC-SYMONE-GILBERT-MOM-MISSING-WEDDING-DRESS.jpg?w=2000&#038;ssl=1"
-			alt="A woman smiles at the camera. She is wearing a white wedding dress and a veil."
+			src="https://i0.wp.com/www.wpri.com/wp-content/uploads/sites/23/2025/12/1210-NEW-BEDFORD-SHOOTING-2.jpg?w=2000&#038;ssl=1"
+			alt="Scene of crash, shots fired and arrests in New Bedford on Dc. 10, 2025. (WPRI-TV)"
 			srcset=""
 			sizes=""
 			loading="lazy"
@@ -854,12 +904,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span
 	aria-hidden="true"
 	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--gallery"
+	class="article-list__article-mediaicon article-list__article-mediaicon--video"
 >
 	<span class="article-list__article-mediaicon-svg">
-		<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" xmlns:v="https://vecta.io/nano"><defs><style>.cls-5{fill:#fff;fill-rule:evenodd}</style></defs><path d="M4.49.627c-.368 0-.667.298-.667.667h0v1.033h7.846a.8.8 0 0 1 .8.8h0v5.258H13.5c.368 0 .667-.298.667-.667h0V1.294c0-.368-.298-.667-.667-.667h0-9.01zM.833 4.282c0-.368.298-.667.667-.667h0 9.011c.368 0 .667.298.667.667h0v6.425c0 .368-.298.667-.667.667h0H1.5c-.368 0-.667-.298-.667-.667h0V4.282z" class="cls-5" /></svg>
+		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
 	</span>
-			<span class="article-list__article-mediaicon-text">Gallery</span>
+			<span class="article-list__article-mediaicon-text">Video</span>
 	</span>
 		</div>
 
@@ -879,22 +929,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/us-and-world/time-magazines-2025-person-of-the-year-heres-who-was-named/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Time magazine’s 2025 Person of the Year: Here’s who was named" 			>
+			href="https://www.wpri.com/sports/patriots-new-england-nation/patriots-can-extend-win-streak-to-11-capture-afc-east-title-with-win-over-bills/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Patriots can extend win streak to 11, capture AFC East title with win over Bills" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/us-and-world/time-magazines-2025-person-of-the-year-heres-who-was-named/"
+					href="https://www.wpri.com/sports/patriots-new-england-nation/patriots-can-extend-win-streak-to-11-capture-afc-east-title-with-win-over-bills/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Time magazine’s 2025 Person of the Year: Here’s who was named" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Patriots can extend win streak to 11, capture AFC East title with win over Bills" 														>
 			
-			Time magazine’s 2025 Person of the Year: Here’s who&nbsp;&hellip;
+			Patriots can clinch playoff berth with win over Bills
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T15:13:34-05:00" >41 minutes ago</time>			</footer>
+				<time datetime="2025-12-11T18:28:20-05:00" >12 minutes ago</time>			</footer>
 			
 	
 	
@@ -904,9 +954,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/us-and-world/time-magazines-2025-person-of-the-year-heres-who-was-named/"
+				href="https://www.wpri.com/sports/patriots-new-england-nation/patriots-can-extend-win-streak-to-11-capture-afc-east-title-with-win-over-bills/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Time magazine’s 2025 Person of the Year: Here’s who was named" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Patriots can extend win streak to 11, capture AFC East title with win over Bills" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -939,22 +989,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/blackstone-valley/central-falls-triple-decker-fire-caused-by-faulty-boiler/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Central Falls triple-decker fire caused by faulty boiler" 			>
+			href="https://www.wpri.com/news/politics/watch-ri-congressman-calls-out-secretary-noem-for-deporting-veteran/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="WATCH: RI congressman calls out Secretary Noem for deporting veteran" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/blackstone-valley/central-falls-triple-decker-fire-caused-by-faulty-boiler/"
+					href="https://www.wpri.com/news/politics/watch-ri-congressman-calls-out-secretary-noem-for-deporting-veteran/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Central Falls triple-decker fire caused by faulty boiler" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="WATCH: RI congressman calls out Secretary Noem for deporting veteran" 														>
 			
-			Central Falls triple-decker fire caused by faulty&nbsp;&hellip;
+			WATCH: Magaziner calls out Noem for deporting veteran
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T14:37:19-05:00" >1 hour ago</time>			</footer>
+				<time datetime="2025-12-11T18:07:11-05:00" >33 minutes ago</time>			</footer>
 			
 	
 	
@@ -964,9 +1014,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/blackstone-valley/central-falls-triple-decker-fire-caused-by-faulty-boiler/"
+				href="https://www.wpri.com/news/politics/watch-ri-congressman-calls-out-secretary-noem-for-deporting-veteran/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Central Falls triple-decker fire caused by faulty boiler" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="WATCH: RI congressman calls out Secretary Noem for deporting veteran" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -999,22 +1049,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/south-county/jury-convicts-man-in-decades-old-exeter-child-sexual-assault-case/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jury convicts man in decades-old Exeter child sexual assault case" 			>
+			href="https://www.wpri.com/news/politics/bill-seeks-to-lower-ris-voting-age-for-school-board-elections/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Bill seeks to lower voting age for RI school board elections" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/south-county/jury-convicts-man-in-decades-old-exeter-child-sexual-assault-case/"
+					href="https://www.wpri.com/news/politics/bill-seeks-to-lower-ris-voting-age-for-school-board-elections/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jury convicts man in decades-old Exeter child sexual assault case" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Bill seeks to lower voting age for RI school board elections" 														>
 			
-			Jury convicts man in decades-old Exeter child sexual&nbsp;&hellip;
+			RI bill would lower voting age for school board races
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T14:54:05-05:00" >1 hour ago</time>			</footer>
+				<time datetime="2025-12-11T18:03:46-05:00" >36 minutes ago</time>			</footer>
 			
 	
 	
@@ -1024,9 +1074,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/south-county/jury-convicts-man-in-decades-old-exeter-child-sexual-assault-case/"
+				href="https://www.wpri.com/news/politics/bill-seeks-to-lower-ris-voting-age-for-school-board-elections/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jury convicts man in decades-old Exeter child sexual assault case" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Bill seeks to lower voting age for RI school board elections" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -1042,55 +1092,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<span class="article-list__article-mediaicon-text">Video</span>
 	</span>
 		</div>
-
-					</a>
-			</figure>
-</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
-
-<div
-	class="article-list__article-text"
-	data-context="supernav"
-	data-article-list-id=""
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/sports/world-cup/you-still-have-a-chance-to-get-fifa-world-cup-tickets/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="You still have a chance to get FIFA World Cup tickets" 			>
-		</a>
-
-		<h4 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/sports/world-cup/you-still-have-a-chance-to-get-fifa-world-cup-tickets/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="You still have a chance to get FIFA World Cup tickets" 														>
-			
-			You still have a chance to get FIFA World Cup tickets
-										</a>
-					</h4>
-	
-						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T13:04:42-05:00" >3 hours ago</time>			</footer>
-			
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/sports/world-cup/you-still-have-a-chance-to-get-fifa-world-cup-tickets/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="You still have a chance to get FIFA World Cup tickets" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-						</div>
 
 					</a>
 			</figure>
@@ -1200,17 +1201,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/for-12-11-key-moments-in-the-second-year-of-the-westbound-washington-bridge-closure/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Key moments in the second year of the westbound Washington Bridge closure" 			>
+			href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/where-spending-construction-stands-with-the-new-washington-bridge/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="2 years after closure: The cost and progress of the new Washington Bridge" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/for-12-11-key-moments-in-the-second-year-of-the-westbound-washington-bridge-closure/"
+					href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/where-spending-construction-stands-with-the-new-washington-bridge/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Key moments in the second year of the westbound Washington Bridge closure" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="2 years after closure: The cost and progress of the new Washington Bridge" 														>
 			
-			Key moments in the second year of the westbound Washington&nbsp;&hellip;
+			McKee: Work on new bridge will be visible &#8216;before&nbsp;&hellip;
 										</a>
 					</h4>
 	
@@ -1223,9 +1224,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/for-12-11-key-moments-in-the-second-year-of-the-westbound-washington-bridge-closure/"
+				href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/where-spending-construction-stands-with-the-new-washington-bridge/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Key moments in the second year of the westbound Washington Bridge closure" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="2 years after closure: The cost and progress of the new Washington Bridge" 											>
 		
 		<div class="article-list__article-image-wrapper">
 			
@@ -1234,8 +1235,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	class="image-wrapper landscape"
 >
 			<img
-			src="https://i0.wp.com/www.wpri.com/wp-content/uploads/sites/23/2025/09/Screenshot-2025-09-04-203944.png?w=2000&#038;ssl=1"
-			alt="A sign posted on the side of the Washington Bridge."
+			src="https://i0.wp.com/www.wpri.com/wp-content/uploads/sites/23/2025/12/1209-WASHINGTON-BRIDGE-DEMO-DONE.jpg?w=2000&#038;ssl=1"
+			alt=""
 			srcset=""
 			sizes=""
 			loading="lazy"
@@ -1271,6 +1272,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
+			href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/for-12-11-key-moments-in-the-second-year-of-the-westbound-washington-bridge-closure/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Key moments in the second year of the westbound Washington Bridge closure" 			>
+		</a>
+
+		<h4 class="article-list__article-title">
+													<a
+					href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/for-12-11-key-moments-in-the-second-year-of-the-westbound-washington-bridge-closure/"
+					class="article-list__article-link"
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Key moments in the second year of the westbound Washington Bridge closure" 														>
+			
+			Year 2 of the Washington Bridge crisis &#8211; as it happened
+										</a>
+					</h4>
+	
+						<footer class="article-list__article-meta">
+				<time datetime="2025-12-11T17:16:09-05:00" >1 hour ago</time>			</footer>
+			
+	
+	
+	
+	</div>
+
+
+	<figure class="article-list__article-thumb">
+					<a
+				href="https://www.wpri.com/traffic/i-195-washington-bridge-closure/for-12-11-key-moments-in-the-second-year-of-the-westbound-washington-bridge-closure/"
+				class="article-list__article-link"
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Key moments in the second year of the westbound Washington Bridge closure" 											>
+		
+		<div class="article-list__article-image-wrapper">
+							<div class="image-wrapper no-image"></div>
+				
+<span
+	aria-hidden="true"
+	tabindex="-1"
+	class="article-list__article-mediaicon article-list__article-mediaicon--video"
+>
+	<span class="article-list__article-mediaicon-svg">
+		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
+	</span>
+			<span class="article-list__article-mediaicon-text">Video</span>
+	</span>
+		</div>
+
+					</a>
+			</figure>
+</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
+
+<div
+	class="article-list__article-text"
+	data-context="supernav"
+	data-article-list-id=""
+	data-article-text-classes="article-list__article-text"
+	data-article-thumb-classes="article-list__article-thumb"
+	data-current-image-context="[]"
+>
+					
+		
+				<a
+			class="article-list__gradient-link"
 			href="https://www.wpri.com/target-12/the-conjuring-home-fight-sparks-lawsuit-against-ghost-hunter-star-jason-hawes/"
 						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘The Conjuring’ home fight sparks lawsuit against ‘Ghost Hunters’ star Jason Hawes" 			>
 		</a>
@@ -1281,7 +1342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					class="article-list__article-link"
 															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘The Conjuring’ home fight sparks lawsuit against ‘Ghost Hunters’ star Jason Hawes" 														>
 			
-			‘The Conjuring’ home fight sparks lawsuit against&nbsp;&hellip;
+			&#8216;Ghost Hunters&#8217; star sued in &#8216;The Conjuring&#8217; house&nbsp;&hellip;
 										</a>
 					</h4>
 	
@@ -1346,7 +1407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-06T04:00:00-05:00" >5 days ago</time>			</footer>
+				<time datetime="2025-12-06T04:00:00-05:00" >6 days ago</time>			</footer>
 			
 	
 	
@@ -1390,7 +1451,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					class="article-list__article-link"
 															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Audit: $145K of improper OT paid to nonunion employees in Providence" 														>
 			
-			Audit: $145K of improper OT paid to nonunion employees&nbsp;&hellip;
+			$145K of improper OT paid to Providence employees
 										</a>
 					</h4>
 	
@@ -1408,66 +1469,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				href="https://www.wpri.com/target-12/audit-145k-of-improper-ot-paid-to-nonunion-employees-in-providence/"
 				class="article-list__article-link"
 				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Audit: $145K of improper OT paid to nonunion employees in Providence" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-			<span class="article-list__article-mediaicon-text">Video</span>
-	</span>
-		</div>
-
-					</a>
-			</figure>
-</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
-
-<div
-	class="article-list__article-text"
-	data-context="supernav"
-	data-article-list-id=""
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/business-news/ag-prime-stepping-back-from-possible-purchase-of-roger-williams-fatima/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="AG: Prime stepping back from possible purchase of Roger Williams, Fatima" 			>
-		</a>
-
-		<h4 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/business-news/ag-prime-stepping-back-from-possible-purchase-of-roger-williams-fatima/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="AG: Prime stepping back from possible purchase of Roger Williams, Fatima" 														>
-			
-			AG: Prime stepping back from possible purchase of&nbsp;&hellip;
-										</a>
-					</h4>
-	
-						<footer class="article-list__article-meta">
-				<time datetime="2025-12-04T23:27:19-05:00" >7 days ago</time>			</footer>
-			
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/business-news/ag-prime-stepping-back-from-possible-purchase-of-roger-williams-fatima/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="AG: Prime stepping back from possible purchase of Roger Williams, Fatima" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -1525,6 +1526,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
+			href="https://www.wpri.com/sports/patriots-new-england-nation/patriots-can-extend-win-streak-to-11-capture-afc-east-title-with-win-over-bills/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Patriots can extend win streak to 11, capture AFC East title with win over Bills" 			>
+		</a>
+
+		<h4 class="article-list__article-title">
+													<a
+					href="https://www.wpri.com/sports/patriots-new-england-nation/patriots-can-extend-win-streak-to-11-capture-afc-east-title-with-win-over-bills/"
+					class="article-list__article-link"
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Patriots can extend win streak to 11, capture AFC East title with win over Bills" 														>
+			
+			Patriots can clinch playoff berth with win over Bills
+										</a>
+					</h4>
+	
+						<footer class="article-list__article-meta">
+				<time datetime="2025-12-11T18:28:20-05:00" >12 minutes ago</time>			</footer>
+			
+	
+	
+	
+	</div>
+
+
+	<figure class="article-list__article-thumb">
+					<a
+				href="https://www.wpri.com/sports/patriots-new-england-nation/patriots-can-extend-win-streak-to-11-capture-afc-east-title-with-win-over-bills/"
+				class="article-list__article-link"
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Patriots can extend win streak to 11, capture AFC East title with win over Bills" 											>
+		
+		<div class="article-list__article-image-wrapper">
+							<div class="image-wrapper no-image"></div>
+				
+<span
+	aria-hidden="true"
+	tabindex="-1"
+	class="article-list__article-mediaicon article-list__article-mediaicon--video"
+>
+	<span class="article-list__article-mediaicon-svg">
+		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
+	</span>
+			<span class="article-list__article-mediaicon-text">Video</span>
+	</span>
+		</div>
+
+					</a>
+			</figure>
+</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
+
+<div
+	class="article-list__article-text"
+	data-context="supernav"
+	data-article-list-id=""
+	data-article-text-classes="article-list__article-text"
+	data-article-thumb-classes="article-list__article-thumb"
+	data-current-image-context="[]"
+>
+					
+		
+				<a
+			class="article-list__gradient-link"
 			href="https://www.wpri.com/sports/world-cup/you-still-have-a-chance-to-get-fifa-world-cup-tickets/"
 						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="You still have a chance to get FIFA World Cup tickets" 			>
 		</a>
@@ -1540,7 +1601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T13:04:42-05:00" >3 hours ago</time>			</footer>
+				<time datetime="2025-12-11T13:04:42-05:00" >6 hours ago</time>			</footer>
 			
 	
 	
@@ -1584,12 +1645,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					class="article-list__article-link"
 															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Fairhaven’s Derek Almeida named New England Patriots Coach of the Year" 														>
 			
-			Fairhaven’s Derek Almeida named New England Patriots&nbsp;&hellip;
+			Fairhaven coach named Patriots Coach of the Year
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T14:52:18-05:00" >1 hour ago</time>			</footer>
+				<time datetime="2025-12-11T14:52:18-05:00" >4 hours ago</time>			</footer>
 			
 	
 	
@@ -1649,7 +1710,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T14:49:37-05:00" >1 hour ago</time>			</footer>
+				<time datetime="2025-12-11T14:49:37-05:00" >4 hours ago</time>			</footer>
 			
 	
 	
@@ -1662,66 +1723,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				href="https://www.wpri.com/sports/college-sports/late-rally-pushes-uri-past-providence-57-51/"
 				class="article-list__article-link"
 				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Late rally pushes URI past Providence, 57-51" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-			<span class="article-list__article-mediaicon-text">Video</span>
-	</span>
-		</div>
-
-					</a>
-			</figure>
-</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
-
-<div
-	class="article-list__article-text"
-	data-context="supernav"
-	data-article-list-id=""
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/sports/patriots-new-england-nation/new-england-nation-ot-patriots-can-lock-up-afc-east-title-with-win-over-bills/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="New England Nation OT: Patriots can lock up AFC East title with win over Bills" 			>
-		</a>
-
-		<h4 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/sports/patriots-new-england-nation/new-england-nation-ot-patriots-can-lock-up-afc-east-title-with-win-over-bills/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="New England Nation OT: Patriots can lock up AFC East title with win over Bills" 														>
-			
-			New England Nation OT: Patriots can lock up AFC East&nbsp;&hellip;
-										</a>
-					</h4>
-	
-						<footer class="article-list__article-meta">
-				<time datetime="2025-12-10T19:54:55-05:00" >20 hours ago</time>			</footer>
-			
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/sports/patriots-new-england-nation/new-england-nation-ot-patriots-can-lock-up-afc-east-title-with-win-over-bills/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="New England Nation OT: Patriots can lock up AFC East title with win over Bills" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -1857,7 +1858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T11:43:43-05:00" >4 hours ago</time>			</footer>
+				<time datetime="2025-12-11T11:43:43-05:00" >7 hours ago</time>			</footer>
 			
 	
 	
@@ -1917,7 +1918,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T10:12:24-05:00" >6 hours ago</time>			</footer>
+				<time datetime="2025-12-11T10:12:24-05:00" >8 hours ago</time>			</footer>
 			
 	
 	
@@ -1977,7 +1978,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T11:53:43-05:00" >4 hours ago</time>			</footer>
+				<time datetime="2025-12-11T11:53:43-05:00" >7 hours ago</time>			</footer>
 			
 	
 	
@@ -2037,7 +2038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2025-12-11T12:13:55-05:00" >4 hours ago</time>			</footer>
+				<time datetime="2025-12-11T12:13:55-05:00" >6 hours ago</time>			</footer>
 			
 	
 	
@@ -2532,7 +2533,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</div>
 
 	<!--  Live Now banner for mobile.  -->
-	</header>
+	<section class="live-now-button-mobile no-thumb">
+	<div class="site-header__live-button">
+		<div class="site-header__live-button-mobile">
+			<a href="https://www.wpri.com/watch/12-news-now-live-streaming/" data-link-position='1' data-link-type="" data-link-label="LIVE">
+				<div class="live-card">
+					<img
+						class="live-card__img"
+						src=" "
+						alt=""
+						width="110" height="65"
+						loading="eager" decoding="async"
+					/>
+					<span class="live-card__badge" aria-hidden="true">
+						<span class="live-card__badge-text"></span>
+					</span>
+				</div>
+			</a>
+			<div class="site-header__live-button-description">
+				<a title="12 News at 6:30 PM" href="https://www.wpri.com/watch/12-news-now-live-streaming/">
+					12 News at 6:30 PM				</a>
+			</div>
+        </div>
+	</div>
+</section>
+
+</header>
 
 		<div class="site-content-wrapper">
 							<div class="alert-banners-component-container" data-react-component="AlertBanners"></div>
@@ -2618,7 +2644,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h2>
 	
 						<footer class="article-list__article-meta">
-				<a href="https://www.wpri.com/news/local-news/ted-nesi/" class="article-list__article-category-link category-link-0" data-link-type="standard-main-category-link" data-link-position="0" data-link-pinned="false" data-link-label="Ted Nesi"   >Ted Nesi</a> / <time datetime="2025-12-06T04:00:00-05:00" >5 days ago</time>			</footer>
+				<a href="https://www.wpri.com/news/local-news/ted-nesi/" class="article-list__article-category-link category-link-0" data-link-type="standard-main-category-link" data-link-position="0" data-link-pinned="false" data-link-label="Ted Nesi"   >Ted Nesi</a> / <time datetime="2025-12-06T04:00:00-05:00" >6 days ago</time>			</footer>
 			
 	
 	
@@ -3815,29 +3841,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Current</h4>
 			<h5 class="weather-widget__item-temperature">
-				32&deg;			</h5>
+				29&deg;			</h5>
 			<figure class="weather-widget__item-icon">
-				<span class="weather-icon weather-icon-sm weather-icon-dark-30"></span>
+				<span class="weather-icon weather-icon-sm weather-icon-dark-31"></span>
 			</figure>
-			<span class="weather-widget__item-conditions">Partly Cloudy</span>
+			<span class="weather-widget__item-conditions">Clear</span>
 		</div>
 
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Tonight</h4>
 			<h5 class="weather-widget__item-temperature">
-				22&deg;			</h5>
+				21&deg;			</h5>
 			<figure class="weather-widget__item-icon">
-				<span class="weather-icon weather-icon-sm weather-icon-dark-29"></span>
+				<span class="weather-icon weather-icon-sm weather-icon-dark-31"></span>
 			</figure>
-			<span class="weather-widget__item-conditions">Partly Cloudy</span>
+			<span class="weather-widget__item-conditions">Clear</span>
 			<span class="weather-widget__item-precipitation">
-				Precip: 0&percnt;			</span>
+				Precip: 2&percnt;			</span>
 		</div>
 
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Tomorrow</h4>
 			<h5 class="weather-widget__item-temperature">
-				35&deg;			</h5>
+				36&deg;			</h5>
 			<figure class="weather-widget__item-icon">
 				<span class="weather-icon weather-icon-sm weather-icon-dark-32"></span>
 			</figure>
@@ -4000,7 +4026,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 											<article
 			class="article-list__article article-list__article--is-slat"
-			data-article-id="2850453"
+			data-article-id="2852978"
 			data-context="numbered_list"
 			data-index="1"
 			data-collection="article-list4"
@@ -4021,17 +4047,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/south-county/jury-convicts-man-in-decades-old-exeter-child-sexual-assault-case/"
-						data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Jury convicts man in decades-old Exeter child sexual assault case" 			>
+			href="https://www.wpri.com/news/local-news/providence/ridot-470k-worth-of-electrical-wire-stolen-along-state-roads-highways/"
+						data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="RIDOT: $470K worth of electrical wire stolen along state highways" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/south-county/jury-convicts-man-in-decades-old-exeter-child-sexual-assault-case/"
+					href="https://www.wpri.com/news/local-news/providence/ridot-470k-worth-of-electrical-wire-stolen-along-state-roads-highways/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Jury convicts man in decades-old Exeter child sexual assault case" 														>
+															data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="RIDOT: $470K worth of electrical wire stolen along state highways" 														>
 			
-			Man convicted of 1987 Exeter child sexual assaults
+			RIDOT: Thieves stole electrical wire along state&nbsp;&hellip;
 										</a>
 					</h3>
 	
@@ -4044,23 +4070,13 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/south-county/jury-convicts-man-in-decades-old-exeter-child-sexual-assault-case/"
+				href="https://www.wpri.com/news/local-news/providence/ridot-470k-worth-of-electrical-wire-stolen-along-state-roads-highways/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Jury convicts man in decades-old Exeter child sexual assault case" 											>
+				data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="RIDOT: $470K worth of electrical wire stolen along state highways" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-	</span>
-		</div>
+						</div>
 
 					</a>
 			</figure>
@@ -4070,7 +4086,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 											<article
 			class="article-list__article article-list__article--is-slat"
-			data-article-id="2850690"
+			data-article-id="599844"
 			data-context="numbered_list"
 			data-index="2"
 			data-collection="article-list4"
@@ -4091,17 +4107,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/providence/jeweler-claims-men-tricked-him-into-giving-away-3k-worth-of-merchandise/"
-						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Jeweler claims men tricked him into giving away $3K worth of merchandise" 			>
+			href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
+						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Very Windy Cold Dry Through Friday" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/providence/jeweler-claims-men-tricked-him-into-giving-away-3k-worth-of-merchandise/"
+					href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Jeweler claims men tricked him into giving away $3K worth of merchandise" 														>
+															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Very Windy Cold Dry Through Friday" 														>
 			
-			Jeweler claims men conned him out of $3K in merchandise
+			Very Windy Cold Dry Through Friday
 										</a>
 					</h3>
 	
@@ -4114,9 +4130,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/providence/jeweler-claims-men-tricked-him-into-giving-away-3k-worth-of-merchandise/"
+				href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Jeweler claims men tricked him into giving away $3K worth of merchandise" 											>
+				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Very Windy Cold Dry Through Friday" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -4140,7 +4156,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 											<article
 			class="article-list__article article-list__article--is-slat"
-			data-article-id="599844"
+			data-article-id="2399084"
 			data-context="numbered_list"
 			data-index="3"
 			data-collection="article-list4"
@@ -4161,17 +4177,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
-						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Gusty, Drier, Much Colder Today" 			>
+			href="https://www.wpri.com/wpri-12-tv-app/"
+						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="WPRI 12+ free TV app: Watch 12 News and local original programming" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
+					href="https://www.wpri.com/wpri-12-tv-app/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Gusty, Drier, Much Colder Today" 														>
+															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="WPRI 12+ free TV app: Watch 12 News and local original programming" 														>
 			
-			Gusty, Drier, Much Colder Today
+			WPRI 12+ free TV app: Watch 12 News and local original&nbsp;&hellip;
 										</a>
 					</h3>
 	
@@ -4184,23 +4200,13 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
+				href="https://www.wpri.com/wpri-12-tv-app/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Gusty, Drier, Much Colder Today" 											>
+				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="WPRI 12+ free TV app: Watch 12 News and local original programming" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-	</span>
-		</div>
+						</div>
 
 					</a>
 			</figure>
@@ -4210,7 +4216,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 											<article
 			class="article-list__article article-list__article--is-slat"
-			data-article-id="2823890"
+			data-article-id="2852863"
 			data-context="numbered_list"
 			data-index="4"
 			data-collection="article-list4"
@@ -4231,17 +4237,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/target-12/inside-the-mafia/the-last-don-of-providence-a-12-tv-app-exclusive/"
-						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="The Last Don of Providence: A 12+ TV app exclusive" 			>
+			href="https://www.wpri.com/news/local-news/west-bay/warwick-city-employee-placed-on-leave-after-arrest/"
+						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Warwick city employee placed on leave after arrest" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/target-12/inside-the-mafia/the-last-don-of-providence-a-12-tv-app-exclusive/"
+					href="https://www.wpri.com/news/local-news/west-bay/warwick-city-employee-placed-on-leave-after-arrest/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="The Last Don of Providence: A 12+ TV app exclusive" 														>
+															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Warwick city employee placed on leave after arrest" 														>
 			
-			The Last Don of Providence: Watch Episode 3 now
+			Warwick city employee placed on leave after arrest
 										</a>
 					</h3>
 	
@@ -4254,9 +4260,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/target-12/inside-the-mafia/the-last-don-of-providence-a-12-tv-app-exclusive/"
+				href="https://www.wpri.com/news/local-news/west-bay/warwick-city-employee-placed-on-leave-after-arrest/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="The Last Don of Providence: A 12+ TV app exclusive" 											>
+				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Warwick city employee placed on leave after arrest" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -5032,7 +5038,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 <li id="menu-item-2829967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2829967"><a href="https://www.wpri.com/wpri-12-tv-app/" data-link-type="navigation-link">WPRI 12+ free TV app</a></li>
 <li id="menu-item-2829966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2829966"><a href="https://www.wpri.com/apps/" data-link-type="navigation-link">WPRI 12 News Mobile App</a></li>
 <li id="menu-item-2830001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2830001"><a href="https://www.wpri.com/news/enews-alerts/" data-link-type="navigation-link">eNews &#038; Alerts</a></li>
-<li id="menu-item-47788" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-47788"><a href="https://www.wpri.com/sports/" data-link-type="navigation-link">Sports</a></li>
+<li id="menu-item-47788" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47788"><a href="https://www.wpri.com/sports/" data-link-type="navigation-link">Sports</a></li>
 <li id="menu-item-47792" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47792"><a href="https://www.wpri.com/target-12/" data-link-type="navigation-link">Target 12</a></li>
 <li id="menu-item-1916209" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1916209"><a href="https://www.wpri.com/rhode-show/" data-link-type="navigation-link">The Rhode Show</a></li>
 <li id="menu-item-47881" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47881"><a href="https://www.wpri.com/fox-providence/" data-link-type="navigation-link">FOX Providence</a></li>
@@ -5361,14 +5367,23 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 							</div>
 
 							<div class="lr-terms-privacy-note-mobile lr-note lr-hidden-on-desktop">
-								<p>By clicking <i>"Unlock Live News"</i> you confirm that you have read and agree to our <a href="https://www.nexstar.tv/terms-of-use/" target="_blank" rel="noopener noreferrer">Terms of Use</a>, which includes a jury trial waiver and class action waiver, and that you have read our <a href="https://www.nexstar.tv/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> detailing our collection, use and sharing of your personal information.</p>
+								<p>By clicking on any of the sign up options below, you confirm that you have read and agree to our <a href="https://www.nexstar.tv/terms-of-use/" target="_blank" rel="noopener noreferrer">Terms of Use</a>, which includes a jury trial waiver and class action waiver, and that you have read our <a href="https://www.nexstar.tv/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> detailing our collection, use and sharing of your personal information.</p>
 							</div>
 							<div class="lr-terms-privacy-note-desktop lr-note lr-hidden-on-mobile">
-								<p>By clicking <i>"Unlock Live News"</i> you confirm that you have read and agree to our <a href="https://www.nexstar.tv/terms-of-use/" target="_blank" rel="noopener noreferrer">Terms of Use</a>, which includes a jury trial waiver and class action waiver, and that you have read our <a href="https://www.nexstar.tv/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> detailing our collection, use and sharing of your personal information.</p>
+								<p>By clicking on any of the sign up options below, you confirm that you have read and agree to our <a href="https://www.nexstar.tv/terms-of-use/" target="_blank" rel="noopener noreferrer">Terms of Use</a>, which includes a jury trial waiver and class action waiver, and that you have read our <a href="https://www.nexstar.tv/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a> detailing our collection, use and sharing of your personal information.</p>
 							</div>
 							<button type="submit" class="lr-button" id="email-form-next-button">Unlock Live Local News &amp; Shows</button>
 
-							
+															<div class="lr-social-login-or-divider" role="separator">
+									<span>or</span>
+								</div>
+										<script type="text/html" id="lrsocialbuttons_tmpl">
+			<button class="lr-social-login-button <#= Name #>" data-endpoint="<#= Endpoint #>" data-provider="<#= Name #>">
+				Sign up with <#= Name #>			</button>
+		</script>
+		<div id="lr-social-buttons-container" class="lr-social-buttons-container"></div>
+		<p class="lr-social-error-container" hidden></p>
+									
 							<button class="lr-cancel lr-button-link">No Thanks</button>
 						</form>
 					</div>
@@ -5470,17 +5485,6 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		</div>
 		<script class="wp-asset-manager nswv-ad-handler-js" type="text/javascript">!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="/wp-content/themes/nexstar-wv/client/build/",n(n.s=308)}({107:function(e,t,n){"use strict";t.a=function(){window.googletag=window.googletag||{},window.googletag.cmd=googletag.cmd||[]}},308:function(e,t,n){e.exports=n(790)},790:function(e,t,n){"use strict";n.r(t);var r=n(107);function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var i=function(){function e(){var t=this;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.observer=null,this.watched={},this.paused={},this.maxRefreshes=9,this.refreshCounter={},window.addEventListener("focus",(function(){t.resumeAllTimers()})),window.addEventListener("blur",(function(){t.pauseAllTimers()})),this.observer=new IntersectionObserver((function(e){t.callback(e)}),{root:null,rootMargin:"0px",threshold:[.3,.5]})}var t,n,r;return t=e,(n=[{key:"callback",value:function(e){var t=this;e.forEach((function(e){var n=e.target.id;if(n in t.watched){var r=t.watched[n];e.isIntersecting&&e.intersectionRatio>=r.ratio?null===r.timerId&&(r.timerId=setTimeout((function(){document.hidden?t.clearTimer(n):(t.stopWatching(n),t.refreshCounter[n]+=1,window.dispatchEvent(new CustomEvent("nsDfpRefreshSingleSlot",{detail:{slotElementId:n}})))}),1e3*r.refreshSecs)):t.clearTimer(n)}}))}},{key:"startWatching",value:function(e,t,n,r){this.watched[e]={ratio:n,timerId:null,node:t,refreshSecs:r},this.observer.observe(t)}},{key:"stopWatching",value:function(e){var t=this.watched[e];clearTimeout(t.timerId),delete this.watched[e],this.observer.unobserve(t.node)}},{key:"clearTimer",value:function(e){var t=this.watched[e];clearTimeout(t.timerId),t.timerId=null}},{key:"observe",value:function(e,t){if(!(5>t||(e in this.refreshCounter||(this.refreshCounter[e]=0),this.refreshCounter[e]>=this.maxRefreshes))){var n=document.getElementById(e);if(n){var r=242e3<n.clientWidth*n.clientHeight?.3:.5;this.startWatching(e,n,r,t)}}}},{key:"pauseAllTimers",value:function(){var e=this;Object.keys(this.watched).forEach((function(t){e.paused[t]=e.watched[t],e.stopWatching(t)}))}},{key:"resumeAllTimers",value:function(){var e=this;Object.keys(this.paused).forEach((function(t){var n=e.paused[t],r=n.node,o=n.ratio,i=n.refreshSecs;e.startWatching(t,r,o,i),delete e.paused[t]}))}}])&&o(t.prototype,n),r&&o(t,r),e}();Object(r.a)();var a=new i;googletag.cmd.push((function(){var e=function(e,t,n){var r;try{r=e.slot[t].apply(e.slot,n)}catch(e){r="[unknown]"}return r},t=function(){var e=window.innerWidth||document.documentElement.clientWidth,t="mobile";768<e&&(t="tablet"),1024<e&&(t="desktop");var n=googletag.pubads().getTargeting("pagetype");return 1===n.length&&["index","subindex","story","mlite"].includes(n[0])||(n="other"),function(e,r){if(window.isAdRefreshEnabled&&window.adExclusionIds.length&&!window.adExclusionIds.includes(r)){var o,i=e.getTargeting("pos"),a=[n,i,t].join("/");return null!==(o=window.adRefreshConfig[a])&&void 0!==o&&o}return!1}}();googletag.pubads().addEventListener("slotRenderEnded",(function(n){if(n.slot){var r=n.slot,o=n.isEmpty,i=n.size,s=n.lineItemId,c=r.getSlotElementId(),d="NA";window.isAdSponsorshipEnabled&&(d=window.adExclusionIds.includes(s));var u=r.getTargeting("ad_rendercount"),l="AD SLOT RENDERED {\n  containerId: ".concat(c,",\n  isEmpty: ").concat(o,",\n  size: ").concat(i,",\n  adUnitPath: ").concat(e(n,"getAdUnitPath"),",\n  position: ").concat(e(n,"getTargeting",["pos"]),",\n  lineItemId: ").concat(s,", sponsorship=").concat(d,",\n  renderCount: ").concat(u,"\n}");if(window.setTimeout((function(){console.info(l)}),10),c.startsWith("acm-ad-tag-adhesion")&&!o){var f=document.getElementById(c).parentNode;f.classList.remove("pre-render"),f.parentNode.classList.remove("pre-render"),f.parentNode.querySelector(".close-btn-container").addEventListener("click",(function(e){e.preventDefault(),f.parentNode.remove()}),!1)}if(c.startsWith("acm-ad-tag-adhesion-adhesion")&&!o){var h=document.getElementById(c).parentNode,v=document.querySelector(".close-btn-container--mobile");v&&v.addEventListener("click",(function(){h.parentNode.remove()}),!1)}if(c.startsWith("acm-ad-tag-oop")&&!o&&document.body.classList.add("has-loaded-super-billboard-ad"),c&&!o&&i&&"function"==typeof document.getElementById(c).closest){var g=document.getElementById(c).closest(".ad-unit");if(g){var m=g.querySelector(".ad-unit__content > div[id^=acm]");if(m){var p=i[0],b=void 0===p?null:p,w=i[1],y=void 0===w?null:w;b&&y&&(m.setAttribute("width",b),m.setAttribute("height",y))}g.classList.add("ad-unit--is-rendered")}}var E=t(r,s);0<E&&a.observe(c,E)}}))}))}});
 //# sourceMappingURL=ad-handler.bundle.min.js.map</script><link rel='stylesheet' id='ns-weather-css-css' href='https://www.wpri.com/wp-content/themes/nexstar-wv/client/build/css/weather.min.css?ver=10d2e14387c1a3b28716' media='all' />
-<script type="text/javascript" id="nexstar/login-registration/scripts/login/js-js-extra">
-/* <![CDATA[ */
-var login_registration = {"rest_urls":{"startSiteProcess":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/start-site-process","start_process":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/start-process","trusted_token_refresh":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/trusted-token-refresh","refresh_token":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/refresh-token","start_process_roku":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/start-process-roku","device":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/device","device\/token":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/device\/token","device\/validate":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/device\/validate","validateProfilename":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/validate-profilename","generateProfilename":"https:\/\/www.wpri.com\/wp-json\/nxs-auth\/v1\/generate-profilename"},"lr_api_key":"2dbf456e-d413-4246-8534-4571d5c9d35b","lr_sdk_app_name":"nexstar","app_to_app_key":"app-to-app-fHYbZC8qAqMVjvGk","cookie_name":"lr_access_token","debug_mode":"","sso_enabled":"on","sso_login_url":"https:\/\/my.nexstar.tv\/ssologin\/login","sso_set_token_url":"https:\/\/my.nexstar.tv\/ssologin\/setToken","magic_link_type":"passwordlesslogin","validation_timeout":"100","cookie_expiry_days":"90","start_site_process_nonce":"17d1fc24bd","home_url":"https:\/\/www.wpri.com","verification_url":"https:\/\/www.wpri.com","refresh_token_days_before_expiry":"7","refresh_token_enabled":"on","login_response_message_page_path":"\/login-response-message"};
-/* ]]> */
-</script>
-<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/login-registration/build/login-registration.44ed304643c2ba795df0.js?ver=44ed304643c2ba795df0" id="nexstar/login-registration/scripts/login/js-js" data-wp-strategy="defer"></script>
-<script type="text/javascript" id="nexstar/login-registration/scripts/login/js-js-after">
-/* <![CDATA[ */
-window.NEXSTAR_LOGIN_REGISTRATION_SETTINGS = {"eventType":"nexstar\/login-registration\/status"};
-/* ]]> */
-</script>
 <script type="text/javascript" id="nswv-common-js-js-extra">
 /* <![CDATA[ */
 var lakana = {"a9":{"aps":{"enabled":"1","deals":"1","pub_id":"3410"}},"ad_platforms":{"htlbid_network_enabled":"1","magnite_network_enabled":"0","magnite_url":"https:\/\/micro.rubiconproject.com\/prebid\/dynamic\/10043.js"},"ad_referral_source":{"social_sites":"12seconds.tv,\n4travel.jp,\nadvogato.org,\nameba.jp,\nanobii.com,\nanswers.yahoo.com,\nasmallworld.net,\navforums.com,\nbadoo.com,\nbebo.com,\nbiip.no,\nblackplanet.com,\nblog.seesaa.jp,\nblogspot.com,\nblomotion.jp,\nboards.qwant.com,\nbolt.com,\nbrightkite.com,\nbuzznet.com,\ncafemom.com,\ncare2.com,\nclassmates.com,\ncyworld.co.kr,\ndailymotion.com,\ndelicious.com,\ndeviantart.com,\ndigg.com,\ndiigo.com,\ndisqus.com,\ndraugiem.lv,\nl.facebook.com,\nwww.facebook.com,\nfaceparty.com,\nfc2.com,\nflickr.com,\nfotolog.com,\nfoursquare.com,\nfriendfeed.com,\nfriendsreunited.com,\nfubar.com,\ngaiaonline.com,\ngeni.com,\ngoodreads.com,\nplus.google.com,\ngrono.net,\nhabbo.com,\nhatena.ne.jp,\nhi5.com,\nhyves.nl,\nibibo.com,\nidenti.ca,\nt.ifeng.com,\ninstagram.com,\nintensedebate.com,\nirc-galleria.net,\njp.myspace.com,\nkaixin001.com,\nkakaku.com,\nlast.fm,\nwww.linkedin.com,\nlivejournal.com,\nlnkd.in,\nmeetup.com,\nmister-wong.com,\nmixi.jp,\nmixx.com,\nmouthshut.com,\nmp.weixin.qq.com,\nmultiply.com,\nmumsnet.com,\nmyheritage.com,\nmyspace.com,\nnasza-klasa.pl,\nmatome.naver.jp,\nnetlog.com,\nnetvibes.com,\nnextdoor.com,\nnicovideo.jp,\nning.com,\nodnoklassniki.ru,\nok.ru,\norkut.com,\npakila.jp,\nphotobucket.com,\npinterest.com,\npinterest.co.uk,\npinterest.ca,\npinterest.fr,\npinterest.es,\npinterest.de,\npinterest.se,\npinterest.pt,\npinterest.dk,\npinterest.ie,\npinterest.co.kr,\npinterest.ch,\npinterest.at,\npinterest.nz,\npinterest.ph,\npinterest.cl,\npinterest.hu,\npinterest.be,\npinterest.in,\npinterest.co,\nplurk.com,\npo.st,\nreddit.com,\nrenren.com,\nskyrock.com,\nslideshare.net,\nsmcb.jp,\nsmugmug.com,\nsnapchat.com,\nstumbleupon.com,\nt.co,\nt.ifeng.com,\nt.sina.com.cn,\nt.sohu.com,\ntabelog.com,\ntagged.com,\ntaringa.net,\nthefancy.com,\ntiktok.com,\ntoutiao.com,\ntripit.com,\ntrombi.com,\ntrytrend.jp,\ntumblr.com,\ntwitter.com,\nuhuru.jp,\nviadeo.com,\nvimeo.com,\nvk.com,\nwayn.com,\nweibo.com,\nwordpress.com,\nxanga.com,\nxing.com,\nanswers.yahoo.com,\nyammer.com,\nyaplog.jp,\nyelp.com,\nyelp.co.uk,\nyouku.com,\nyoutube.com,\nyozm.daum.net,\nyuku.com,\nzooomr.com,\nzhihu.com,\nm.badoo.com,\nm.blogspot.com,\nm.brightkite.com,\nm.classmates.com,\nm.cyworld.co.kr,\nm.dailymotion.com,\nm.deviantart.com,\nm.diigo.com,\nm.disqus.com,\nm.draugiem.lv,\nm.facebook.com,\nm.flickr.com,\nm.foursquare.com,\nm.fubar.com,\nm.gaiaonline.com,\nm.plus.google.com,\nm.hatena.ne.jp,\nm.hi5.com,\nm.ibibo.com,\nm.ifeng.com,\nm.instagram.com,\nm.irc-galleria.net,\nm.kaixin001.com,\nm.last.fm,\nm.linkedin.com,\nm.livejournal.com,\nm.mixi.jp,\nm.mixx.com,\nm.mouthshut.com,\nm.myheritage.com,\nm.mylife.com,\nm.myspace.com,\nm.nasza-klasa.pl,\nm.odnoklassniki.ru,\nm.ok.ru,\nm.reddit.com,\nm.renren.com,\nm.slideshare.net,\nm.smugmug.com,\nm.co,\nm.ifeng.com,\nm.qq.com,\nm.sina.com.cn,\nm.sohu.com,\nm.tagged.com,\nm.taringa.net,\nm.tiktok.com,\nm.toutiao.com,\nm.tripit.com,\nm.tumblr.com,\nm.twitter.com,\nm.vk.com,\nm.weibo.com,\nm.wordpress.com,\nm.xanga.com,\nm.xing.com,\nm.answers.yahoo.com,\nm.youku.com,\nm.youtube.com,\nm.yuku.com,\nm.zhihu.com,\nwww.12seconds.tv,\nwww.advogato.org,\nwww.anobii.com,\nwww.answers.yahoo.com,\nwww.asmallworld.net,\nwww.avforums.com,\nwww.badoo.com,\nwww.bebo.com,\nwww.blackplanet.com,\nwww.blogspot.com,\nwww.bolt.com,\nwww.brightkite.com,\nwww.buzznet.com,\nwww.cafemom.com,\nwww.care2.com,\nwww.classmates.com,\nwww.cyworld.co.kr,\nwww.dailymotion.com,\nwww.delicious.com,\nwww.deviantart.com,\nwww.digg.com,\nwww.diigo.com,\nwww.disqus.com,\nwww.draugiem.lv,\nwww.faceparty.com,\nwww.fc2.com,\nwww.flickr.com,\nwww.flixster.com,\nwww.fotolog.com,\nwww.foursquare.com,\nwww.friendsreunited.com,\nwww.fubar.com,\nwww.gaiaonline.com,\nwww.goodreads.com,\nwww.plus.google.com,\nwww.grono.net,\nwww.habbo.com,\nwww.hatena.ne.jp,\nwww.hi5.com,\nwww.hyves.nl,\nwww.ibibo.com,\nwww.identi.ca,\nwww.instagram.com,\nwww.intensedebate.com,\nwww.kaixin001.com,\nwww.kakaku.com,\nwww.last.fm,\nwww.livejournal.com,\nwww.meetup.com,\nwww.mister-wong.com,\nwww.mixi.jp,\nwww.mixx.com,\nwww.mouthshut.com,\nwww.multiply.com,\nwww.mumsnet.com,\nwww.myheritage.com,\nwww.myspace.com,\nwww.nasza-klasa.pl,\nwww.netlog.com,\nwww.netvibes.com,\nwww.nextdoor.com,\nwww.nicovideo.jp,\nwww.ning.com,\nwww.odnoklassniki.ru,\nwww.ok.ru,\nwww.orkut.com,\nwww.photobucket.com,\nwww.pinterest.com,\nwww.pinterest.co.uk,\nwww.pinterest.ca,\nwww.pinterest.fr,\nwww.pinterest.es,\nwww.pinterest.de,\nwww.pinterest.se,\nwww.pinterest.pt,\nwww.pinterest.dk,\nwww.pinterest.ie,\nwww.pinterest.co.kr,\nwww.pinterest.ch,\nwww.pinterest.at,\nwww.pinterest.nz,\nwww.pinterest.ph,\nwww.pinterest.cl,\nwww.pinterest.hu,\nwww.pinterest.be,\nwww.pinterest.in,\nwww.pinterest.co,\nwww.plurk.com,\nwww.po.st,\nwww.reddit.com,\nwww.renren.com,\nwww.skyrock.com,\nwww.slideshare.net,\nwww.smugmug.com,\nwww.snapchat.com,\nwww.stumbleupon.com,\nwww.t.ifeng.com,\nwww.tabelog.com,\nwww.tagged.com,\nwww.taringa.net,\nwww.thefancy.com,\nwww.tiktok.com,\nwww.toutiao.com,\nwww.tripit.com,\nwww.trombi.com,\nwww.tumblr.com,\nwww.twitter.com,\nwww.uhuru.jp,\nwww.viadeo.com,\nwww.vimeo.com,\nwww.vk.com,\nwww.wayn.com,\nwww.weibo.com,\nwww.wordpress.com,\nwww.xanga.com,\nwww.xing.com,\nwww.answers.yahoo.com,\nwww.yammer.com,\nwww.youku.com,\nwww.youtube.com,\nwww.zooomr.com,\nwww.zhihu.com,"},"adobe_analytics":{"enabled":"1","launch_library":"https:\/\/assets.adobedtm.com\/3f27c430a962\/d33d8acd711c\/launch-25e943fdd407.min.js","analytics_script":"https:\/\/segment.psg.nexstardigital.net\/adobeanalytics.js","tracking_server":"nexstar.data.adobedc.net","report_suite_id":"nexstarglobalprod","newsbreak_launch_library":"https:\/\/assets.adobedtm.com\/3f27c430a962\/0852aae22492\/launch-43352a2f5f64.min.js","media_edge_path":"https:\/\/edge.adobedc.net\/ee\/va\/v1\/","media_session_datastream_id":"2d3a9df0-344f-464e-8b3c-79141641d86e","ecid_from_adobe_demdex_endpoint":"https:\/\/dpm.demdex.net\/id?d_fieldgroup=MC&d_rtbd=json&d_ver=2&d_orgid=19020C7354766EB60A4C98A4@AdobeOrg","adobe_org_identity_cookie_name":"kndctr_19020C7354766EB60A4C98A4_AdobeOrg_identity"},"advertising":{"lazyload_status":"1","refresh_status":"1","lineitems_url":"https:\/\/htlbid.com\/v3\/nexstardigital.com\/lineitems.json"},"alert_types_switcher":{"enabled":"0"},"archive_widget_form":{"total_archive_widgets":"100"},"auto_refresh":{"landing_duration":"10","disable_homepage":"0"},"blimply":{"enabled":"0"},"blockthrough":{"enabled":"0"},"blueconic_enabled":"1","blueconic_prebid":{"publisher_id":"","status":"1"},"branding":{"footer_copyright":"\u00a9 1998 - [year] Nexstar Media Inc. | All Rights Reserved."},"browsi":{"enabled":"1","script_url":"https:\/\/cdn.browsiprod.com\/bootstrap\/bootstrap.js"},"civicscience":{"enabled":"1","below_post_placement":"1","survey_404_pages":"1","civic_science_keys":{"404_survey_id":"civsci-id-970186143","404_widget_id":"29244b88-4a11-6284-b57b-1b64cf8a9cbd","article_survey_id":"2122639739","article_widget_id":"82d19ca8-4f30-60f4-2562-28d5394c0c93","sidebar_survey_id":"304165588","sidebar_widget_id":"d570cf89-d697-0844-8df3-6f5daee77194"},"article_ad_unit":{"display_in_article_body":"1","ad_position_name":"mr3_ab","article_body_survey_id":"civsci-id-305934525","article_body_widget_id":"3f127ebd-287e-0b64-a901-d55ec286348a"}},"confiant":{"enabled":"1"},"copyright_text":"Copyright 2025 Nexstar Media Inc. All rights reserved. This material may not be published, broadcast, rewritten, or redistributed.","devcon":{"data_key":"31b9b552-f32e-4036-8364-726eb992b71d","status":"0","data_e":"5"},"freewheel":{"video_ad_tag":{"network_status":"1"},"mrm_pixel":{"network_status":"1"}},"gdpr_prebid_settings":{"enable":"1"},"gtm":{"id":"GTM-KJJZHXD"},"id":"1","index_exchange":{"script_url":""},"jetpack_form_autodeletion":{"days_autodelete":""},"liveblog":{"liveblog_ads":"0"},"liveblog_customization":{"schema":{"status_enable_custom_schema":"0"}},"liveramp":{"pid":"1262","prebid_status":"1","prebid_analytics_status":"1","ats_status":"1","ats_version":"2"},"login_page":{"status_password_reset_links_to_current_site":"0"},"magnite":{"pixel":{"network_status":"1"}},"nativo_enabled":"1","nativo_rewrite":{"nativo_rewrite_rule":"^sponsor-content(.*)?$","nativo_rewrite_path":""},"optimera":{"client_id":"67","status":"0"},"pair_id":{"status":"1"},"prebid":{"status":"1","script_url":"https:\/\/www.nxsttv.com\/wp-content\/themes\/nexstar\/client\/vendors\/prebid\/versions\/pbjs-7.46.0-20230523.js","video_status":"1"},"prebid_server":{"status":"1","amp_sync_pixel_status":"1"},"retrans":{"status":"1","api_url":"https:\/\/keepmystation.com\/"},"schema_org":{"video":"1"},"segment":{"segment_script_url":"https:\/\/segment.psg.nexstardigital.net\/segment.js","anvato_script_url":"https:\/\/segment.psg.nexstardigital.net\/anvato.js","newsbreak_script_url":"https:\/\/segment.psg.nexstardigital.net\/newsbreak.js","smartnews_script_url":"","segment_calls":"0","status":"1"},"send_to_news":{"enabled":"1"},"sign_up_link":{"enable":"1"},"site_footer":{"secondary_footer":[{"title":"Privacy Policy","onetrust_button":"0","link":"https:\/\/www.nexstar.tv\/privacy-policy\/","link_target":"_blank"},{"title":"Terms Of Use","onetrust_button":"0","link":"https:\/\/www.nexstar.tv\/terms-of-use\/","link_target":"_blank"},{"title":"FCC Applications","onetrust_button":"0","link":"https:\/\/www.nexstar.tv\/fcc-applications\/","link_target":"_blank"},{"title":"Public File Assistance Contact","onetrust_button":"0","link":"[home-url]\/contact-us"},{"title":"Onesignal Desktop","onetrust_button":"0","link":"[onesignal-custom-link]"},{"title":"The Hill","onetrust_button":"0","link":"https:\/\/www.thehill.com\/"},{"title":"NewsNation","onetrust_button":"0","link":"https:\/\/www.newsnationnow.com\/"},{"title":"BestReviews","onetrust_button":"0","link":"https:\/\/www.bestreviews.com\/"},{"title":"Content Licensing","onetrust_button":"0","link":"https:\/\/www.newsnationnow.com\/licensing-nexstars-local-and-national-television-news-footage\/"},{"title":"Advertise with Nexstar","onetrust_button":"0","link":"https:\/\/nexstaradvertising.com\/"},{"title":"Journalistic Integrity","onetrust_button":"0","link":"https:\/\/www.nexstar.tv\/corporate-social-responsibility\/journalistic-integrity\/"},{"title":"Sitemap","onetrust_button":"0","link":"[home-url]\/sitemap\/"}]},"springserve":{"pixel":{"network_status":"1"}},"taboola":{"enabled":"1","mobile_enabled":"1"},"uuid":"a6289d30-8810-420f-b327-035e1320873a","warning-edit-shared":{"wes_dialog_message":"","wes_acknowledgement":""},"wsi":{"cid":"878507589"},"external_partner_xml":{"external_partners":{"show_divider":0}},"privacy_policy":{"last_updated_date":"09\/30\/2025"}};
@@ -5493,6 +5497,13 @@ var weatherAlerts = {"alert_types":["Air Quality Alert","Air Stagnation Advisory
 <script type="text/javascript" src="https://www.wpri.com/wp-content/themes/nexstar-wv/client/build/js/global.bundle.min.js?ver=a38a4ca466dedd2c1153" id="nswv-global-js-js"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/themes/nexstar-wv/client/build/js/video-playlist.bundle.min.js?ver=e51693788eab90d1f597" id="nswv-video-playlist-js-js"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/themes/nexstar-wv/inc/truncate-featured-image-captions.js?ver=0.0.2" id="truncate-featured-image-captions-js"></script>
+<script type="text/javascript" id="live-now-script-js-extra">
+/* <![CDATA[ */
+var liveNowScriptObject = {"homeUrl":"https:\/\/www.wpri.com"};
+var liveNowScriptObject = {"homeUrl":"https:\/\/www.wpri.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/build/liveNow.js?ver=c3cf8a86" id="live-now-script-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/themes/nexstar-wv/client/build/js/weather.bundle.min.js?ver=a401703d17563c069343" id="ns-weather-js-js" defer="defer" data-wp-strategy="defer"></script>
 
 	
