@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+<head><title>502 Bad Gateway</title></head>
+<body>
+<center><h1>502 Bad Gateway</h1></center>
+ Sorry for the inconvenience.<br/>
+Please report this message and include the following information to us.<br/>
+Thank you very much!</p>
+<table>
+<tr>
+<td>URL:</td>
+<td>https://v45.tiktokcdn-us.com/fe0682fc06f3ebdf660d807fd2f7ac3a/696504ac/video/tos/alisg/tos-alisg-pve-0037c001/oMrA0q0EhQxBmAhNwHqVJfibiCAI1Qs5rCIVMI/?a=1233</td>
+</tr>
+<tr>
+<td>Server:</td>
+<td>edge-prod-7b99bf9999-hsbvg</td>
+</tr>
+<tr>
+<td>Date:</td>
+<td>2026/01/10 14:26:19</td>
+</tr>
+</table>
+<hr/>Powered by Byte-nginx<hr><center>tengine</center>
+</body>
+</html>
