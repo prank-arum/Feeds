@@ -100,36 +100,53 @@
 	
 	
 <script>
-    window.addEventListener("load", function() {
-        // Promise that check if the user has consented or not
-        window.consentGranted = () => new Promise((resolve) => {
-            if (window.__uspapi && 'function' === typeof __uspapi) {
-                __uspapi('getUSPData', 1, (uspData, success) => {
-                    if(success) {
-                        const consent = uspData.uspString.split('')[2];
-                        if (consent === 'N') {
-                            resolve(true);
-                        } else {
-                            resolve(false);
-                        }
-                    } else {
-                        resolve(false);
-                    }
-                });
-            } else {
-                resolve(false);
-            }
-        });
+		window.addEventListener("load", function() {
+		/**
+		 * Check the cookie groups the user has consented to and
+		 * set a cookie if they have opted out for SSPD_BG (Share or Sale of Personal Data)
+		 *
+		 * @param {Array} groups - The cookie groups the user has consented to
+		 */
+		function handleNexstarOptedOutCookie( groups ) {
+			 if ( ! groups?.includes( 'SSPD_BG' ) ) {
+				const expires = new Date( Date.now() + 365 * 24 * 60 * 60 * 1000 ).toUTCString();
+				document.cookie = `nexstar/upsno=1;path=/;expires=${expires}`;
+			} else {
+				document.cookie = 'nexstar/upsno=0;path=/;expires=0';
+			}
+		}
 
-        // Dispatch event for user consent
-        window.OneTrust?.OnConsentChanged(({ detail }) => {
-            const nxsConsentEvent = new CustomEvent('nxsConsent', { detail });
-            dispatchEvent(nxsConsentEvent);
-        });
+		// Promise that check if the user has consented or not
+		window.consentGranted = () => new Promise( ( resolve ) => {
+			if ( window.__uspapi && 'function' === typeof __uspapi ) {
+				__uspapi( 'getUSPData', 1, ( uspData, success ) => {
+					if( success ) {
+						const consent = uspData.uspString.split('')[2];
+						if ( 'N' === consent ) {
+							resolve( true );
+						} else {
+							resolve( false );
+						}
+					} else {
+						resolve( false );
+					}
+				});
+			} else {
+				resolve( false );
+			}
+		} );
 
-        // groups the user has consented to
-        window.nxsConsentGroups = window.OnetrustActiveGroups;
-    })
+		// Dispatch event for user consent
+		window.OneTrust?.OnConsentChanged( ( { detail } ) => {
+			handleNexstarOptedOutCookie( detail );
+			const nxsConsentEvent = new CustomEvent( 'nxsConsent', { detail } );
+			dispatchEvent( nxsConsentEvent );
+		} );
+
+		// groups the user has consented to
+		window.nxsConsentGroups = window.OnetrustActiveGroups;
+		handleNexstarOptedOutCookie( window.nxsConsentGroups );
+	})
 </script>
 
 						<script
@@ -148,11 +165,11 @@
 			window.NXSTdata.privacy = window.NXSTdata.privacy || {};
 			window.NXSTdata.alerts = window.NXSTdata.alerts || {};
 			window.NXSTdata.location = window.NXSTdata.location || {};
-			window.NXSTdata.content = Object.assign( window.NXSTdata.content, {"title":"Nesi's Notes","homepageTitle":"","metaKeywords":"","socialTitle":"","pageType":"tag","authorName":"","authorNonByline":"","description":"The Latest News and Updates in  brought to you by the team at WPRI.com: ","publicationDate":"","lastModifiedDate":"","publicationDayOfWeek":"","categoryList":[],"primaryCategory":"","tagList":[],"wordCount":0,"paragraphCount":0,"imageCount":0,"videoCount":0,"slideshowCount":0,"pageId":"","providerName":"","isShared":false,"originalSource":"","sharingMode":"","pageDcode":["1"],"localId":"nxs-23-tag-499","seoTitle":"","iabGenre":[],"iabCategory":[],"initialCreator":null,"newsletterTitle":"","pageName":"wpri:tag:nesis-notes","publicationDateLocal":"","persistentId":"nxs-23-tag-499"} )
+			window.NXSTdata.content = Object.assign( window.NXSTdata.content, {"title":"Nesi's Notes","homepageTitle":"","metaKeywords":"","socialTitle":"","pageType":"tag","authorName":"","authorNonByline":"","description":"The Latest News and Updates in  brought to you by the team at WPRI.com: ","publicationDate":"","lastModifiedDate":"","publicationDayOfWeek":"","categoryList":[],"primaryCategory":"","tagList":[],"wordCount":0,"paragraphCount":0,"imageCount":0,"videoCount":0,"slideshowCount":0,"pageId":"","providerName":"","isShared":false,"originalSource":"","sharingMode":"","pageDcode":["-1"],"localId":"nxs-23-tag-499","seoTitle":"","iabGenre":[],"iabCategory":[],"initialCreator":null,"newsletterTitle":"","pageName":"wpri:tag:nesis-notes","publicationDateLocal":"","persistentId":"nxs-23-tag-499"} )
 			window.NXSTdata.page = Object.assign( window.NXSTdata.page, {"canonicalUrl":"","ampUrl":"","urlHostname":"https:\/\/www.wpri.com","urlSlug":"","directoryPath":["tag","nesis-notes"]} )
 			window.NXSTdata.site = Object.assign( window.NXSTdata.site, {"activeTheme":"nexstar wv","appVersion":"wp","brandName":"WPRI.com","callSign":"WPRI","domainName":"wpri.com","timeZone":"America\/New_York","segmentKey":"","gaId":"","networkId":"nxs-23","adobeMediaAPI":"https:\/\/edge.adobedc.net\/ee\/va\/v1\/","adobeDataStreamId":"2d3a9df0-344f-464e-8b3c-79141641d86e","adobeAnalyticsEnabled":true,"adobeOrgId":"","primaryCallSign":"WPRI","uniqueSiteShortcode":"WPRI"} )
 			window.NXSTdata.layout = Object.assign( window.NXSTdata.layout, {"mainModule":"","templateType":"standard"} )
-			window.NXSTdata.location = Object.assign( window.NXSTdata.location, {"publicIp":"74.97.14.000"} )
+			window.NXSTdata.location = Object.assign( window.NXSTdata.location, {"publicIp":"24.38.179.000"} )
 						window.NXSTdata.ads = Object.assign( window.NXSTdata.ads, {"adSlots":[],"adUnitPath":"nesi_s_notes\/landing","a9Enabled":true,"confiantEnabled":true,"indexExchangeEnabled":false,"nativoEnabled":true,"prebidEnabled":true,"isSponsored":false,"sponsor":"","outstreamAvailable":false,"companionsEnabled":false,"htlbidEnabled":true,"magniteEnabled":false} )
 					</script>
 		
@@ -529,8 +546,8 @@ window.isHtlbidEnabled = true; window.htlbid = window.htlbid || {}; window.htlbi
 var blueConicLoginRegIntegration = {"lr_status_event_timeout":"500","lr_bc_ready_event_timeout":"500"};
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/login-registration-integration.js?ver=1768319407" id="nexstar/blueconic/login-registration-integration-js" defer="defer" data-wp-strategy="defer"></script>
-<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/login-registration-bc-wall.js?ver=1764604675" id="nexstar/blueconic/login-registration-integration/bc-wall-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/login-registration-integration.js?ver=1768922970" id="nexstar/blueconic/login-registration-integration-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/lakana/inc/blueconic/scripts/login-registration-bc-wall.js?ver=1764600419" id="nexstar/blueconic/login-registration-integration/bc-wall-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js" id="ima-sdk-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://imasdk.googleapis.com/pal/sdkloader/pal.js" id="pal-sdk-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" id="nexstar/nexstar-video-ads-shim/scripts/video-ads-shim/js-js-extra">
@@ -566,7 +583,7 @@ var nexstarNielsenConfig = {"appId":"PBC7C328E-FF99-43B6-86D3-8D3E9E8018BB","sfC
 var nexstarVideoPluginSettings = {"currentPlayer":"nexstar_videojs","debugSettings":{"enabled":false},"floatSettings":{"floatMinimized":true,"viewablePixels":10},"videoCenterSettings":{"disableUrlUpdates":false},"pauseOtherInstances":"1","isCustomRecommendationsEnabled":"","initSettings":{"delayTimeout":0},"providerSettings":{"anvato":{"anvack":"m3E80nAx02K5gfOPJSgHJMr7nAk9MbDP","videoApiBaseUrl":"https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video","overrides":{"adstJjQDmxjEg3nl":{"anvack":"mGkgwyj5w95GxcxnBtV1ca6XL84YRxe7"}},"urlFilterTimeout":300000,"videoMetadata":{},"apiCallRecord":{}}}};
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/video/build/frontend.35cc8ca38ed294d564c5.js?ver=35cc8ca38ed294d564c5" id="nexstar/video/scripts/blocks/front-end/js-js" defer="defer" data-wp-strategy="defer"></script>
+<script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/video/build/frontend.2bba0f0ea65e460f9045.js?ver=2bba0f0ea65e460f9045" id="nexstar/video/scripts/blocks/front-end/js-js" defer="defer" data-wp-strategy="defer"></script>
 <script type="text/javascript" src="https://www.wpri.com/wp-content/plugins/search-guard/build/search-guard.b547835f3eb95cde193c.js?ver=b547835f3eb95cde193c" id="search-guard-js" defer="defer" data-wp-strategy="defer"></script>
 <script defer type="text/javascript" src="https://stats.wp.com/e-202620.js" id="jetpack-stats-js"></script>
 <script type="text/javascript" id="jetpack-stats-js-after">
@@ -654,9 +671,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="https://www.wpri.com/weather/" data-link-type="header-weather-widget" data-link-label="Providence">
 			<span class="site-header__weather-region">Providence</span>
 			<span class="site-header__weather-forecast">
-				<span class="site-header__weather-forecast__text">58&deg;</span>
+				<span class="site-header__weather-forecast__text">65&deg;</span>
 				<figure class="site-header__weather-forecast__icon">
-					<span class="weather-icon weather-icon-sm weather-icon-light-26"></span>
+					<span class="weather-icon weather-icon-sm weather-icon-light-30"></span>
 				</figure>
 			</span>
 		</a>
@@ -691,9 +708,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="https://www.wpri.com/weather/" data-link-type="header-weather-widget" data-link-label="Providence">
 			<span class="site-header__weather-region">Providence</span>
 			<span class="site-header__weather-forecast">
-				<span class="site-header__weather-forecast__text">58&deg;</span>
+				<span class="site-header__weather-forecast__text">65&deg;</span>
 				<figure class="site-header__weather-forecast__icon">
-					<span class="weather-icon weather-icon-sm weather-icon-light-26"></span>
+					<span class="weather-icon weather-icon-sm weather-icon-light-30"></span>
 				</figure>
 			</span>
 		</a>
@@ -743,11 +760,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<h2 class="screen-reader-text">Primary Menu</h2>
 
 				<ul id="supernav" class="menu">
-	<li id="menu-item-1818" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-has-articles menu-item-1818"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/" data-link-type="navigation-link">NEWS</a>
+	<li id="menu-item-1818" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-has-articles menu-item-1818"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/" data-link-type="navigation-link">NEWS</a>
 <div class="dropnav dropnav--4-col dropnav--full-width">
 	<div class="dropnav__section dropnav__section--sub-menu dropnav__section--half">
 		<ul class="sub-menu" data-columns="2">
-	<li id="menu-item-40063" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40063"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/local-news/" data-link-type="navigation-link">Local News</a></li>
+	<li id="menu-item-40063" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-40063"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/local-news/" data-link-type="navigation-link">Local News</a></li>
 	<li id="menu-item-2966977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2966977"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/worldcup/" data-link-type="navigation-link">World Cup: Summer of Soccer</a></li>
 	<li id="menu-item-3021671" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3021671"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/gas-tracker/" data-link-type="navigation-link">Gas Tracker: Find the best price</a></li>
 	<li id="menu-item-40072" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40072"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/crime/" data-link-type="navigation-link">Crime</a></li>
@@ -764,7 +781,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<li id="menu-item-2127" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2127"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/enews-alerts/" data-link-type="navigation-link">Email Newsletters &#038; Alerts</a></li>
 	<li id="menu-item-2703464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2703464"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/wpri-12-tv-app/" data-link-type="navigation-link">WPRI 12+ TV app: Watch 12 News and more</a></li>
 </ul>
-</div><div class="dropnav__section dropnav__section--article-list dropnav__section--quarter"><div class="article-list article-list--top-story"><h3 class="article-list__heading">Top Stories</h3><div class="article-list__content"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article article-list__article--is-stacked article-list__article--has-thumb article-list__article--is-media-type">
+</div><div class="dropnav__section dropnav__section--article-list dropnav__section--quarter"><div class="article-list article-list--top-story"><h3 class="article-list__heading">Top Stories</h3><div class="article-list__content"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article article-list__article--is-stacked article-list__article--has-thumb">
 
 <div
 	class="article-list__article-text"
@@ -778,17 +795,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/education/deal-reached-to-delete-data-stolen-from-canvas-educational-platform-by-hackers/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Deal reached to delete data stolen from Canvas educational platform by hackers" 			>
+			href="https://www.wpri.com/news/local-news/providence/pcs-duncan-powell-has-domestic-charge-dropped-but-still-faces-trial/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PC’s Duncan Powell has domestic charge dropped, but still faces trial" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/education/deal-reached-to-delete-data-stolen-from-canvas-educational-platform-by-hackers/"
+					href="https://www.wpri.com/news/local-news/providence/pcs-duncan-powell-has-domestic-charge-dropped-but-still-faces-trial/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Deal reached to delete data stolen from Canvas educational platform by hackers" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PC’s Duncan Powell has domestic charge dropped, but still faces trial" 														>
 			
-			Deal reached to delete data stolen from Canvas platform
+			PC&#8217;s Powell has charge dropped, but still faces trial
 										</a>
 					</h4>
 	
@@ -801,9 +818,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/education/deal-reached-to-delete-data-stolen-from-canvas-educational-platform-by-hackers/"
+				href="https://www.wpri.com/news/local-news/providence/pcs-duncan-powell-has-domestic-charge-dropped-but-still-faces-trial/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Deal reached to delete data stolen from Canvas educational platform by hackers" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PC’s Duncan Powell has domestic charge dropped, but still faces trial" 											>
 		
 		<div class="article-list__article-image-wrapper">
 			
@@ -812,25 +829,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	class="image-wrapper landscape"
 >
 			<img
-			src="https://i0.wp.com/www.wpri.com/wp-content/uploads/sites/23/2026/05/Canvas-theft-e1778674347570.jpg?w=2000&#038;ssl=1"
-			alt=""
+			src="https://i0.wp.com/www.wpri.com/wp-content/uploads/sites/23/2026/05/AP26133625873524.jpg?w=2000&#038;ssl=1"
+			alt="Providence forward Duncan Powell (31) defends against St. John during the first half of an NCAA college basketball game Jan. 3, 2026, in New York."
 			srcset=""
 			sizes=""
 			loading="lazy"
 			onerror="this.onerror=null; this.src=&#039;https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png&#039;; this.srcset=&#039;https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=160 160w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=256 256w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=320 320w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=640 640w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=876 876w&#039;; this.sizes=&#039;(max-width: 899px) 100vw, 876px&#039;;"
 					/>
 	</div>
-
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-			<span class="article-list__article-mediaicon-text">Video</span>
-	</span>
 		</div>
 
 					</a>
@@ -849,22 +855,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/us-and-world/singer-d4vd-appears-in-court-waives-may-hearing-in-teen-murder-case/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Singer D4vd appears in court, waives May hearing in teen murder case" 			>
+			href="https://www.wpri.com/news/us-and-world/alex-murdaughs-murder-convictions-overturned-appeal-for-new-trial-granted/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Alex Murdaugh’s murder convictions overturned, appeal for new trial granted" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/us-and-world/singer-d4vd-appears-in-court-waives-may-hearing-in-teen-murder-case/"
+					href="https://www.wpri.com/news/us-and-world/alex-murdaughs-murder-convictions-overturned-appeal-for-new-trial-granted/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Singer D4vd appears in court, waives May hearing in teen murder case" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Alex Murdaugh’s murder convictions overturned, appeal for new trial granted" 														>
 			
-			Singer D4vd waives May hearing in teen murder case
+			Murdaugh&#8217;s convictions overturned, appeal granted
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T12:31:57-04:00" >4 minutes ago</time>			</footer>
+				<time datetime="2026-05-13T14:55:08-04:00" >1 hour ago</time>			</footer>
 			
 	
 	
@@ -874,9 +880,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/us-and-world/singer-d4vd-appears-in-court-waives-may-hearing-in-teen-murder-case/"
+				href="https://www.wpri.com/news/us-and-world/alex-murdaughs-murder-convictions-overturned-appeal-for-new-trial-granted/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Singer D4vd appears in court, waives May hearing in teen murder case" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Alex Murdaugh’s murder convictions overturned, appeal for new trial granted" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -909,22 +915,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/elections/political-power-ranker-massachusetts-senate-race/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Political Power Ranker: Massachusetts Senate race" 			>
+			href="https://www.wpri.com/news/local-news/se-mass/51k-in-sunglasses-stolen-from-dartmouth-store-during-break-in-police-say/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="$51K in sunglasses stolen from Dartmouth store during break-in, police say" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/elections/political-power-ranker-massachusetts-senate-race/"
+					href="https://www.wpri.com/news/local-news/se-mass/51k-in-sunglasses-stolen-from-dartmouth-store-during-break-in-police-say/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Political Power Ranker: Massachusetts Senate race" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="$51K in sunglasses stolen from Dartmouth store during break-in, police say" 														>
 			
-			Political Power Ranker: Massachusetts Senate race
+			$51K in sunglasses stolen during Dartmouth break-in
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T11:48:42-04:00" >47 minutes ago</time>			</footer>
+				<time datetime="2026-05-13T15:48:51-04:00" >7 minutes ago</time>			</footer>
 			
 	
 	
@@ -934,9 +940,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/elections/political-power-ranker-massachusetts-senate-race/"
+				href="https://www.wpri.com/news/local-news/se-mass/51k-in-sunglasses-stolen-from-dartmouth-store-during-break-in-police-say/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Political Power Ranker: Massachusetts Senate race" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="$51K in sunglasses stolen from Dartmouth store during break-in, police say" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -944,12 +950,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <span
 	aria-hidden="true"
 	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
+	class="article-list__article-mediaicon article-list__article-mediaicon--gallery"
 >
 	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="15" height="12" xmlns:v="https://vecta.io/nano"><defs><style>.cls-5{fill:#fff;fill-rule:evenodd}</style></defs><path d="M4.49.627c-.368 0-.667.298-.667.667h0v1.033h7.846a.8.8 0 0 1 .8.8h0v5.258H13.5c.368 0 .667-.298.667-.667h0V1.294c0-.368-.298-.667-.667-.667h0-9.01zM.833 4.282c0-.368.298-.667.667-.667h0 9.011c.368 0 .667.298.667.667h0v6.425c0 .368-.298.667-.667.667h0H1.5c-.368 0-.667-.298-.667-.667h0V4.282z" class="cls-5" /></svg>
 	</span>
-			<span class="article-list__article-mediaicon-text">Video</span>
+			<span class="article-list__article-mediaicon-text">Gallery</span>
 	</span>
 		</div>
 
@@ -969,22 +975,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/behindthestory/big-donations-ben-berke-examines-campaign-funds-ahead-of-rent-control-vote/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘Big donations’: Ben Berke examines campaign funds ahead of rent-control vote" 			>
+			href="https://www.wpri.com/sports/world-cup-2026/one-month-until-first-world-cup-match-in-foxboro/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="One month until first World Cup match in Foxboro" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/behindthestory/big-donations-ben-berke-examines-campaign-funds-ahead-of-rent-control-vote/"
+					href="https://www.wpri.com/sports/world-cup-2026/one-month-until-first-world-cup-match-in-foxboro/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘Big donations’: Ben Berke examines campaign funds ahead of rent-control vote" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="One month until first World Cup match in Foxboro" 														>
 			
-			‘Big donations’: Ben Berke examines campaign funds&nbsp;&hellip;
+			One month until first World Cup match in Foxboro
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T11:32:12-04:00" >1 hour ago</time>			</footer>
+				<time datetime="2026-05-13T14:22:10-04:00" >2 hours ago</time>			</footer>
 			
 	
 	
@@ -994,24 +1000,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/behindthestory/big-donations-ben-berke-examines-campaign-funds-ahead-of-rent-control-vote/"
+				href="https://www.wpri.com/sports/world-cup-2026/one-month-until-first-world-cup-match-in-foxboro/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘Big donations’: Ben Berke examines campaign funds ahead of rent-control vote" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="One month until first World Cup match in Foxboro" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-			<span class="article-list__article-mediaicon-text">Video</span>
-	</span>
-		</div>
+						</div>
 
 					</a>
 			</figure>
@@ -1029,22 +1024,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/possible-hantavirus-case-not-linked-to-mv-hondius-ship-investigated-in-illinois/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Possible hantavirus case not linked to MV Hondius ship investigated in Illinois" 			>
+			href="https://www.wpri.com/community/12-gives-back/12-gives-back-commercial-fisheries-center-of-rhode-island/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="12 Gives Back: Commercial Fisheries Center of Rhode Island" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/possible-hantavirus-case-not-linked-to-mv-hondius-ship-investigated-in-illinois/"
+					href="https://www.wpri.com/community/12-gives-back/12-gives-back-commercial-fisheries-center-of-rhode-island/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Possible hantavirus case not linked to MV Hondius ship investigated in Illinois" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="12 Gives Back: Commercial Fisheries Center of Rhode Island" 														>
 			
-			Possible hantavirus case in IL not linked to cruise
+			12 Gives Back: Commercial Fisheries Center of RI
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T10:28:54-04:00" >2 hours ago</time>			</footer>
+				<time datetime="2026-05-13T15:48:05-04:00" >8 minutes ago</time>			</footer>
 			
 	
 	
@@ -1054,9 +1049,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/possible-hantavirus-case-not-linked-to-mv-hondius-ship-investigated-in-illinois/"
+				href="https://www.wpri.com/community/12-gives-back/12-gives-back-commercial-fisheries-center-of-rhode-island/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Possible hantavirus case not linked to MV Hondius ship investigated in Illinois" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="12 Gives Back: Commercial Fisheries Center of Rhode Island" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -1264,7 +1259,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-12T17:44:08-04:00" >19 hours ago</time>			</footer>
+				<time datetime="2026-05-13T15:04:11-04:00" >52 minutes ago</time>			</footer>
 			
 	
 	
@@ -1324,7 +1319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-12T19:15:28-04:00" >17 hours ago</time>			</footer>
+				<time datetime="2026-05-13T15:03:41-04:00" >52 minutes ago</time>			</footer>
 			
 	
 	
@@ -1384,7 +1379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-12T21:40:45-04:00" >15 hours ago</time>			</footer>
+				<time datetime="2026-05-12T21:40:45-04:00" >18 hours ago</time>			</footer>
 			
 	
 	
@@ -1514,22 +1509,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/sports/la-salle-improves-to-12-1-with-win-over-east-providence/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="La Salle improves to 12-1 with win over East Providence" 			>
+			href="https://www.wpri.com/news/local-news/providence/pcs-duncan-powell-has-domestic-charge-dropped-but-still-faces-trial/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PC’s Duncan Powell has domestic charge dropped, but still faces trial" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/sports/la-salle-improves-to-12-1-with-win-over-east-providence/"
+					href="https://www.wpri.com/news/local-news/providence/pcs-duncan-powell-has-domestic-charge-dropped-but-still-faces-trial/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="La Salle improves to 12-1 with win over East Providence" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PC’s Duncan Powell has domestic charge dropped, but still faces trial" 														>
 			
-			La Salle improves to 12-1 with win over East Providence
+			PC&#8217;s Powell has charge dropped, but still faces trial
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-12T22:49:04-04:00" >14 hours ago</time>			</footer>
+				<time datetime="2026-05-13T15:45:13-04:00" >11 minutes ago</time>			</footer>
 			
 	
 	
@@ -1539,7 +1534,105 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/sports/la-salle-improves-to-12-1-with-win-over-east-providence/"
+				href="https://www.wpri.com/news/local-news/providence/pcs-duncan-powell-has-domestic-charge-dropped-but-still-faces-trial/"
+				class="article-list__article-link"
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PC’s Duncan Powell has domestic charge dropped, but still faces trial" 											>
+		
+		<div class="article-list__article-image-wrapper">
+							<div class="image-wrapper no-image"></div>
+						</div>
+
+					</a>
+			</figure>
+</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
+
+<div
+	class="article-list__article-text"
+	data-context="supernav"
+	data-article-list-id=""
+	data-article-text-classes="article-list__article-text"
+	data-article-thumb-classes="article-list__article-thumb"
+	data-current-image-context="[]"
+>
+					
+		
+				<a
+			class="article-list__gradient-link"
+			href="https://www.wpri.com/sports/world-cup-2026/one-month-until-first-world-cup-match-in-foxboro/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="One month until first World Cup match in Foxboro" 			>
+		</a>
+
+		<h4 class="article-list__article-title">
+													<a
+					href="https://www.wpri.com/sports/world-cup-2026/one-month-until-first-world-cup-match-in-foxboro/"
+					class="article-list__article-link"
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="One month until first World Cup match in Foxboro" 														>
+			
+			One month until first World Cup match in Foxboro
+										</a>
+					</h4>
+	
+						<footer class="article-list__article-meta">
+				<time datetime="2026-05-13T14:22:10-04:00" >2 hours ago</time>			</footer>
+			
+	
+	
+	
+	</div>
+
+
+	<figure class="article-list__article-thumb">
+					<a
+				href="https://www.wpri.com/sports/world-cup-2026/one-month-until-first-world-cup-match-in-foxboro/"
+				class="article-list__article-link"
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="One month until first World Cup match in Foxboro" 											>
+		
+		<div class="article-list__article-image-wrapper">
+							<div class="image-wrapper no-image"></div>
+						</div>
+
+					</a>
+			</figure>
+</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
+
+<div
+	class="article-list__article-text"
+	data-context="supernav"
+	data-article-list-id=""
+	data-article-text-classes="article-list__article-text"
+	data-article-thumb-classes="article-list__article-thumb"
+	data-current-image-context="[]"
+>
+					
+		
+				<a
+			class="article-list__gradient-link"
+			href="https://www.wpri.com/sports/high-school/la-salle-improves-to-12-1-with-win-over-east-providence/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="La Salle improves to 12-1 with win over East Providence" 			>
+		</a>
+
+		<h4 class="article-list__article-title">
+													<a
+					href="https://www.wpri.com/sports/high-school/la-salle-improves-to-12-1-with-win-over-east-providence/"
+					class="article-list__article-link"
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="La Salle improves to 12-1 with win over East Providence" 														>
+			
+			La Salle improves to 12-1 with win over East Providence
+										</a>
+					</h4>
+	
+						<footer class="article-list__article-meta">
+				<time datetime="2026-05-13T15:11:07-04:00" >45 minutes ago</time>			</footer>
+			
+	
+	
+	
+	</div>
+
+
+	<figure class="article-list__article-thumb">
+					<a
+				href="https://www.wpri.com/sports/high-school/la-salle-improves-to-12-1-with-win-over-east-providence/"
 				class="article-list__article-link"
 				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="La Salle improves to 12-1 with win over East Providence" 											>
 		
@@ -1574,22 +1667,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/sports/celtics/jason-collins-first-openly-gay-nba-player-dies-after-cancer-battle/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jason Collins, first openly gay NBA player, dies after cancer battle" 			>
+			href="https://www.wpri.com/sports/nba/jason-collins-first-openly-gay-nba-player-dies-after-cancer-battle/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jason Collins, NBA’s first openly gay player, dies at 47 of brain cancer" 			>
 		</a>
 
 		<h4 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/sports/celtics/jason-collins-first-openly-gay-nba-player-dies-after-cancer-battle/"
+					href="https://www.wpri.com/sports/nba/jason-collins-first-openly-gay-nba-player-dies-after-cancer-battle/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jason Collins, first openly gay NBA player, dies after cancer battle" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jason Collins, NBA’s first openly gay player, dies at 47 of brain cancer" 														>
 			
 			First openly gay NBA player, Jason Collins, dies
 										</a>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-12T21:44:24-04:00" >15 hours ago</time>			</footer>
+				<time datetime="2026-05-13T15:07:45-04:00" >48 minutes ago</time>			</footer>
 			
 	
 	
@@ -1599,9 +1692,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/sports/celtics/jason-collins-first-openly-gay-nba-player-dies-after-cancer-battle/"
+				href="https://www.wpri.com/sports/nba/jason-collins-first-openly-gay-nba-player-dies-after-cancer-battle/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jason Collins, first openly gay NBA player, dies after cancer battle" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Jason Collins, NBA’s first openly gay player, dies at 47 of brain cancer" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -1617,115 +1710,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<span class="article-list__article-mediaicon-text">Video</span>
 	</span>
 		</div>
-
-					</a>
-			</figure>
-</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
-
-<div
-	class="article-list__article-text"
-	data-context="supernav"
-	data-article-list-id=""
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/sports/world-cup-2026/restaurant-worried-world-cup-will-be-bad-for-business-selling-rides-to-games/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Restaurant worried World Cup will be bad for business, selling rides to games" 			>
-		</a>
-
-		<h4 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/sports/world-cup-2026/restaurant-worried-world-cup-will-be-bad-for-business-selling-rides-to-games/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Restaurant worried World Cup will be bad for business, selling rides to games" 														>
-			
-			Foxboro restaurant selling rides to World Cup games
-										</a>
-					</h4>
-	
-						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T09:07:59-04:00" >3 hours ago</time>			</footer>
-			
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/sports/world-cup-2026/restaurant-worried-world-cup-will-be-bad-for-business-selling-rides-to-games/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Restaurant worried World Cup will be bad for business, selling rides to games" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-			<span class="article-list__article-mediaicon-text">Video</span>
-	</span>
-		</div>
-
-					</a>
-			</figure>
-</articledata-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><article class="article-list__article">
-
-<div
-	class="article-list__article-text"
-	data-context="supernav"
-	data-article-list-id=""
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/sports/memphis-grizzlies-forward-brandon-clarke-dies-at-29/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Memphis Grizzlies forward Brandon Clarke dies at 29" 			>
-		</a>
-
-		<h4 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/sports/memphis-grizzlies-forward-brandon-clarke-dies-at-29/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Memphis Grizzlies forward Brandon Clarke dies at 29" 														>
-			
-			Memphis Grizzlies forward Brandon Clarke dies
-										</a>
-					</h4>
-	
-						<footer class="article-list__article-meta">
-				<time datetime="2026-05-12T15:30:58-04:00" >21 hours ago</time>			</footer>
-			
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/sports/memphis-grizzlies-forward-brandon-clarke-dies-at-29/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="Memphis Grizzlies forward Brandon Clarke dies at 29" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-						</div>
 
 					</a>
 			</figure>
@@ -1846,7 +1830,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T10:59:15-04:00" >2 hours ago</time>			</footer>
+				<time datetime="2026-05-13T10:59:15-04:00" >5 hours ago</time>			</footer>
 			
 	
 	
@@ -1906,7 +1890,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T11:50:52-04:00" >45 minutes ago</time>			</footer>
+				<time datetime="2026-05-13T11:50:52-04:00" >4 hours ago</time>			</footer>
 			
 	
 	
@@ -1966,7 +1950,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-05-13T10:35:17-04:00" >2 hours ago</time>			</footer>
+				<time datetime="2026-05-13T10:35:17-04:00" >5 hours ago</time>			</footer>
 			
 	
 	
@@ -3820,29 +3804,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Current</h4>
 			<h5 class="weather-widget__item-temperature">
-				58&deg;			</h5>
+				65&deg;			</h5>
 			<figure class="weather-widget__item-icon">
-				<span class="weather-icon weather-icon-sm weather-icon-dark-26"></span>
+				<span class="weather-icon weather-icon-sm weather-icon-dark-30"></span>
 			</figure>
-			<span class="weather-widget__item-conditions">Cloudy</span>
+			<span class="weather-widget__item-conditions">Partly Cloudy</span>
 		</div>
 
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Tonight</h4>
 			<h5 class="weather-widget__item-temperature">
-				54&deg;			</h5>
+				53&deg;			</h5>
 			<figure class="weather-widget__item-icon">
 				<span class="weather-icon weather-icon-sm weather-icon-dark-45"></span>
 			</figure>
 			<span class="weather-widget__item-conditions">Showers Late</span>
 			<span class="weather-widget__item-precipitation">
-				Precip: 41&percnt;			</span>
+				Precip: 47&percnt;			</span>
 		</div>
 
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Tomorrow</h4>
 			<h5 class="weather-widget__item-temperature">
-				61&deg;			</h5>
+				60&deg;			</h5>
 			<figure class="weather-widget__item-icon">
 				<span class="weather-icon weather-icon-sm weather-icon-dark-12"></span>
 			</figure>
@@ -4089,16 +4073,16 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 				<a
 			class="article-list__gradient-link"
 			href="https://www.wpri.com/news/local-news/providence/suspect-arrested-in-providence-deadly-shooting-of-20-year-old/"
-						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Suspect arrested in deadly Providence shooting" 			>
+						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Suspect arraigned in deadly Providence shooting" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
 					href="https://www.wpri.com/news/local-news/providence/suspect-arrested-in-providence-deadly-shooting-of-20-year-old/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Suspect arrested in deadly Providence shooting" 														>
+															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Suspect arraigned in deadly Providence shooting" 														>
 			
-			Suspect arrested in deadly Providence shooting
+			Suspect arraigned in deadly Providence shooting
 										</a>
 					</h3>
 	
@@ -4113,77 +4097,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 					<a
 				href="https://www.wpri.com/news/local-news/providence/suspect-arrested-in-providence-deadly-shooting-of-20-year-old/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Suspect arrested in deadly Providence shooting" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-	</span>
-		</div>
-
-					</a>
-			</figure>
-							</article>
-
-		
-
-															<article
-			class="article-list__article article-list__article--is-slat"
-			data-article-id="3020954"
-			data-context="numbered_list"
-			data-index="3"
-			data-collection="article-list4"
-			data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}"
-						>
-			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
-				
-
-<div
-	class="article-list__article-text"
-	data-context="numbered_list"
-	data-article-list-id="article-list4"
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[&quot;16:9&quot;,&quot;(max-width: 1023px) 50vw, 876px&quot;]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/south-county/quidnessett-country-club-faces-lawsuit-over-refusal-to-remove-illegal-seawall/"
-						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Quidnessett Country Club faces lawsuit over refusal to remove ‘illegal’ seawall" 			>
-		</a>
-
-		<h3 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/news/local-news/south-county/quidnessett-country-club-faces-lawsuit-over-refusal-to-remove-illegal-seawall/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Quidnessett Country Club faces lawsuit over refusal to remove ‘illegal’ seawall" 														>
-			
-			AG sues Quidnessett over &#8216;illegal&#8217; seawall
-										</a>
-					</h3>
-	
-				
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/news/local-news/south-county/quidnessett-country-club-faces-lawsuit-over-refusal-to-remove-illegal-seawall/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Quidnessett Country Club faces lawsuit over refusal to remove ‘illegal’ seawall" 											>
+				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Suspect arraigned in deadly Providence shooting" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -4209,7 +4123,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 			class="article-list__article article-list__article--is-slat"
 			data-article-id="599844"
 			data-context="numbered_list"
-			data-index="4"
+			data-index="3"
 			data-collection="article-list4"
 			data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}"
 						>
@@ -4229,14 +4143,14 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 				<a
 			class="article-list__gradient-link"
 			href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
-						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Drier with Some Sun This Afternoon, Gusty Winds" 			>
+						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Drier with Some Sun This Afternoon, Gusty Winds" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
 					href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Drier with Some Sun This Afternoon, Gusty Winds" 														>
+															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Drier with Some Sun This Afternoon, Gusty Winds" 														>
 			
 			Drier with Some Sun This Afternoon, Gusty Winds
 										</a>
@@ -4253,7 +4167,77 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 					<a
 				href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Drier with Some Sun This Afternoon, Gusty Winds" 											>
+				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Drier with Some Sun This Afternoon, Gusty Winds" 											>
+		
+		<div class="article-list__article-image-wrapper">
+							<div class="image-wrapper no-image"></div>
+				
+<span
+	aria-hidden="true"
+	tabindex="-1"
+	class="article-list__article-mediaicon article-list__article-mediaicon--video"
+>
+	<span class="article-list__article-mediaicon-svg">
+		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
+	</span>
+	</span>
+		</div>
+
+					</a>
+			</figure>
+							</article>
+
+		
+
+															<article
+			class="article-list__article article-list__article--is-slat"
+			data-article-id="3020954"
+			data-context="numbered_list"
+			data-index="4"
+			data-collection="article-list4"
+			data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}"
+						>
+			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
+				
+
+<div
+	class="article-list__article-text"
+	data-context="numbered_list"
+	data-article-list-id="article-list4"
+	data-article-text-classes="article-list__article-text"
+	data-article-thumb-classes="article-list__article-thumb"
+	data-current-image-context="[&quot;16:9&quot;,&quot;(max-width: 1023px) 50vw, 876px&quot;]"
+>
+					
+		
+				<a
+			class="article-list__gradient-link"
+			href="https://www.wpri.com/news/local-news/south-county/quidnessett-country-club-faces-lawsuit-over-refusal-to-remove-illegal-seawall/"
+						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Quidnessett Country Club faces lawsuit over refusal to remove ‘illegal’ seawall" 			>
+		</a>
+
+		<h3 class="article-list__article-title">
+													<a
+					href="https://www.wpri.com/news/local-news/south-county/quidnessett-country-club-faces-lawsuit-over-refusal-to-remove-illegal-seawall/"
+					class="article-list__article-link"
+															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Quidnessett Country Club faces lawsuit over refusal to remove ‘illegal’ seawall" 														>
+			
+			AG sues Quidnessett over &#8216;illegal&#8217; seawall
+										</a>
+					</h3>
+	
+				
+	
+	
+	
+	</div>
+
+
+	<figure class="article-list__article-thumb">
+					<a
+				href="https://www.wpri.com/news/local-news/south-county/quidnessett-country-club-faces-lawsuit-over-refusal-to-remove-illegal-seawall/"
+				class="article-list__article-link"
+				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Quidnessett Country Club faces lawsuit over refusal to remove ‘illegal’ seawall" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -4433,7 +4417,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 					</h3>
 	
 						<footer class="article-list__article-meta">
-				<a href="https://www.wpri.com/behind-the-smiles-winning-photos/" class="article-list__article-category-link" data-link-type="category-link" data-link-position="2" data-link-pinned="false" data-link-label="Behind the Smiles"   >Behind the Smiles</a> / <time datetime="2026-05-13T07:22:25-04:00" >5 hours ago</time>			</footer>
+				<a href="https://www.wpri.com/behind-the-smiles-winning-photos/" class="article-list__article-category-link" data-link-type="category-link" data-link-position="2" data-link-pinned="false" data-link-label="Behind the Smiles"   >Behind the Smiles</a> / <time datetime="2026-05-13T07:22:25-04:00" >9 hours ago</time>			</footer>
 			
 	
 	
@@ -4604,12 +4588,12 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 <div
 	class="article-list__content"
 	data-module-type="dont-miss"
-	data-playlist-config="[{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3017522&quot;,&quot;videoTitle&quot;:&quot;Fire and Explosion Kill Two Black Hills Residents&quot;,&quot;program&quot;:&quot;News&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536447600&quot;,&quot;videoDuration&quot;:&quot;134&quot;,&quot;originalVideoTitle&quot;:&quot;Fire and Explosion Kill Two Black Hills Residents&quot;},&quot;id&quot;:&quot;3017522&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/bc5a26660b792b78ac1f59a304adf69d3eabe634806aaf23cc2b35371d499fdd\/captures\/3F8\/FCE\/3F8FCEE5F6E94C28B11046EF318558A6.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3017522.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Fire and Explosion Kill Two Black Hills Residents&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3017616&quot;,&quot;videoTitle&quot;:&quot;Death toll rises, flights resume, power back in Japan quake&quot;,&quot;program&quot;:&quot;WTNH.com and YouTube (Default)&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536447600&quot;,&quot;videoDuration&quot;:&quot;25&quot;,&quot;originalVideoTitle&quot;:&quot;Death toll rises, flights resume, power back in Japan quake&quot;},&quot;id&quot;:&quot;3017616&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/a7a59fbfc2437702efddda7c05d4cd9bb4d7242c72e6fe1c1d7c8aaf6109d16b\/captures\/BB1\/DA5\/BB1DA515FFB241EC8D1ECB245BA6E6AA.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3017616.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Death toll rises, flights resume, power back in Japan quake&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3016624&quot;,&quot;videoTitle&quot;:&quot;TDFN PART 3&quot;,&quot;program&quot;:&quot;Default&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536377845&quot;,&quot;videoDuration&quot;:&quot;125&quot;,&quot;originalVideoTitle&quot;:&quot;TDFN PART 3&quot;},&quot;id&quot;:&quot;3016624&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/add4dc62591270b5a9b3f69fd80ff535592d9f72437d67115eef867b8f24d951\/captures\/D87\/706\/D87706AEC8124177BA29F8C2AADBB109.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3016624.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;TDFN PART 3&quot;,&quot;error&quot;:null}]"
+	data-playlist-config="[{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3020169&quot;,&quot;videoTitle&quot;:&quot;Niles Police ask for help identifying suspect&quot;,&quot;program&quot;:&quot;27 WKBN Local News - goes to YouTube&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536595200&quot;,&quot;videoDuration&quot;:&quot;20&quot;,&quot;originalVideoTitle&quot;:&quot;Niles Police ask for help identifying suspect&quot;},&quot;id&quot;:&quot;3020169&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/cfd601682297fba6befdaed8c1d4c774ecb5d4eebfcdcdf35912f81d938272e3\/captures\/E81\/9F7\/E819F71A895F4121B8E24537352EE939.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3020169.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Niles Police ask for help identifying suspect&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3017522&quot;,&quot;videoTitle&quot;:&quot;Fire and Explosion Kill Two Black Hills Residents&quot;,&quot;program&quot;:&quot;News&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536447600&quot;,&quot;videoDuration&quot;:&quot;134&quot;,&quot;originalVideoTitle&quot;:&quot;Fire and Explosion Kill Two Black Hills Residents&quot;},&quot;id&quot;:&quot;3017522&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/bc5a26660b792b78ac1f59a304adf69d3eabe634806aaf23cc2b35371d499fdd\/captures\/3F8\/FCE\/3F8FCEE5F6E94C28B11046EF318558A6.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3017522.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Fire and Explosion Kill Two Black Hills Residents&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3017616&quot;,&quot;videoTitle&quot;:&quot;Death toll rises, flights resume, power back in Japan quake&quot;,&quot;program&quot;:&quot;WTNH.com and YouTube (Default)&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536447600&quot;,&quot;videoDuration&quot;:&quot;25&quot;,&quot;originalVideoTitle&quot;:&quot;Death toll rises, flights resume, power back in Japan quake&quot;},&quot;id&quot;:&quot;3017616&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/a7a59fbfc2437702efddda7c05d4cd9bb4d7242c72e6fe1c1d7c8aaf6109d16b\/captures\/BB1\/DA5\/BB1DA515FFB241EC8D1ECB245BA6E6AA.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3017616.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Death toll rises, flights resume, power back in Japan quake&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3016624&quot;,&quot;videoTitle&quot;:&quot;TDFN PART 3&quot;,&quot;program&quot;:&quot;Default&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1536377845&quot;,&quot;videoDuration&quot;:&quot;125&quot;,&quot;originalVideoTitle&quot;:&quot;TDFN PART 3&quot;},&quot;id&quot;:&quot;3016624&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/add4dc62591270b5a9b3f69fd80ff535592d9f72437d67115eef867b8f24d951\/captures\/D87\/706\/D87706AEC8124177BA29F8C2AADBB109.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3016624.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;TDFN PART 3&quot;,&quot;error&quot;:null}]"
 >
 
 										<article
 			class="article-list__article"
-			data-article-id="3019788"
+			data-article-id="3020169"
 			data-context="headline_list_dont_miss"
 			data-index="0"
 			data-collection="article-list6"
@@ -4630,17 +4614,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/providence/ppacs-historic-organ-off-to-california-for-complete-restoration/"
-						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PPAC’s historic organ off to California for complete restoration" 			>
+			href="https://www.wpri.com/entertainment-news/real-housewives-of-rhode-island-will-return-for-season-2/"
+						data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘Real Housewives of Rhode Island’ will return for season 2" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/providence/ppacs-historic-organ-off-to-california-for-complete-restoration/"
+					href="https://www.wpri.com/entertainment-news/real-housewives-of-rhode-island-will-return-for-season-2/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PPAC’s historic organ off to California for complete restoration" 														>
+															data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘Real Housewives of Rhode Island’ will return for season 2" 														>
 			
-			PPAC&#8217;s historic organ off to California for restoration
+			&#8216;Real Housewives of RI&#8217; will return for season 2
 										</a>
 					</h3>
 	
@@ -4653,9 +4637,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/providence/ppacs-historic-organ-off-to-california-for-complete-restoration/"
+				href="https://www.wpri.com/entertainment-news/real-housewives-of-rhode-island-will-return-for-season-2/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="PPAC’s historic organ off to California for complete restoration" 											>
+				data-link-type="content-link" data-link-position="1" data-link-pinned="false" data-link-label="‘Real Housewives of Rhode Island’ will return for season 2" 											>
 		
 		<div class="article-list__article-image-wrapper">
 			
@@ -4664,9 +4648,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 	class="image-wrapper square-true-ratio landscape"
 >
 			<img
-			src="https://www.wpri.com/wp-content/uploads/sites/23/2026/05/Screenshot-2026-05-11-180223.png?strip=1"
-			alt=""
-			srcset="https://www.wpri.com/wp-content/uploads/sites/23/2026/05/Screenshot-2026-05-11-180223.png 958w, https://www.wpri.com/wp-content/uploads/sites/23/2026/05/Screenshot-2026-05-11-180223.png?resize=300,183 300w, https://www.wpri.com/wp-content/uploads/sites/23/2026/05/Screenshot-2026-05-11-180223.png?resize=768,468 768w, https://www.wpri.com/wp-content/uploads/sites/23/2026/05/Screenshot-2026-05-11-180223.png?resize=50,30 50w"
+			src="https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?strip=1"
+			alt="A photo of seven women who are dressed up, standing and sitting around a table on a beach."
+			srcset="https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg 800w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=160,90 160w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=300,169 300w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=768,432 768w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=320,180 320w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=256,144 256w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=512,288 512w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=640,360 640w, https://www.wpri.com/wp-content/uploads/sites/23/2026/04/0403-REAL-HOUSEWIVES-OF-RHODE-ISLAND-COURTESY-BRAVO-TV.jpg?resize=50,28 50w"
 			sizes="(max-width: 899px) 50vw, 600px"
 			loading="lazy"
 			onerror="this.onerror=null; this.src=&#039;https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png&#039;; this.srcset=&#039;https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=160 160w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=256 256w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=320 320w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=640 640w, https://www.wpri.com/wp-content/themes/nexstar-wv/client/src/images/placeholder-1-1.png?w=876 876w&#039;; this.sizes=&#039;(max-width: 899px) 100vw, 876px&#039;;"
@@ -4692,7 +4676,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 															<article
 			class="article-list__article"
-			data-article-id="3017522"
+			data-article-id="3019788"
 			data-context="headline_list_dont_miss"
 			data-index="1"
 			data-collection="article-list6"
@@ -4713,15 +4697,85 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
+			href="https://www.wpri.com/news/local-news/providence/ppacs-historic-organ-off-to-california-for-complete-restoration/"
+						data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="PPAC’s historic organ off to California for complete restoration" 			>
+		</a>
+
+		<h3 class="article-list__article-title">
+													<a
+					href="https://www.wpri.com/news/local-news/providence/ppacs-historic-organ-off-to-california-for-complete-restoration/"
+					class="article-list__article-link"
+															data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="PPAC’s historic organ off to California for complete restoration" 														>
+			
+			PPAC&#8217;s historic organ off to California for restoration
+										</a>
+					</h3>
+	
+				
+	
+	
+	
+	</div>
+
+
+	<figure class="article-list__article-thumb">
+					<a
+				href="https://www.wpri.com/news/local-news/providence/ppacs-historic-organ-off-to-california-for-complete-restoration/"
+				class="article-list__article-link"
+				data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="PPAC’s historic organ off to California for complete restoration" 											>
+		
+		<div class="article-list__article-image-wrapper">
+							<div class="image-wrapper no-image"></div>
+				
+<span
+	aria-hidden="true"
+	tabindex="-1"
+	class="article-list__article-mediaicon article-list__article-mediaicon--video"
+>
+	<span class="article-list__article-mediaicon-svg">
+		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
+	</span>
+	</span>
+		</div>
+
+					</a>
+			</figure>
+							</article>
+
+		
+
+															<article
+			class="article-list__article"
+			data-article-id="3017522"
+			data-context="headline_list_dont_miss"
+			data-index="2"
+			data-collection="article-list6"
+			data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}"
+						>
+			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
+				
+
+<div
+	class="article-list__article-text"
+	data-context="headline_list_dont_miss"
+	data-article-list-id="article-list6"
+	data-article-text-classes="article-list__article-text"
+	data-article-thumb-classes="article-list__article-thumb"
+	data-current-image-context="[&quot;1:1&quot;,&quot;(max-width: 899px) 50vw, 600px&quot;]"
+>
+					
+		
+				<a
+			class="article-list__gradient-link"
 			href="https://www.wpri.com/news/street-stories/ccris-new-comfort-dog-already-making-a-difference/"
-						data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="CCRI’s new comfort dog already making a difference" 			>
+						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="CCRI’s new comfort dog already making a difference" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
 					href="https://www.wpri.com/news/street-stories/ccris-new-comfort-dog-already-making-a-difference/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="CCRI’s new comfort dog already making a difference" 														>
+															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="CCRI’s new comfort dog already making a difference" 														>
 			
 			CCRI’s new comfort dog already making a difference
 										</a>
@@ -4738,7 +4792,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 					<a
 				href="https://www.wpri.com/news/street-stories/ccris-new-comfort-dog-already-making-a-difference/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="CCRI’s new comfort dog already making a difference" 											>
+				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="CCRI’s new comfort dog already making a difference" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -4764,66 +4818,6 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 			class="article-list__article"
 			data-article-id="3017616"
 			data-context="headline_list_dont_miss"
-			data-index="2"
-			data-collection="article-list6"
-			data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}"
-						>
-			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
-				
-
-<div
-	class="article-list__article-text"
-	data-context="headline_list_dont_miss"
-	data-article-list-id="article-list6"
-	data-article-text-classes="article-list__article-text"
-	data-article-thumb-classes="article-list__article-thumb"
-	data-current-image-context="[&quot;1:1&quot;,&quot;(max-width: 899px) 50vw, 600px&quot;]"
->
-					
-		
-				<a
-			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/us-and-world/olivia-and-liam-top-the-list-of-most-popular-us-baby-names-for-the-seventh-year-running/"
-						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Olivia and Liam top the list of most popular US baby names for the seventh year running" 			>
-		</a>
-
-		<h3 class="article-list__article-title">
-													<a
-					href="https://www.wpri.com/news/us-and-world/olivia-and-liam-top-the-list-of-most-popular-us-baby-names-for-the-seventh-year-running/"
-					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Olivia and Liam top the list of most popular US baby names for the seventh year running" 														>
-			
-			Olivia, Liam top list of most popular US baby names
-										</a>
-					</h3>
-	
-				
-	
-	
-	
-	</div>
-
-
-	<figure class="article-list__article-thumb">
-					<a
-				href="https://www.wpri.com/news/us-and-world/olivia-and-liam-top-the-list-of-most-popular-us-baby-names-for-the-seventh-year-running/"
-				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Olivia and Liam top the list of most popular US baby names for the seventh year running" 											>
-		
-		<div class="article-list__article-image-wrapper">
-							<div class="image-wrapper no-image"></div>
-						</div>
-
-					</a>
-			</figure>
-							</article>
-
-		
-
-															<article
-			class="article-list__article"
-			data-article-id="3016624"
-			data-context="headline_list_dont_miss"
 			data-index="3"
 			data-collection="article-list6"
 			data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}"
@@ -4843,17 +4837,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/east-bay/longtime-friend-of-ted-turner-he-was-larger-than-life/"
-						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Longtime friend of Ted Turner: ‘He was larger than life’" 			>
+			href="https://www.wpri.com/news/us-and-world/olivia-and-liam-top-the-list-of-most-popular-us-baby-names-for-the-seventh-year-running/"
+						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Olivia and Liam top the list of most popular US baby names for the seventh year running" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/east-bay/longtime-friend-of-ted-turner-he-was-larger-than-life/"
+					href="https://www.wpri.com/news/us-and-world/olivia-and-liam-top-the-list-of-most-popular-us-baby-names-for-the-seventh-year-running/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Longtime friend of Ted Turner: ‘He was larger than life’" 														>
+															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Olivia and Liam top the list of most popular US baby names for the seventh year running" 														>
 			
-			Longtime friend of Ted Turner: ‘He was larger than&nbsp;&hellip;
+			Olivia, Liam top list of most popular US baby names
 										</a>
 					</h3>
 	
@@ -4866,23 +4860,13 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/east-bay/longtime-friend-of-ted-turner-he-was-larger-than-life/"
+				href="https://www.wpri.com/news/us-and-world/olivia-and-liam-top-the-list-of-most-popular-us-baby-names-for-the-seventh-year-running/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Longtime friend of Ted Turner: ‘He was larger than life’" 											>
+				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="Olivia and Liam top the list of most popular US baby names for the seventh year running" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
-				
-<span
-	aria-hidden="true"
-	tabindex="-1"
-	class="article-list__article-mediaicon article-list__article-mediaicon--video"
->
-	<span class="article-list__article-mediaicon-svg">
-		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
-	</span>
-	</span>
-		</div>
+						</div>
 
 					</a>
 			</figure>
@@ -4892,7 +4876,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 															<article
 			class="article-list__article"
-			data-article-id="3015292"
+			data-article-id="3016624"
 			data-context="headline_list_dont_miss"
 			data-index="4"
 			data-collection="article-list6"
@@ -4913,17 +4897,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/business-news/tizzy-ks-cereal-ice-cream-to-open-its-third-shop-in-east-providence/"
-						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Tizzy K’s Cereal Ice Cream to open its third shop in East Providence" 			>
+			href="https://www.wpri.com/news/local-news/east-bay/longtime-friend-of-ted-turner-he-was-larger-than-life/"
+						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Longtime friend of Ted Turner: ‘He was larger than life’" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/business-news/tizzy-ks-cereal-ice-cream-to-open-its-third-shop-in-east-providence/"
+					href="https://www.wpri.com/news/local-news/east-bay/longtime-friend-of-ted-turner-he-was-larger-than-life/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Tizzy K’s Cereal Ice Cream to open its third shop in East Providence" 														>
+															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Longtime friend of Ted Turner: ‘He was larger than life’" 														>
 			
-			Tizzy K&#8217;s Cereal Ice Cream to open its third shop
+			Longtime friend of Ted Turner: ‘He was larger than&nbsp;&hellip;
 										</a>
 					</h3>
 	
@@ -4936,9 +4920,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/business-news/tizzy-ks-cereal-ice-cream-to-open-its-third-shop-in-east-providence/"
+				href="https://www.wpri.com/news/local-news/east-bay/longtime-friend-of-ted-turner-he-was-larger-than-life/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Tizzy K’s Cereal Ice Cream to open its third shop in East Providence" 											>
+				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Longtime friend of Ted Turner: ‘He was larger than life’" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -5037,7 +5021,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 <li id="menu-item-2830001" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2830001"><a href="https://www.wpri.com/news/enews-alerts/" data-link-type="navigation-link">eNews &#038; Alerts</a></li>
 <li id="menu-item-47788" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47788"><a href="https://www.wpri.com/sports/" data-link-type="navigation-link">Sports</a></li>
 <li id="menu-item-47792" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47792"><a href="https://www.wpri.com/target-12/" data-link-type="navigation-link">Target 12</a></li>
-<li id="menu-item-1916209" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1916209"><a href="https://www.wpri.com/rhode-show/" data-link-type="navigation-link">The Rhode Show</a></li>
+<li id="menu-item-1916209" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1916209"><a href="https://www.wpri.com/rhode-show/" data-link-type="navigation-link">The Rhode Show</a></li>
 <li id="menu-item-47881" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47881"><a href="https://www.wpri.com/fox-providence/" data-link-type="navigation-link">FOX Providence</a></li>
 <li id="menu-item-47813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47813"><a href="https://www.wpri.com/on-air/the-cw-providence/" data-link-type="navigation-link">The CW Providence</a></li>
 <li id="menu-item-47816" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47816"><a href="https://www.wpri.com/myritv/" data-link-type="navigation-link">myRITV</a></li>
