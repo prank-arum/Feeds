@@ -2,7 +2,8 @@
 <!doctype html>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-58accd45e525b4988ee",applicationID:"749933453",browserID:"772371058"};;/*! For license information please see nr-loader-rum-1.316.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:"object"==typeof e[o]&&"object"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>u,RI:()=>i,WN:()=>l,bv:()=>s,gm:()=>o,m:()=>c,mw:()=>a,sb:()=>d,zk:()=>f});var n=r(863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean("hidden"===o?.document?.visibilityState),c=""+o?.location,u=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),d=u&&"undefined"==typeof SharedWorker,l=((()=>{const e=o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);Array.isArray(e)&&e.length>=2&&e[1]})(),Date.now()-(0,n.t)()),f=()=>{const e=o?.performance?.getEntriesByType?.("navigation")?.[0];if(e&&e.responseStart>0&&e.responseStart<o.performance.now())return e}},234:(e,t,r)=>{"use strict";r.d(t,{W:()=>i});var n=r(687);class i{constructor(e,t){this.agentRef=e,this.ee=e?.ee,this.featureName=t,this.blocked=!1}deregisterDrain(){(0,n.x3)(this.agentRef,this.featureName)}}},241:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(154);const i="newrelic";function s(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>u,BL:()=>a,CH:()=>g,Dl:()=>_,Fw:()=>y,PA:()=>h,Pl:()=>n,Pv:()=>k,Tb:()=>l,U2:()=>s,V1:()=>R,Wb:()=>x,bt:()=>b,cD:()=>v,d3:()=>w,dT:()=>c,eY:()=>p,fF:()=>f,hG:()=>i,k6:()=>o,nb:()=>m,o5:()=>d});const n="api-",i="addPageAction",s="addToTrace",o="addRelease",a="finished",c="interaction",u="log",d="noticeError",l="pauseReplay",f="recordCustomEvent",g="recordReplay",p="register",m="setApplicationVersion",h="setCurrentRouteName",v="setCustomAttribute",b="setErrorHandler",y="setPageViewName",_="setUserId",w="start",x="wrapLogger",R="measure",k="consent"},289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>o,Qr:()=>c,sB:()=>a});var n=r(878),i=r(389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(s())return e();const r=(0,i.J)(e),o=setInterval(()=>{s()&&(clearInterval(o),r())},500);(0,n.sp)("load",r,t)}function a(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},324:(e,t,r)=>{"use strict";r.d(t,{F3:()=>i,Xs:()=>s,xv:()=>n});const n="1.316.0",i="PROD",s="CDN"},362:(e,t,r)=>{"use strict";r.d(t,{d:()=>s});var n=r(566),i=r(741);class s extends i.W{agentIdentifier=(0,n.LA)(16)}},374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>d,dV:()=>u,pV:()=>l});var n=r(154),i=r(863),s=r(944),o=r(910);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function u(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function d(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),u(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},555:(e,t,r)=>{"use strict";r.d(t,{D:()=>a,f:()=>o});var n=r(384),i=r(122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function o(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const a=e=>(0,i.a)(e,s)},566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>a,bz:()=>o});var n=r(154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function s(e,t){return e?15&e[t]:16*Math.random()|0}function o(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?s(t,r++).toString(16):"y"===e?(3&s()|8).toString(16):e).join("")}function a(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const o=[];for(var a=0;a<e;a++)o.push(s(r,i++).toString(16));return o.join("")}},606:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(908);s.on=o;var i=s.handlers={};function s(e,t,r,s){o(s||n.d,i,e,t,r)}function o(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var o=t[s]=t[s]||{};(o[r]=o[r]||[]).push([e,i])}},607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(566).bz)()},614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>s,Wt:()=>n,g:()=>c,iL:()=>a,tS:()=>o,wk:()=>i});const n="NRBA_SESSION::",i=144e5,s=18e5,o={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},a={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},c={OFF:0,FULL:1,ERROR:2}},630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>a,Ze:()=>u,x3:()=>c});var n=r(241),i=r(606),s=r(860),o=r(646);function a(e,t){if(!e)return;const r={staged:!1,priority:s.P3[t]||0};e.runtime.drainRegistry.get(t)||e.runtime.drainRegistry.set(t,r)}function c(e,t){if(!e)return;const r=e.runtime.drainRegistry;r&&(r.get(t)&&r.delete(t),l(e,t,!1),r.size&&d(e))}function u(e,t="feature",r=!1){if(e){if(!e.runtime.drainRegistry.get(t)||r)return l(e,t);e.runtime.drainRegistry.get(t).staged=!0,d(e)}}function d(e){if(!e)return;const t=Array.from(e.runtime.drainRegistry);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{e.runtime.drainRegistry.delete(t),l(e,t)}))}function l(e,t,r=!0){if(!e)return;const s=e.ee,a=i.i.handlers;if(s&&!s.aborted&&s.backlog&&a){if((0,n.W)({type:"lifecycle",name:"drain",feature:t}),r){const e=s.backlog[t],r=a[t];if(r){for(let t=0;e&&t<e.length;++t)f(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0].context()instanceof o.y&&!t[0].listeners(e).includes(t[1])&&t[0].on(e,t[1])})})}}s.isolatedBacklog||delete a[t],s.backlog[t]=null,s.emit("drain-"+t,[])}}function f(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},699:(e,t,r)=>{"use strict";r.d(t,{It:()=>s,KC:()=>a,No:()=>i,qh:()=>o});var n=r(860);const i=16e3,s=1e6,o="SESSION_ERROR",a={[n.K7.logging]:!0,[n.K7.genericEvents]:!0,[n.K7.jserrors]:!0,[n.K7.ajax]:!0}},738:(e,t,r)=>{"use strict";r.d(t,{U:()=>f,Y:()=>l});var n=r(241),i=r(908),s=r(863),o=r(944),a=r(969),c=r(362),u=r(860),d=r(261);function l(e,t,r,s){const l=s||r;!l||l[e]&&l[e]!==c.d.prototype[e]||(l[e]=function(){(0,i.p)(a.xV,["API/"+e+"/called"],void 0,u.K7.metrics,r.ee),(0,n.W)({drained:!!r.runtime?.activatedFeatures,type:"data",name:"api",feature:d.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,o.R)(23,e)}})}function f(e,t,r,n,o){const a=e.info;null===r?delete a.jsAttributes[t]:a.jsAttributes[t]=r,(o||null===r)&&(0,i.p)(d.Pl+n,[(0,s.t)(),t,r],void 0,"session",e.ee)}},741:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e,t=!1){return this.#e(i.Dl,e,t)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},836:(e,t,r)=>{"use strict";r.d(t,{P:()=>a,ee:()=>c});var n=r(384),i=r(990),s=r(646),o=r(607);const a="nr@context:".concat(o.W),c=function e(t,r){var n={},o={},d={},l=!1;try{l=16===r.length&&u.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var f={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var a=g(n);m(e).forEach(e=>{e.apply(a,r)});var u=v()[o[e]];u&&u.push([f,e,r,a]);return a},get:h,listeners:m,context:g,buffer:function(e,t){const r=v();if(t=t||"feature",f.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{o[n]=t,t in r||(r[t]=[])})},abort:function(){f._aborted=!0,Object.keys(f.backlog).forEach(e=>{delete f.backlog[e]})},isBuffering:function(e){return!!v()[o[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(f,"aborted",{get:()=>{let e=f._aborted||!1;return e||(t&&(e=t.aborted),e)}}),f;function g(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,a,()=>new s.y(a)):new s.y(a)}function p(e,t){n[e]=m(e).concat(t)}function m(e){return n[e]||[]}function h(t){return d[t]=d[t]||e(f,t)}function v(){return f.backlog}}(void 0,"globalEE"),u=(0,n.Zm)();u.ee||(u.ee=c)},843:(e,t,r)=>{"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>d,K7:()=>c,P3:()=>u,XX:()=>i,Yy:()=>a,df:()=>s,qY:()=>n,v4:()=>o});const n="events",i="jserrors",s="browser/blobs",o="rum",a="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations"},u={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.softNav]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.sessionReplay]:8,[c.logging]:9,[c.genericEvents]:10},d={[c.pageViewEvent]:o,[c.pageViewTiming]:n,[c.ajax]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:s,[c.sessionReplay]:s,[c.logging]:a,[c.genericEvents]:"ins"}},863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}},910:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>a,rs:()=>i,xV:()=>o,z_:()=>s});const n=r(860).K7.metrics,i="sm",s="cm",o="storeSupportabilityMetrics",a="storeEventMetrics"},990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var s=n[e]={exports:{}};return r[e](s,s.exports,i),s.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>"nr-rum-1.316.0.min.js",i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.316.0.PROD:",i.l=(r,n,s,o)=>{if(e[r])e[r].push(n);else{var a,c;if(void 0!==s)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+s){a=l;break}}if(!a){c=!0;var f={296:"sha512-jIy711COcvYTdufY9XXNNQaPvXp9CzLzgyI7kxmbI9RLMR0SBawMfv3DLsTJ4+RwkGrvP36bKNVeHloWZxeEKQ=="};(a=document.createElement("script")).charset="utf-8",i.nc&&a.setAttribute("nonce",i.nc),a.setAttribute("data-webpack",t+s),a.src=r,0!==a.src.indexOf(window.location.origin+"/")&&(a.crossOrigin="anonymous"),f[o]&&(a.integrity=f[o])}e[r]=[n];var g=(t,n)=>{a.onerror=a.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],a.parentNode&&a.parentNode.removeChild(a),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(g.bind(null,void 0,{type:"timeout",target:a}),12e4);a.onerror=g.bind(null,a.onerror),a.onload=g.bind(null,a.onload),c&&document.head.appendChild(a)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={374:0,840:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var s=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=s);var o=i.p+i.u(t),a=new Error;i.l(o,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var s=r&&("load"===r.type?"missing":r.type),o=r&&r.target&&r.target.src;a.message="Loading chunk "+t+" failed: ("+s+": "+o+")",a.name="ChunkLoadError",a.type=s,a.request=o,n[1](a)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,s,[o,a,c]=r,u=0;if(o.some(t=>0!==e[t])){for(n in a)i.o(a,n)&&(i.m[n]=a[n]);if(c)c(i)}for(t&&t(r);u<o.length;u++)s=o[u],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0},r=self["webpackChunk:NRBA-1.316.0.PROD"]=self["webpackChunk:NRBA-1.316.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(374);var e=i(362),t=i(860);const r=Object.values(t.K7);var n=i(384),s=i(741);var o=i(555);t.K7.genericEvents;const a="experimental.resources",c="register",u=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var d=i(614),l=i(944),f=i(122);const g="[data-nr-mask]",p=e=>(0,f.a)(e,(()=>{const e={feature_flags:[],experimental:{register:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{register:{get enabled(){return e.feature_flags.includes(c)||e.experimental.register},set enabled(t){e.experimental.register=t},duplicate_data_to_container:!1}},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(a)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:d.wk,inactiveMs:d.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){u(t)?e.mask_selector="".concat(t,",").concat(g):""===t||null===t?e.mask_selector=g:(0,l.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){u(t)?e.block_selector+=",".concat(t):""!==t&&(0,l.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,l.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var m=i(154),h=i(324);let v=0;const b={buildEnv:h.F3,distMethod:h.Xs,version:h.xv,originTime:m.WN},y={consented:!1},_={activatedFeatures:void 0,appMetadata:{},configured:!1,get consented(){return this.session?.state?.consent||y.consented},set consented(e){y.consented=e},customTransaction:void 0,denyList:[],disabled:!1,drainRegistry:new Map,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++v}};var w=i(836),x=i(241);const R={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0};function k(e,t={},r,a){let{init:c,info:u,loader_config:d,runtime:l={},exposed:g=!0}=t;if(!u){const e=(0,n.pV)();c=e.init,u=e.info,d=e.loader_config}var h;e.init=p(c||{}),e.loader_config=(h=d||{},(0,f.a)(h,R)),u.jsAttributes??={},m.bv&&(u.jsAttributes.isWorker=!0),e.info=(0,o.D)(u);const v=e.init;e.runtime??=(e=>{const t=(0,f.a)(e,_),r=Object.keys(b).reduce((e,t)=>(e[t]={value:b[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)})(l),v.proxy.assets&&(e=>{const t=e.startsWith("http");e+="/",i.p=t?e:"https://"+e})(v.proxy.assets),e.runtime.configured||(Object.defineProperty(e,"beacons",{get:()=>[e.info.beacon,e.info.errorBeacon,e.init.proxy.assets,e.init.proxy.beacon].filter(Boolean)}),Object.defineProperty(e.runtime,"denyList",{get:()=>[...e.init.ajax.deny_list||[],...e.init.ajax.block_internal?e.beacons:[]]}),e.runtime.ptid=e.agentIdentifier,function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(s.W.prototype).forEach(r=>{const n=s.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let i=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return i?i(...t):n})})}(e),e.runtime.loaderType=r,e.ee=w.ee.get(e.agentIdentifier),e.exposed=g,(0,x.W)({drained:!!e.runtime.activatedFeatures,type:"lifecycle",name:"initialize",feature:void 0,data:e.config}),e.runtime.configured=!0)}var A=i(908),T=i(863),S=i(261),E=i(738);var j=i(687),P=i(234),N=i(289);const O=e=>m.RI&&!0===e?.privacy.cookies_enabled;function M(e){return!!(0,n.dV)().o.MO&&O(e)&&!0===e?.session_trace.enabled}var I=i(389),D=i(699);const W=new WeakSet;class B extends P.W{constructor(e,t){super(e,t),this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,I.J)(()=>{(0,j.Ak)(e,this.featureName),t()}))}):(0,j.Ak)(e,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{if(await this.deferred,this.#t(e),!(0,o.f)(e.info))return(0,l.R)(43),e.ee.abort(),void this.loadedSuccessfully(!1);let n;try{if(O(e.init)){const{setupAgentSession:t}=await i.e(296).then(i.bind(i,8));n=t(e)}}catch(e){(0,l.R)(20,e),this.ee.emit("internal-error",[e]),(0,A.p)(D.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#r(this.featureName,n,e.init))return(0,j.Ze)(this.agentRef,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,l.R)(34,e),this.abortHandler?.(),(0,j.Ze)(this.agentRef,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};m.RI?(0,N.GG)(()=>n(),!0):n()}#r(e,r,n){if(this.blocked)return!1;switch(e){case t.K7.sessionReplay:return M(n)&&!!r;case t.K7.sessionTrace:return!!r;default:return!0}}#t(e){if(!W.has(e)&&(W.add(e),!(0,o.f)(e.info))){const t=(0,n.pV)();let r={...t.info?.jsAttributes};try{r={...r,...e.info?.jsAttributes}}catch(e){}k(e,{...t,info:{...t.info,jsAttributes:r},runtime:e.runtime},e.runtime.loaderType)}}}var V=i(630);class K extends B{static featureName=V.T;constructor(e){var t;super(e,V.T),this.setupInspectionEvents(),t=e,(0,E.Y)(S.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,A.p)(S.Pl+S.Fw,[(0,T.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(296).then(i.bind(i,146)))}setupInspectionEvents(){const e=(e,t)=>{e&&(0,x.W)({timeStamp:e.timeStamp,loaded:"complete"===e.target.readyState,type:"window",name:t,data:e.target.location+""})};(0,N.sB)(t=>{e(t,"DOMContentLoaded")}),(0,N.GG)(t=>{e(t,"load")}),(0,N.Qr)(t=>{e(t,"navigate")}),this.ee.on(d.tS.UPDATE,(e,t)=>{(0,x.W)({type:"lifecycle",name:"session",data:t})})}}class C extends e.d{constructor(e){var t;(super(),m.gm)?(this.features={},(0,n.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(K),k(this,e,e.loaderType||"agent"),t=this,(0,E.Y)(S.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return(0,E.U)(t,e,r,S.cD,n);(0,l.R)(40,typeof r)}else(0,l.R)(39,typeof e)},t),function(e){(0,E.Y)(S.Dl,function(t,r=!1){if("string"!=typeof t&&null!==t)return void(0,l.R)(41,typeof t);const n=e.info.jsAttributes["enduser.id"];r&&null!=n&&n!==t?(0,A.p)(S.Pl+"setUserIdAndResetSession",[t],void 0,"session",e.ee):(0,E.U)(e,"enduser.id",t,S.Dl,!0)},e)}(this),function(e){(0,E.Y)(S.nb,function(t){if("string"==typeof t||null===t)return(0,E.U)(e,"application.version",t,S.nb,!1);(0,l.R)(42,typeof t)},e)}(this),function(e){(0,E.Y)(S.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){(0,E.Y)(S.Pv,function(t=!0){if("boolean"==typeof t){if((0,A.p)(S.Pl+S.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,l.R)(65,typeof t)},e)}(this),this.run()):(0,l.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return r.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),n=[...this.desiredFeatures];n.sort((e,r)=>t.P3[e.featureName]-t.P3[r.featureName]),n.forEach(r=>{if(!e[r.featureName]&&r.featureName!==t.K7.pageViewEvent)return;const n=function(e){switch(e){case t.K7.ajax:return[t.K7.jserrors];case t.K7.sessionTrace:return[t.K7.ajax,t.K7.pageViewEvent];case t.K7.sessionReplay:return[t.K7.sessionTrace];case t.K7.pageViewTiming:return[t.K7.pageViewEvent];default:return[]}}(r.featureName).filter(e=>!(e in this.features));n.length>0&&(0,l.R)(36,{targetFeature:r.featureName,missingDependencies:n}),this.features[r.featureName]=new r(this)})}catch(e){(0,l.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,n.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}var F=i(843),U=i(782);class L extends B{static featureName=U.T;constructor(e){super(e,U.T),m.RI&&((0,F.u)(()=>(0,A.p)("docHidden",[(0,T.t)()],void 0,U.T,this.ee),!0),(0,F.G)(()=>(0,A.p)("winPagehide",[(0,T.t)()],void 0,U.T,this.ee)),this.importAggregator(e,()=>i.e(296).then(i.bind(i,117))))}}var G=i(969);class H extends B{static featureName=G.TZ;constructor(e){super(e,G.TZ),this.importAggregator(e,()=>i.e(296).then(i.bind(i,623)))}}new C({features:[K,L,H],loaderType:"lite"})})()})();</script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="manifest" href="https://www.wpri.com/wp-json/lakana/v1/onesignal-manifest">
 		<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -684,9 +685,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="https://www.wpri.com/weather/" data-link-type="header-weather-widget" data-link-label="Providence">
 			<span class="site-header__weather-region">Providence</span>
 			<span class="site-header__weather-forecast">
-				<span class="site-header__weather-forecast__text">61&deg;</span>
+				<span class="site-header__weather-forecast__text">63&deg;</span>
 				<figure class="site-header__weather-forecast__icon">
-					<span class="weather-icon weather-icon-sm weather-icon-light-31"></span>
+					<span class="weather-icon weather-icon-sm weather-icon-light-34"></span>
 				</figure>
 			</span>
 		</a>
@@ -745,9 +746,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<a href="https://www.wpri.com/weather/" data-link-type="header-weather-widget" data-link-label="Providence">
 			<span class="site-header__weather-region">Providence</span>
 			<span class="site-header__weather-forecast">
-				<span class="site-header__weather-forecast__text">61&deg;</span>
+				<span class="site-header__weather-forecast__text">63&deg;</span>
 				<figure class="site-header__weather-forecast__icon">
-					<span class="weather-icon weather-icon-sm weather-icon-light-31"></span>
+					<span class="weather-icon weather-icon-sm weather-icon-light-34"></span>
 				</figure>
 			</span>
 		</a>
@@ -797,11 +798,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<h2 class="screen-reader-text">Primary Menu</h2>
 
 				<ul id="supernav" class="menu">
-	<li id="menu-item-1818" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-has-articles menu-item-1818"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/" data-link-type="navigation-link">NEWS</a>
+	<li id="menu-item-1818" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-has-articles menu-item-1818"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/" data-link-type="navigation-link">NEWS</a>
 <div class="dropnav dropnav--4-col dropnav--full-width">
 	<div class="dropnav__section dropnav__section--sub-menu dropnav__section--half">
 		<ul class="sub-menu" data-columns="2">
-	<li id="menu-item-40063" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40063"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/local-news/" data-link-type="navigation-link">Local News</a></li>
+	<li id="menu-item-40063" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-40063"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/local-news/" data-link-type="navigation-link">Local News</a></li>
 	<li id="menu-item-2966977" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2966977"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/worldcup/" data-link-type="navigation-link">World Cup: Summer of Soccer</a></li>
 	<li id="menu-item-40072" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40072"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/crime/" data-link-type="navigation-link">Crime</a></li>
 	<li id="menu-item-40090" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-40090"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/politics/" data-link-type="navigation-link">Politics</a></li>
@@ -907,7 +908,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T22:15:23-04:00" >6 hours ago</time>			</footer>
+				<time datetime="2026-06-16T22:15:23-04:00" >8 hours ago</time>			</footer>
 			
 	
 	
@@ -967,7 +968,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T21:02:18-04:00" >8 hours ago</time>			</footer>
+				<time datetime="2026-06-16T21:02:18-04:00" >10 hours ago</time>			</footer>
 			
 	
 	
@@ -1016,7 +1017,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T22:14:59-04:00" >6 hours ago</time>			</footer>
+				<time datetime="2026-06-16T22:14:59-04:00" >8 hours ago</time>			</footer>
 			
 	
 	
@@ -1076,7 +1077,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T22:15:09-04:00" >6 hours ago</time>			</footer>
+				<time datetime="2026-06-16T22:15:09-04:00" >8 hours ago</time>			</footer>
 			
 	
 	
@@ -1121,11 +1122,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<li id="menu-item-2173081" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2173081"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/salute-to-veterans/" data-link-type="navigation-link">Salute to Veterans: View the gallery</a></li>
 </ul>
 </div></div></li>
-<li id="menu-item-1998" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children menu-item-1998"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather/" data-link-type="navigation-link">WEATHER</a>
+<li id="menu-item-1998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1998"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather/" data-link-type="navigation-link">WEATHER</a>
 <div class="dropnav dropnav--2-col">
 	<div class="dropnav__section dropnav__section--sub-menu">
 		<ul class="sub-menu" data-columns="2">
-	<li id="menu-item-1311719" class="menu-item menu-item-type-post_type menu-item-object-post current-menu-item menu-item-1311719"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/" aria-current="page" data-link-type="navigation-link">Detailed 7-Day Forecast</a></li>
+	<li id="menu-item-1311719" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-1311719"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/" data-link-type="navigation-link">Detailed 7-Day Forecast</a></li>
 	<li id="menu-item-50099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50099"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather-now/" data-link-type="navigation-link">Weather Now</a></li>
 	<li id="menu-item-1999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1999"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather/radar/" data-link-type="navigation-link">Radar</a></li>
 	<li id="menu-item-2140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2140"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/weather/ocean-bay-beach/" data-link-type="navigation-link">Ocean, Bay &#038; Beach</a></li>
@@ -1167,7 +1168,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<li id="menu-item-2977360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2977360"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/atme/" data-link-type="navigation-link">@Me with Victoria B.</a></li>
 	<li id="menu-item-887141" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-887141"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/crime/cold-cases/" data-link-type="navigation-link">Cold Cases</a></li>
 	<li id="menu-item-99871" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-99871"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/small-but-strong/" data-link-type="navigation-link">Small But Strong</a></li>
-	<li id="menu-item-2649875" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2649875"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/tracksidenortheast/" data-link-type="navigation-link">Trackside Northeast</a></li>
+	<li id="menu-item-2649875" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2649875"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/tracksidenortheast/" data-link-type="navigation-link">Trackside Northeast</a></li>
 	<li id="menu-item-1656548" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1656548"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/news/local-news/community-focus/" data-link-type="navigation-link">Community Focus</a></li>
 	<li id="menu-item-85662" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-85662"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/12-on-12/" data-link-type="navigation-link">12 on 12 Digital Originals</a></li>
 	<li id="menu-item-2649890" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2649890"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/12-on-12/the-mafia-tapes/" data-link-type="navigation-link">The Mafia Tapes</a></li>
@@ -1286,7 +1287,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T19:04:49-04:00" >9 hours ago</time>			</footer>
+				<time datetime="2026-06-16T19:04:49-04:00" >12 hours ago</time>			</footer>
 			
 	
 	
@@ -1346,7 +1347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T19:05:21-04:00" >9 hours ago</time>			</footer>
+				<time datetime="2026-06-16T19:05:21-04:00" >12 hours ago</time>			</footer>
 			
 	
 	
@@ -1487,7 +1488,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</a>
 			</figure>
 </article></div></div></div></div></li>
-<li id="menu-item-46954" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-has-articles menu-item-46954"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/" data-link-type="navigation-link">SPORTS</a>
+<li id="menu-item-46954" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-has-articles menu-item-46954"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/" data-link-type="navigation-link">SPORTS</a>
 <div class="dropnav dropnav--4-col dropnav--full-width">
 	<div class="dropnav__section dropnav__section--sub-menu dropnav__section--autofill">
 		<ul class="sub-menu" data-columns="3">
@@ -1506,8 +1507,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<li id="menu-item-46976" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-46976"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/red-sox/" data-link-type="navigation-link">Boston Red Sox</a></li>
 	<li id="menu-item-1313818" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1313818"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/revolution-soccer/" data-link-type="navigation-link">Revolution Soccer</a></li>
 	<li id="menu-item-46967" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-46967"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/patriots-new-england-nation/" data-link-type="navigation-link">Patriots: New England Nation</a></li>
-	<li id="menu-item-2052515" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2052515"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/nascar-news/" data-link-type="navigation-link">NASCAR</a></li>
-	<li id="menu-item-2771713" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2771713"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/tracksidenortheast/" data-link-type="navigation-link">Trackside Northeast</a></li>
+	<li id="menu-item-2052515" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2052515"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/nascar-news/" data-link-type="navigation-link">NASCAR</a></li>
+	<li id="menu-item-2771713" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2771713"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/tracksidenortheast/" data-link-type="navigation-link">Trackside Northeast</a></li>
 	<li id="menu-item-2744368" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2744368"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/high-school-football/" data-link-type="navigation-link">Friday Night Blitz</a></li>
 	<li id="menu-item-2770565" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2770565"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/high-school/blitz-breakdown/" data-link-type="navigation-link">Blitz Breakdown</a></li>
 	<li id="menu-item-1616807" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1616807"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"data-link-category="Navigation" data-module-type="navigation"><a href="https://www.wpri.com/sports/sports-illustrated/" data-link-type="navigation-link">Sports Illustrated Headlines</a></li>
@@ -1541,7 +1542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T22:15:23-04:00" >6 hours ago</time>			</footer>
+				<time datetime="2026-06-16T22:15:23-04:00" >8 hours ago</time>			</footer>
 			
 	
 	
@@ -1601,7 +1602,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T20:52:09-04:00" >8 hours ago</time>			</footer>
+				<time datetime="2026-06-16T20:52:09-04:00" >10 hours ago</time>			</footer>
 			
 	
 	
@@ -1661,7 +1662,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T17:20:47-04:00" >11 hours ago</time>			</footer>
+				<time datetime="2026-06-16T17:20:47-04:00" >13 hours ago</time>			</footer>
 			
 	
 	
@@ -1721,7 +1722,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T20:25:38-04:00" >8 hours ago</time>			</footer>
+				<time datetime="2026-06-16T20:25:38-04:00" >10 hours ago</time>			</footer>
 			
 	
 	
@@ -1858,7 +1859,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T11:15:44-04:00" >17 hours ago</time>			</footer>
+				<time datetime="2026-06-16T11:15:44-04:00" >19 hours ago</time>			</footer>
 			
 	
 	
@@ -1918,7 +1919,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T12:36:34-04:00" >16 hours ago</time>			</footer>
+				<time datetime="2026-06-16T12:36:34-04:00" >18 hours ago</time>			</footer>
 			
 	
 	
@@ -1978,7 +1979,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T10:30:39-04:00" >18 hours ago</time>			</footer>
+				<time datetime="2026-06-16T10:30:39-04:00" >20 hours ago</time>			</footer>
 			
 	
 	
@@ -2038,7 +2039,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 					</h4>
 	
 						<footer class="article-list__article-meta">
-				<time datetime="2026-06-16T10:41:01-04:00" >18 hours ago</time>			</footer>
+				<time datetime="2026-06-16T10:41:01-04:00" >20 hours ago</time>			</footer>
 			
 	
 	
@@ -3469,17 +3470,17 @@ if ( whereAmI.search('/pass-or-fail/') > 0 && window.innerWidth < 700  ) {
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Current</h4>
 			<h5 class="weather-widget__item-temperature">
-				61&deg;			</h5>
+				63&deg;			</h5>
 			<figure class="weather-widget__item-icon">
-				<span class="weather-icon weather-icon-sm weather-icon-dark-31"></span>
+				<span class="weather-icon weather-icon-sm weather-icon-dark-34"></span>
 			</figure>
-			<span class="weather-widget__item-conditions">Clear</span>
+			<span class="weather-widget__item-conditions">Fair</span>
 		</div>
 
 		<div class="weather-widget__item">
 			<h4 class="weather-widget__item-day">Tonight</h4>
 			<h5 class="weather-widget__item-temperature">
-				61&deg;			</h5>
+				62&deg;			</h5>
 			<figure class="weather-widget__item-icon">
 				<span class="weather-icon weather-icon-sm weather-icon-dark-27"></span>
 			</figure>
@@ -3493,11 +3494,11 @@ if ( whereAmI.search('/pass-or-fail/') > 0 && window.innerWidth < 700  ) {
 			<h5 class="weather-widget__item-temperature">
 				76&deg;			</h5>
 			<figure class="weather-widget__item-icon">
-				<span class="weather-icon weather-icon-sm weather-icon-dark-39"></span>
+				<span class="weather-icon weather-icon-sm weather-icon-dark-26"></span>
 			</figure>
-			<span class="weather-widget__item-conditions">PM Showers</span>
+			<span class="weather-widget__item-conditions">Cloudy</span>
 			<span class="weather-widget__item-precipitation">
-				Precip: 53&percnt;			</span>
+				Precip: 24&percnt;			</span>
 		</div>
 	</a>
 </aside>
@@ -3555,7 +3556,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 <option value="https://wpri.com/weather">ALL PINPOINT WEATHER</option>
 </select>
 </div>
-</body>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-58accd45e525b4988ee","applicationID":"749933453","transactionName":"YQBabEtUWBdQUUJZVlhKe01KQVkJHkZXSFZYClVBF0VZF0VtQlFe","queueTime":0,"applicationTime":1600,"atts":"TUdNGgNOS0gTUxQKQksY","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
 </div></div></section><section id="custom_html-340" class="widget_text widget widget--has-z-index-stacking-reset widget_custom_html" data-component="dropzoneWidget"><h2 class="widget-title">Download FREE: WPRI 12+ TV App, Mobile News &#038; Weather Apps</h2><div class="textwidget custom-html-widget"><div class="rich-text-cascade"><center><a href="https://www.wpri.com/wpri-12-smart-tv-app/"><img src="https://www.wpri.com/wp-content/uploads/sites/23/2025/09/WPRI12_FS.png?quality=75" alt="Get the free WPRI 12+ TV app"></a></center>
 
 <a href="https://www.wpri.com/about-us/what-to-watch-today-on-wpri-12/"> 📺 <b>WHAT TO WATCH:</b> Today's WPRI 12+ TV app schedule &raquo;</a>
@@ -3581,7 +3582,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 <div
 	class="article-list__content"
 	data-module-type="stories-trending-now"
-	data-playlist-config="[{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3050271&quot;,&quot;videoTitle&quot;:&quot;Wedding guests in Liberty Hill rescued from rising floodwater&quot;,&quot;program&quot;:&quot;02 - Digital Download&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1537657200&quot;,&quot;videoDuration&quot;:&quot;119&quot;,&quot;originalVideoTitle&quot;:&quot;Wedding guests in Liberty Hill rescued from rising floodwater&quot;},&quot;id&quot;:&quot;3050271&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/755285bf28d8d9474a82e359c97f5d9629443c80b049b2d1ef02b4888044ff0f\/captures\/2EE\/62E\/2EE62EC7983A4DA38DB6493C8DDE4AD2.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3050271.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Wedding guests in Liberty Hill rescued from rising floodwater&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3056501&quot;,&quot;videoTitle&quot;:&quot;Chapel Haven in midst of largest expansion ever&quot;,&quot;program&quot;:&quot;WTNH.com and YouTube (Default)&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1537927200&quot;,&quot;videoDuration&quot;:&quot;109&quot;,&quot;originalVideoTitle&quot;:&quot;Chapel Haven in midst of largest expansion ever&quot;},&quot;id&quot;:&quot;3056501&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/dfd35a0440dc1afbb11c317b293dbfc3f8d5019426c79f2d7700fb030d2766d1\/captures\/698\/A9E\/698A9ED121604DD6A5DEE9C41288E560.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3056501.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Chapel Haven in midst of largest expansion ever&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3057865&quot;,&quot;videoTitle&quot;:&quot;High Risk Inmate Scheduled To Be Released At End Of September&quot;,&quot;program&quot;:&quot;News&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1537981200&quot;,&quot;videoDuration&quot;:&quot;33&quot;,&quot;originalVideoTitle&quot;:&quot;High Risk Inmate Scheduled To Be Released At End Of September&quot;},&quot;id&quot;:&quot;3057865&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/931c8bf023728cd2ded89760cb3bc567eea6c2dbd2ecfce9b1d43024f7186b63\/captures\/D5E\/C57\/D5EC576517394E419C6FA996535C578E.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3057865.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;High Risk Inmate Scheduled To Be Released At End Of September&quot;,&quot;error&quot;:null}]"
+	data-playlist-config="[{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3050271&quot;,&quot;videoTitle&quot;:&quot;Wedding guests in Liberty Hill rescued from rising floodwater&quot;,&quot;program&quot;:&quot;02 - Digital Download&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1537657200&quot;,&quot;videoDuration&quot;:&quot;119&quot;,&quot;originalVideoTitle&quot;:&quot;Wedding guests in Liberty Hill rescued from rising floodwater&quot;},&quot;id&quot;:&quot;3050271&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/755285bf28d8d9474a82e359c97f5d9629443c80b049b2d1ef02b4888044ff0f\/captures\/2EE\/62E\/2EE62EC7983A4DA38DB6493C8DDE4AD2.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3050271.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Wedding guests in Liberty Hill rescued from rising floodwater&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3058487&quot;,&quot;videoTitle&quot;:&quot;News 4 at 4 p.m.&quot;,&quot;program&quot;:&quot;Reporter Reel&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1537992000&quot;,&quot;videoDuration&quot;:&quot;594&quot;,&quot;originalVideoTitle&quot;:&quot;News 4 at 4 p.m.&quot;},&quot;id&quot;:&quot;3058487&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/94e422559ef3731e3622136a27b6a0c234fedf84ad9899bbd6bb7ab1b5f1f93d\/captures\/F2D\/F92\/F2DF9283B9A84E9895231773ABA98002.jpg&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3058487.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;News 4 at 4 p.m.&quot;,&quot;error&quot;:null},{&quot;contentMetadata&quot;:{&quot;videoId&quot;:&quot;3057610&quot;,&quot;videoTitle&quot;:&quot;Chocolate cottage&quot;,&quot;program&quot;:&quot;Default program&quot;,&quot;fullEpisode&quot;:true,&quot;framerate&quot;:&quot;30&quot;,&quot;airDate&quot;:&quot;1537970400&quot;,&quot;videoDuration&quot;:&quot;346&quot;,&quot;originalVideoTitle&quot;:&quot;Chocolate cottage&quot;},&quot;id&quot;:&quot;3057610&quot;,&quot;poster&quot;:&quot;https:\/\/c104216-pcdn.mp.lura.live\/expiretime=2082787200\/cf909ba12cf8285d9d84466bfbbce60229b18ed2cbf707d210c73e43908b961b\/iupl_lin\/B4C\/1DF\/B4C1DF3DF6F34DCA980241126FABE65B&quot;,&quot;sources&quot;:[{&quot;src&quot;:&quot;https:\/\/tkx.mp.lura.live\/rest\/v2\/mcp\/video\/3057610.m3u8?anvack=EZqvRyKExWk7BCmjYhrds7Lk91A0Vx73&amp;eud=oW7qCP8eS2P1KVZI1Zy%2BD%2F8atzUfyQPgZnSqxMYJxDmdacIQukeAMO3mDFSPCjzSTyO8KsbFw40vgX8hrw%2Bxqw%3D%3D&quot;,&quot;videoType&quot;:&quot;playlist&quot;,&quot;renderMethod&quot;:&quot;static&quot;}],&quot;title&quot;:&quot;Chocolate cottage&quot;,&quot;error&quot;:null}]"
 >
 
 										<article
@@ -3649,7 +3650,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 
 															<article
-				class="article-list__article article-list__article--is-slat" data-article-id="3056501" data-context="numbered_list" data-index="1" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
+				class="article-list__article article-list__article--is-slat" data-article-id="599844" data-context="numbered_list" data-index="1" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
 			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
 				
 
@@ -3665,17 +3666,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/providence/man-accused-of-throwing-trash-can-at-federal-hill-motorcyclist-charged/"
-						data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Man accused of throwing trash can at Federal Hill motorcyclist charged" 			>
+			href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
+						data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Blend of Sun &amp; Clouds Today; Showers, Humid Thursday" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/providence/man-accused-of-throwing-trash-can-at-federal-hill-motorcyclist-charged/"
+					href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Man accused of throwing trash can at Federal Hill motorcyclist charged" 																			>
+															data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Blend of Sun &amp; Clouds Today; Showers, Humid Thursday" 																			>
 			
-			Arrest made in Federal Hill motorcyclist assault
+			Blend of Sun &#038; Clouds Today; Showers, Humid Thursday
 										</a>
 					</h3>
 	
@@ -3688,9 +3689,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/providence/man-accused-of-throwing-trash-can-at-federal-hill-motorcyclist-charged/"
+				href="https://www.wpri.com/weather/detailed-7-day/pinpoint-weather-12-detailed-7-day-forecast/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Man accused of throwing trash can at Federal Hill motorcyclist charged" 											>
+				data-link-type="content-link" data-link-position="2" data-link-pinned="false" data-link-label="Blend of Sun &amp; Clouds Today; Showers, Humid Thursday" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -3713,7 +3714,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 
 															<article
-				class="article-list__article article-list__article--is-slat" data-article-id="3057865" data-context="numbered_list" data-index="2" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
+				class="article-list__article article-list__article--is-slat" data-article-id="3058487" data-context="numbered_list" data-index="2" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
 			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
 				
 
@@ -3729,17 +3730,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/business-news/providence-bar-takes-home-national-james-beard-award/"
-						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Providence bar takes home national James Beard Award" 			>
+			href="https://www.wpri.com/news/local-news/south-county/north-kingstown-residents-sound-off-on-controversial-post-by-school-committee-member/"
+						data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="North Kingstown residents sound off on controversial post by school committee member" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/business-news/providence-bar-takes-home-national-james-beard-award/"
+					href="https://www.wpri.com/news/local-news/south-county/north-kingstown-residents-sound-off-on-controversial-post-by-school-committee-member/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Providence bar takes home national James Beard Award" 																			>
+															data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="North Kingstown residents sound off on controversial post by school committee member" 																			>
 			
-			Providence bar takes home national James Beard Award
+			North Kingstown elected official&#8217;s post draws ire
 										</a>
 					</h3>
 	
@@ -3752,9 +3753,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/business-news/providence-bar-takes-home-national-james-beard-award/"
+				href="https://www.wpri.com/news/local-news/south-county/north-kingstown-residents-sound-off-on-controversial-post-by-school-committee-member/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="Providence bar takes home national James Beard Award" 											>
+				data-link-type="content-link" data-link-position="3" data-link-pinned="false" data-link-label="North Kingstown residents sound off on controversial post by school committee member" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -3777,7 +3778,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 
 															<article
-				class="article-list__article article-list__article--is-slat" data-article-id="3055662" data-context="numbered_list" data-index="3" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
+				class="article-list__article article-list__article--is-slat" data-article-id="3057610" data-context="numbered_list" data-index="3" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
 			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
 				
 
@@ -3793,17 +3794,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/news/local-news/west-bay/one-person-dies-after-early-morning-fire-in-coventry/"
-						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="1 dead after early morning fire in Coventry" 			>
+			href="https://www.wpri.com/target-12/crimes-committed-by-a-monster-man-sentenced-to-life-in-sexual-assault-cold-case/"
+						data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="‘Crimes committed by a monster’: Man sentenced to life in sexual assault cold case" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/news/local-news/west-bay/one-person-dies-after-early-morning-fire-in-coventry/"
+					href="https://www.wpri.com/target-12/crimes-committed-by-a-monster-man-sentenced-to-life-in-sexual-assault-cold-case/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="1 dead after early morning fire in Coventry" 																			>
+															data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="‘Crimes committed by a monster’: Man sentenced to life in sexual assault cold case" 																			>
 			
-			1 dead after early morning fire in Coventry
+			Sex assault cold case suspect Thies gets life in&nbsp;&hellip;
 										</a>
 					</h3>
 	
@@ -3816,9 +3817,9 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/news/local-news/west-bay/one-person-dies-after-early-morning-fire-in-coventry/"
+				href="https://www.wpri.com/target-12/crimes-committed-by-a-monster-man-sentenced-to-life-in-sexual-assault-cold-case/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="1 dead after early morning fire in Coventry" 											>
+				data-link-type="content-link" data-link-position="4" data-link-pinned="false" data-link-label="‘Crimes committed by a monster’: Man sentenced to life in sexual assault cold case" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
@@ -3841,7 +3842,7 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 
 															<article
-				class="article-list__article article-list__article--is-slat" data-article-id="3058004" data-context="numbered_list" data-index="4" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
+				class="article-list__article article-list__article--is-slat" data-article-id="3058214" data-context="numbered_list" data-index="4" data-collection="article-list4" data-anvato-params="{&quot;pauseOnTabInactive&quot;:false}" 			>
 			<!-- Next line is not the perfect/ideal way to control hiding the items. Can revisit later. -->
 				
 
@@ -3857,17 +3858,17 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 		
 				<a
 			class="article-list__gradient-link"
-			href="https://www.wpri.com/business-news/mcdonalds-is-serving-fried-apple-pie-again-for-americas-250th-birthday/"
-						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="McDonald’s is serving fried apple pie again for America’s 250th birthday" 			>
+			href="https://www.wpri.com/new-england/massachusetts/kraft-group-sues-foxboro-over-excess-entertainment-license-fee/"
+						data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Kraft Group sues Foxboro over excess entertainment license fee" 			>
 		</a>
 
 		<h3 class="article-list__article-title">
 													<a
-					href="https://www.wpri.com/business-news/mcdonalds-is-serving-fried-apple-pie-again-for-americas-250th-birthday/"
+					href="https://www.wpri.com/new-england/massachusetts/kraft-group-sues-foxboro-over-excess-entertainment-license-fee/"
 					class="article-list__article-link"
-															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="McDonald’s is serving fried apple pie again for America’s 250th birthday" 																			>
+															data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Kraft Group sues Foxboro over excess entertainment license fee" 																			>
 			
-			McDonald&#8217;s to serve fried apple pie for America 250
+			Kraft Group sues Foxboro over excess license fee
 										</a>
 					</h3>
 	
@@ -3880,13 +3881,23 @@ span.h {font-weight:bold;display:block;margin-bottom:5px;}
 
 	<figure class="article-list__article-thumb">
 					<a
-				href="https://www.wpri.com/business-news/mcdonalds-is-serving-fried-apple-pie-again-for-americas-250th-birthday/"
+				href="https://www.wpri.com/new-england/massachusetts/kraft-group-sues-foxboro-over-excess-entertainment-license-fee/"
 				class="article-list__article-link"
-				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="McDonald’s is serving fried apple pie again for America’s 250th birthday" 											>
+				data-link-type="content-link" data-link-position="5" data-link-pinned="false" data-link-label="Kraft Group sues Foxboro over excess entertainment license fee" 											>
 		
 		<div class="article-list__article-image-wrapper">
 							<div class="image-wrapper no-image"></div>
-						</div>
+				
+<span
+	aria-hidden="true"
+	tabindex="-1"
+	class="article-list__article-mediaicon article-list__article-mediaicon--video"
+>
+	<span class="article-list__article-mediaicon-svg">
+		<svg width="15" height="16" viewBox="0 0 15 16" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-3{fill:#fff;fill-rule:evenodd}</style></defs><path d="M0 13.6457V2.35094C0 0.99199 1.41453 0.0955065 2.64344 0.675612L13.9382 6.00731C15.3192 6.65918 15.3627 8.60798 14.0123 9.32093L2.71754 15.284C1.48379 15.9354 0 15.0409 0 13.6457Z" class="cls-3"/></svg>
+	</span>
+	</span>
+		</div>
 
 					</a>
 			</figure>
