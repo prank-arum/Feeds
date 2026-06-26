@@ -468,6 +468,28 @@ if(GTranslateGetCurrentLang() != null)jQuery(document).ready(function() {var lan
                     <div class="arrow-down"><i class="fa fa-sort-desc fa-lg"></i></div>
                 </div>
             </div>
+                    <div class="el-blk">
+                <div class=" select-bkl">
+                    <label for="event-city-select" class="hidden">Select City:</label>
+                    <!-- #498-26807 Add hint with the id of aria-labelledby for selectWoo -->
+                    <span class="hidden sr-only" id="select2-event-city-select-container">City/Town combo box can be expanded with either Spacebar, Alt + Down arrow key, or Enter. Then arrows can be used to explore the options. Only one selection can be made in each of these combo boxes. To select, navigate to the option with the arrow keys and then press enter to save the selection.</span>
+                    <select placeholder="Select City/Town" name="event_city" id="event-city-select" data-menu="">
+                        <option value="">Select City/Town</option>
+                        <option value="0">City/Town </option><option  value="Ashaway" data-state="RI">Ashaway</option><option  value="Barrington" data-state="RI">Barrington</option><option  value="Bradford" data-state="RI">Bradford</option><option  value="Bristol" data-state="RI">Bristol</option><option  value="Carolina" data-state="RI">Carolina</option><option  value="Central Falls" data-state="RI">Central Falls</option><option  value="Charlestown" data-state="RI">Charlestown</option><option  value="Chepachet" data-state="RI">Chepachet</option><option  value="Clayville" data-state="RI">Clayville</option><option  value="Coventry" data-state="RI">Coventry</option><option  value="Cranston" data-state="RI">Cranston</option><option  value="Cumberland" data-state="RI">Cumberland</option><option  value="East Greenwich" data-state="RI">East Greenwich</option><option  value="East Providence" data-state="RI">East Providence</option><option  value="Exeter" data-state="RI">Exeter</option><option  value="Foster" data-state="RI">Foster</option><option  value="Greene" data-state="RI">Greene</option><option  value="Greenville" data-state="RI">Greenville</option><option  value="Harrisville" data-state="RI">Harrisville</option><option  value="Hope" data-state="RI">Hope</option><option  value="Hope Valley" data-state="RI">Hope Valley</option><option  value="Hopkinton" data-state="RI">Hopkinton</option><option  value="Jamestown" data-state="RI">Jamestown</option><option  value="Johnston" data-state="RI">Johnston</option><option  value="Kenyon" data-state="RI">Kenyon</option><option  value="Kingston" data-state="RI">Kingston</option><option  value="Lincoln" data-state="RI">Lincoln</option><option  value="Little Compton" data-state="RI">Little Compton</option><option  value="Manville" data-state="RI">Manville</option><option  value="Mapleville" data-state="RI">Mapleville</option><option  value="Middletown" data-state="RI">Middletown</option><option  value="Narragansett" data-state="RI">Narragansett</option><option  value="Newport" data-state="RI">Newport</option><option  value="North Kingstown" data-state="RI">North Kingstown</option><option  value="North Providence" data-state="RI">North Providence</option><option  value="North Scituate" data-state="RI">North Scituate</option><option  value="North Smithfield" data-state="RI">North Smithfield</option><option  value="Oakland" data-state="RI">Oakland</option><option  value="Pascoag" data-state="RI">Pascoag</option><option  value="Pawtucket" data-state="RI">Pawtucket</option><option  value="Portsmouth" data-state="RI">Portsmouth</option><option  value="Providence" data-state="RI">Providence</option><option  value="Riverside" data-state="RI">Riverside</option><option  value="Rumford" data-state="RI">Rumford</option><option  value="Saunderstown" data-state="RI">Saunderstown</option><option  value="Shannock" data-state="RI">Shannock</option><option  value="Slatersville" data-state="RI">Slatersville</option><option  value="Slocum" data-state="RI">Slocum</option><option  value="Smithfield" data-state="RI">Smithfield</option><option  value="Tiverton" data-state="RI">Tiverton</option><option  value="Wakefield" data-state="RI">Wakefield</option><option  value="Warren" data-state="RI">Warren</option><option  value="Warwick" data-state="RI">Warwick</option><option  value="West Greenwich" data-state="RI">West Greenwich</option><option  value="West Kingston" data-state="RI">West Kingston</option><option  value="West Warwick" data-state="RI">West Warwick</option><option  value="Westerly" data-state="RI">Westerly</option><option  value="Wood River Junction" data-state="RI">Wood River Junction</option><option  value="Woonsocket" data-state="RI">Woonsocket</option><option  value="Wyoming" data-state="RI">Wyoming</option>                    </select>
+                    <div class="arrow-down"><i class="fa fa-sort-desc fa-lg"></i></div>
+                </div>
+            </div>
+        
+        <!-- @ticket: #17283 -->
+        <div class="el-blk-quicksearch">
+            <label>Quick Search</label>
+            <div class="list-quicksearch">
+                                <a class="btn-today quick-search-date" id="today-quick-search">Today</a>
+                <a class="btn-weekend quick-search-date" id="weekend-quick-search">Weekend</a>
+                <a class="btn-tomorrow quick-search-date"
+                   id="tomorrow-quick-search">Tomorrow</a>
+            </div>
+        </div>
                     <div class="el-blk accessibility-icon">
                                 <div class=" select-bkl">
                     <select name="accessibility" id="event-accessibility-select" class="event-accessibility-select">
@@ -529,28 +551,6 @@ if(GTranslateGetCurrentLang() != null)jQuery(document).ready(function() {var lan
                     <input class="access-group" name="accessGroup" type="hidden" value="">
                 </div>
             </div>
-                    <div class="el-blk">
-                <div class=" select-bkl">
-                    <label for="event-city-select" class="hidden">Select City:</label>
-                    <!-- #498-26807 Add hint with the id of aria-labelledby for selectWoo -->
-                    <span class="hidden sr-only" id="select2-event-city-select-container">City/Town combo box can be expanded with either Spacebar, Alt + Down arrow key, or Enter. Then arrows can be used to explore the options. Only one selection can be made in each of these combo boxes. To select, navigate to the option with the arrow keys and then press enter to save the selection.</span>
-                    <select placeholder="Select City/Town" name="event_city" id="event-city-select" data-menu="">
-                        <option value="">Select City/Town</option>
-                        <option value="0">City/Town </option><option  value="Ashaway" data-state="RI">Ashaway</option><option  value="Barrington" data-state="RI">Barrington</option><option  value="Bradford" data-state="RI">Bradford</option><option  value="Bristol" data-state="RI">Bristol</option><option  value="Carolina" data-state="RI">Carolina</option><option  value="Central Falls" data-state="RI">Central Falls</option><option  value="Charlestown" data-state="RI">Charlestown</option><option  value="Chepachet" data-state="RI">Chepachet</option><option  value="Clayville" data-state="RI">Clayville</option><option  value="Coventry" data-state="RI">Coventry</option><option  value="Cranston" data-state="RI">Cranston</option><option  value="Cumberland" data-state="RI">Cumberland</option><option  value="East Greenwich" data-state="RI">East Greenwich</option><option  value="East Providence" data-state="RI">East Providence</option><option  value="Exeter" data-state="RI">Exeter</option><option  value="Foster" data-state="RI">Foster</option><option  value="Greene" data-state="RI">Greene</option><option  value="Greenville" data-state="RI">Greenville</option><option  value="Harrisville" data-state="RI">Harrisville</option><option  value="Hope" data-state="RI">Hope</option><option  value="Hope Valley" data-state="RI">Hope Valley</option><option  value="Hopkinton" data-state="RI">Hopkinton</option><option  value="Jamestown" data-state="RI">Jamestown</option><option  value="Johnston" data-state="RI">Johnston</option><option  value="Kenyon" data-state="RI">Kenyon</option><option  value="Kingston" data-state="RI">Kingston</option><option  value="Lincoln" data-state="RI">Lincoln</option><option  value="Little Compton" data-state="RI">Little Compton</option><option  value="Manville" data-state="RI">Manville</option><option  value="Mapleville" data-state="RI">Mapleville</option><option  value="Middletown" data-state="RI">Middletown</option><option  value="Narragansett" data-state="RI">Narragansett</option><option  value="Newport" data-state="RI">Newport</option><option  value="North Kingstown" data-state="RI">North Kingstown</option><option  value="North Providence" data-state="RI">North Providence</option><option  value="North Scituate" data-state="RI">North Scituate</option><option  value="North Smithfield" data-state="RI">North Smithfield</option><option  value="Oakland" data-state="RI">Oakland</option><option  value="Pascoag" data-state="RI">Pascoag</option><option  value="Pawtucket" data-state="RI">Pawtucket</option><option  value="Portsmouth" data-state="RI">Portsmouth</option><option  value="Providence" data-state="RI">Providence</option><option  value="Riverside" data-state="RI">Riverside</option><option  value="Rumford" data-state="RI">Rumford</option><option  value="Saunderstown" data-state="RI">Saunderstown</option><option  value="Shannock" data-state="RI">Shannock</option><option  value="Slatersville" data-state="RI">Slatersville</option><option  value="Slocum" data-state="RI">Slocum</option><option  value="Smithfield" data-state="RI">Smithfield</option><option  value="Tiverton" data-state="RI">Tiverton</option><option  value="Wakefield" data-state="RI">Wakefield</option><option  value="Warren" data-state="RI">Warren</option><option  value="Warwick" data-state="RI">Warwick</option><option  value="West Greenwich" data-state="RI">West Greenwich</option><option  value="West Kingston" data-state="RI">West Kingston</option><option  value="West Warwick" data-state="RI">West Warwick</option><option  value="Westerly" data-state="RI">Westerly</option><option  value="Wood River Junction" data-state="RI">Wood River Junction</option><option  value="Woonsocket" data-state="RI">Woonsocket</option><option  value="Wyoming" data-state="RI">Wyoming</option>                    </select>
-                    <div class="arrow-down"><i class="fa fa-sort-desc fa-lg"></i></div>
-                </div>
-            </div>
-        
-        <!-- @ticket: #17283 -->
-        <div class="el-blk-quicksearch">
-            <label>Quick Search</label>
-            <div class="list-quicksearch">
-                                <a class="btn-today quick-search-date" id="today-quick-search">Today</a>
-                <a class="btn-weekend quick-search-date" id="weekend-quick-search">Weekend</a>
-                <a class="btn-tomorrow quick-search-date"
-                   id="tomorrow-quick-search">Tomorrow</a>
-            </div>
-        </div>
             
         <div class="s-rw e-s-wg-c-l cln ">
             <div class="calendar-ipt clearfix">
