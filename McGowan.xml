@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<atom:link href="https://prank-arum.github.io/Feeds/feed.xml" rel="self" type="application/rss+xml" />
+<title>Boston Globe scraper 0.1.2607</title>
+<link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
+<description>Boston Globe articles by Dan McGowan</description>
+<lastBuildDate>Fri, 24 Jul 2026 06:38:23 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/07/24/metro/rhode-island-can-learn-from-connecticut-pizza-tourism-campaign-mcgowan/</link>
+<pubDate>Fri, 24 Jul 2026 09:55:00 EDT</pubDate>
+<title><![CDATA[What Rhode Island – and the rest of New England – can learn from Connecticut’s audacious pizza campaign ]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/07/22/metro/providence-police-union-posts-ai-altered-photo-of-morales-ri/</link>
+<pubDate>Wed, 22 Jul 2026 15:45:57 EDT</pubDate>
+<title><![CDATA[Providence police union’s ‘debunk’ of mayoral candidate David Morales features an apparently AI-altered photo]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/07/21/metro/rhode-island-inspector-general-process-begins/</link>
+<pubDate>Tue, 21 Jul 2026 15:21:58 EDT</pubDate>
+<title><![CDATA[Rhode Island could have its first inspector general in place by year’s end]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/07/16/metro/block-island-arcade-ban-game-room-debate-ri-mcgowan/</link>
+<pubDate>Fri, 17 Jul 2026 18:58:44 EDT</pubDate>
+<title><![CDATA[The great Block Island pinball war]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/07/15/metro/rhode-island-afl-cio-endorsement-decision-mckee/</link>
+<pubDate>Thu, 16 Jul 2026 13:15:26 EDT</pubDate>
+<title><![CDATA[R.I. AFL-CIO makes no endorsement in governor’s race]]></title>
+</item>
+</channel>
+</rss>
