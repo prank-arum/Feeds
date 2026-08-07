@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<atom:link href="https://prank-arum.github.io/Feeds/feed.xml" rel="self" type="application/rss+xml" />
+<title>Boston Globe scraper 0.1.2607</title>
+<link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
+<description>Boston Globe articles by Dan McGowan</description>
+<lastBuildDate>Fri, 07 Aug 2026 07:49:36 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/08/06/metro/rhode-island-flock-cameras-surveillance-state-constitution-concerns/</link>
+<pubDate>Thu, 06 Aug 2026 14:26:37 EDT</pubDate>
+<title><![CDATA[Do Flock surveillance cameras clash with Rhode Island’s Constitution?]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/08/06/metro/bernie-sanders-2016-primary-tad-devine-insight/</link>
+<pubDate>Thu, 06 Aug 2026 14:36:24 EDT</pubDate>
+<title><![CDATA[Behind the rise of Bernie Sanders, there was Tad Devine]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/08/05/metro/candidates-cash-campaign-accounts-rhode-island/</link>
+<pubDate>Wed, 05 Aug 2026 13:57:55 EDT</pubDate>
+<title><![CDATA[Foulkes leads campaign fundraising in Rhode Island governor’s race]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/08/04/metro/brown-university-president-search-gina-raimondo-mcgowan-ri/</link>
+<pubDate>Wed, 05 Aug 2026 13:13:46 EDT</pubDate>
+<title><![CDATA[How about Gina Raimondo for president ... of Brown?]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/08/03/metro/jorge-elorza-david-morales-providence-mayor/</link>
+<pubDate>Mon, 03 Aug 2026 15:47:37 EDT</pubDate>
+<title><![CDATA[Jorge Elorza to endorse David Morales for Providence mayor]]></title>
+</item>
+</channel>
+</rss>
