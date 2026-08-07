@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:frss="https://freshrss.org/opml" version="2.0">
+	<head>
+		<title>FreshRSS</title>
+		<dateCreated>Thu, 06 Aug 2026 15:15:07 -0400</dateCreated>
+	</head>
+	<body>
+		<outline text="xmadmx" type="rss" xmlUrl="https://prank-arum.github.io/Feeds/Instagram/xmadmx/feed.xml" htmlUrl="https://picnob.com/xmadmx"/>
+	</body>
+</opml>
