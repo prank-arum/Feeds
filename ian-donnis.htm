@@ -29,9 +29,6 @@
 
 
 
-    <meta property="fb:app_id" content="oceanstatemedia.net">
-
-
     
     <meta name="twitter:card" content="summary_large_image">
     
@@ -53,6 +50,9 @@
 <meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
 <meta name="disqus.title" content="Ian Donnis">
 <meta name="disqus.identifier" content="0000019f-1e17-d3a7-afdf-7edfa50e0006">
+    <meta property="fb:app_id" content="oceanstatemedia.net">
+
+
 
     <link data-cssvarsponyfill="true" class="Webpack-css" rel="stylesheet" href="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.2e3c393e3f0d115e0280905c97c4e28f.gz.css">
 
@@ -151,7 +151,28 @@ body,
     <script src="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.b574178186f8dca4ba5d7a5aa51a76a0.gz.js" async=""></script>
     
 
-    <meta name="gtm-dataLayer" content="{
+    <!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script type="text/javascript">
+    // Google tag setup
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    googletag.cmd.push(function () {
+        // @see https://developers.google.com/publisher-tag/reference#googletag.PubAdsService_enableLazyLoad
+        googletag.pubads().enableLazyLoad({
+            fetchMarginPercent: 100, // fetch and render ads within this % of viewport
+            renderMarginPercent: 100,
+            mobileScaling: 1  // Same on mobile.
+        });
+
+        googletag.pubads().enableSingleRequest()
+        googletag.pubads().enableAsyncRendering()
+        googletag.pubads().collapseEmptyDivs()
+        googletag.pubads().disableInitialLoad()
+        googletag.enableServices()
+    })
+</script>
+<meta name="gtm-dataLayer" content="{
   &quot;gtmAuthor&quot; : &quot;Ian Donnis&quot;,
   &quot;gtmBspStoryId&quot; : null,
   &quot;gtmCategory&quot; : null,
@@ -207,28 +228,7 @@ body,
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-<script type="text/javascript">
-    // Google tag setup
-    var googletag = googletag || {};
-    googletag.cmd = googletag.cmd || [];
-
-    googletag.cmd.push(function () {
-        // @see https://developers.google.com/publisher-tag/reference#googletag.PubAdsService_enableLazyLoad
-        googletag.pubads().enableLazyLoad({
-            fetchMarginPercent: 100, // fetch and render ads within this % of viewport
-            renderMarginPercent: 100,
-            mobileScaling: 1  // Same on mobile.
-        });
-
-        googletag.pubads().enableSingleRequest()
-        googletag.pubads().enableAsyncRendering()
-        googletag.pubads().collapseEmptyDivs()
-        googletag.pubads().disableInitialLoad()
-        googletag.enableServices()
-    })
-</script>
-<!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script>window.addEventListener('DOMContentLoaded', (event) => {
+<script>window.addEventListener('DOMContentLoaded', (event) => {
     window.nulldurationobserver = new MutationObserver(function (mutations) {
         document.querySelectorAll('.StreamPill-duration').forEach(pill => { 
       if (pill.innerText == "LISTENNULL") {
@@ -669,7 +669,7 @@ body,
                     <li class="NavI-items-item gtm_nav_subcat"><a class="NavLink" href="https://lp.constantcontactpages.com/sl/iSzcTrG" target="_blank">TGIF Political Newsletter</a>
 </li>
                 
-                    <li class="NavI-items-item gtm_nav_subcat"><a class="NavLink" href="https://www.oceanstatemedia.org/school closings">School Closings &amp; Community Notices</a>
+                    <li class="NavI-items-item gtm_nav_subcat"><a class="NavLink" href="https://www.oceanstatemedia.org/schoolclosings">School Closings &amp; Community Notices</a>
 </li>
                 
             
@@ -713,7 +713,7 @@ body,
                     <li class="NavI-items-item"><a class="NavLink" href="https://lp.constantcontactpages.com/sl/iSzcTrG" target="_blank">TGIF Political Newsletter</a>
 </li>
                 
-                    <li class="NavI-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/school closings">School Closings &amp; Community Notices</a>
+                    <li class="NavI-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/schoolclosings">School Closings &amp; Community Notices</a>
 </li>
                 
             
@@ -778,7 +778,7 @@ body,
                     <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/passport">Passport</a>
 </li>
                 
-                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/Independent producers">Independent Producers</a>
+                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/independent-producers">Independent Producers</a>
 </li>
                 
             
@@ -832,7 +832,7 @@ body,
                     <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/passport">Passport</a>
 </li>
                 
-                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/Independent producers">Independent Producers</a>
+                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/independent-producers">Independent Producers</a>
 </li>
                 
             
@@ -1168,15 +1168,15 @@ body,
     </div>
     <div class="BrightspotPersistentPlayer-streamInfo">
         <div class="BrightspotPersistentPlayer-name" data-stream-name="">Ocean State Media</div>
-        <div class="BrightspotPersistentPlayer-programName" data-stream-program-name="">Q from the CBC</div>
+        <div class="BrightspotPersistentPlayer-programName" data-stream-program-name="">BBC Newshour </div>
         <div class="BrightspotPersistentPlayer-name" data-secondary-info="">Ocean State Media</div>
-        <div class="BrightspotPersistentPlayer-programName" data-primary-info="">Q from the CBC</div>
+        <div class="BrightspotPersistentPlayer-programName" data-primary-info="">BBC Newshour </div>
     </div>
     <div class="BrightspotPersistentPlayer-tabletDesktopExtraInfo">
         <div class="BrightspotPersistentPlayer-schedule">
             <span class="BrightspotPersistentPlayer-schedule-next">Next Up:</span>
-            <span class="BrightspotPersistentPlayer-schedule-startTime" data-schedule-start-time="">1:00 PM</span>
-            <span class="BrightspotPersistentPlayer-schedule-programName" data-schedule-program-name="">Fresh Air</span>
+            <span class="BrightspotPersistentPlayer-schedule-startTime" data-schedule-start-time="">4:00 PM</span>
+            <span class="BrightspotPersistentPlayer-schedule-programName" data-schedule-program-name="">All Things Considered</span>
         </div>
         <div class="BrightspotPersistentPlayer-songInfo">
             <span class="BrightspotPersistentPlayer-songInfo-text">
@@ -1204,7 +1204,7 @@ body,
         <div class="BrightspotPersistentPlayer-drawerMain">
             <div class="BrightspotPersistentPlayer-currentPlaying">
                 <div class="BrightspotPersistentPlayer-drawerImage" data-drawer-image=""></div>
-                <div class="BrightspotPersistentPlayer-primaryInfo" data-primary-info="">Q from the CBC</div>
+                <div class="BrightspotPersistentPlayer-primaryInfo" data-primary-info="">BBC Newshour </div>
                 <div class="BrightspotPersistentPlayer-secondaryInfo" data-secondary-info="">Ocean State Media</div>
                  <div class="BrightspotPersistentPlayer-trackSlider drawer">
                     <div class="BrightspotPersistentPlayer-trackSlider-wrapper">
@@ -1366,7 +1366,7 @@ body,
                     <li class="NavI-items-item gtm_nav_subcat"><a class="NavLink" href="https://lp.constantcontactpages.com/sl/iSzcTrG" target="_blank">TGIF Political Newsletter</a>
 </li>
                 
-                    <li class="NavI-items-item gtm_nav_subcat"><a class="NavLink" href="https://www.oceanstatemedia.org/school closings">School Closings &amp; Community Notices</a>
+                    <li class="NavI-items-item gtm_nav_subcat"><a class="NavLink" href="https://www.oceanstatemedia.org/schoolclosings">School Closings &amp; Community Notices</a>
 </li>
                 
             
@@ -1410,7 +1410,7 @@ body,
                     <li class="NavI-items-item"><a class="NavLink" href="https://lp.constantcontactpages.com/sl/iSzcTrG" target="_blank">TGIF Political Newsletter</a>
 </li>
                 
-                    <li class="NavI-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/school closings">School Closings &amp; Community Notices</a>
+                    <li class="NavI-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/schoolclosings">School Closings &amp; Community Notices</a>
 </li>
                 
             
@@ -1475,7 +1475,7 @@ body,
                     <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/passport">Passport</a>
 </li>
                 
-                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/Independent producers">Independent Producers</a>
+                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/independent-producers">Independent Producers</a>
 </li>
                 
             
@@ -1529,7 +1529,7 @@ body,
                     <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/passport">Passport</a>
 </li>
                 
-                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/Independent producers">Independent Producers</a>
+                    <li class="NavigationGroup-items-item"><a class="NavLink" href="https://www.oceanstatemedia.org/independent-producers">Independent Producers</a>
 </li>
                 
             
@@ -1899,7 +1899,7 @@ body,
     <div class="PromoA-content">
         
     <div class="PromoA-category">
-        <a href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories" class="Link">One on One with Ian Donnis</a>
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories" class="Link">One on One with Ian Donnis</a>
     </div>
 
         
@@ -1915,7 +1915,7 @@ body,
             </div>
         
         
-            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1786563728788" data-date="August 12, 2026 at 3:42 PM EDT" data-promo-date="August 12, 2026" data-show-timestamp="true">, 20 hours ago</div></div>
+            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1786563728788" data-date="August 12, 2026 at 3:42 PM EDT" data-promo-date="August 12, 2026" data-show-timestamp="true">, 23 hours ago</div></div>
         
     </div>
 
@@ -2108,7 +2108,7 @@ body,
             <div class="PromoB-image-wrapper">
                 
                     
-                        <a aria-label="Victor Mellor: ‘I’m not trying to masquerade as a moderate Democrat’" href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories/2026-08-06/victor-mellor-im-not-trying-to-masquerade-as-a-moderate-democrat" class="Link"><picture>
+                        <a aria-label="Victor Mellor: ‘I’m not trying to masquerade as a moderate Democrat’" href="https://www.oceanstatemedia.org/one-on-one-with-ian donnis-stories/2026-08-06/victor-mellor-im-not-trying-to-masquerade-as-a-moderate-democrat" class="Link"><picture>
     
     
         
@@ -2160,12 +2160,12 @@ body,
     <div class="PromoA-content">
         
     <div class="PromoA-category">
-        <a href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories" class="Link">One on One with Ian Donnis</a>
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories" class="Link">One on One with Ian Donnis</a>
     </div>
 
         
     <div class="PromoA-title">
-        <a href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories/2026-08-06/victor-mellor-im-not-trying-to-masquerade-as-a-moderate-democrat" class="Link">Victor Mellor: ‘I’m not trying to masquerade as a moderate Democrat’</a>
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian donnis-stories/2026-08-06/victor-mellor-im-not-trying-to-masquerade-as-a-moderate-democrat" class="Link">Victor Mellor: ‘I’m not trying to masquerade as a moderate Democrat’</a>
     </div>
 
         
@@ -2195,7 +2195,7 @@ body,
             <div class="PromoB-image-wrapper">
                 
                     
-                        <a aria-label="Stephen Skoly: ‘My decision will be based on what’s best for Rhode Islanders’" href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories/2026-08-06/stephen-skoly-my-decision-will-be-based-on-whats-best-for-rhode-islanders" class="Link"><picture>
+                        <a aria-label="Stephen Skoly: ‘My decision will be based on what’s best for Rhode Islanders’" href="https://www.oceanstatemedia.org/one-on-one-with-ian donnis-stories/2026-08-06/stephen-skoly-my-decision-will-be-based-on-whats-best-for-rhode-islanders" class="Link"><picture>
     
     
         
@@ -2247,12 +2247,12 @@ body,
     <div class="PromoA-content">
         
     <div class="PromoA-category">
-        <a href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories" class="Link">One on One with Ian Donnis</a>
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories" class="Link">One on One with Ian Donnis</a>
     </div>
 
         
     <div class="PromoA-title">
-        <a href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories/2026-08-06/stephen-skoly-my-decision-will-be-based-on-whats-best-for-rhode-islanders" class="Link">Stephen Skoly: ‘My decision will be based on what’s best for Rhode Islanders’</a>
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian donnis-stories/2026-08-06/stephen-skoly-my-decision-will-be-based-on-whats-best-for-rhode-islanders" class="Link">Stephen Skoly: ‘My decision will be based on what’s best for Rhode Islanders’</a>
     </div>
 
         
@@ -2595,7 +2595,7 @@ body,
     <div class="PromoA-content">
         
     <div class="PromoA-category">
-        <a href="https://www.oceanstatemedia.org/One on One with Ian Donnis stories" class="Link">One on One with Ian Donnis</a>
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories" class="Link">One on One with Ian Donnis</a>
     </div>
 
         
@@ -2951,7 +2951,7 @@ body,
                 <li class="FooterNavItem-items-item gtm_nav_cat"><a class="NavLink" href="https://www.oceanstatemedia.org/contact">Contact Us</a>
 </li>
             
-                <li class="FooterNavItem-items-item gtm_nav_cat"><a class="NavLink" href="https://www.oceanstatemedia.org/Independent producers">Independent Producers</a>
+                <li class="FooterNavItem-items-item gtm_nav_cat"><a class="NavLink" href="https://www.oceanstatemedia.org/independent-producers">Independent Producers</a>
 </li>
             
                 <li class="FooterNavItem-items-item gtm_nav_cat"><a class="NavLink" href="https://www.instagram.com/ocean.state.media/" target="_blank">Instagram</a>
