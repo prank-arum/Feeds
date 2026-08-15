@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:frss="https://freshrss.org/opml" version="2.0">
+	<head>
+		<title>FreshRSS</title>
+		<dateCreated>Mon, 10 Aug 2026 10:49:41 -0400</dateCreated>
+	</head>
+	<body>
+		<outline text="sydney_sweeney" type="rss" xmlUrl="https://prank-arum.github.io/Feeds/Instagram/sydney_sweeney/feed.xml" htmlUrl="https://picnob.com/sydney_sweeney"/>
+	</body>
+</opml>
