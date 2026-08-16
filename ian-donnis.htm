@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="AuthorPage js-focus-visible fonts-loaded" lang="en" data-js-focus-visible="" style="--windowInnerHeight: 524px;"><head>
+<!DOCTYPE html><html class="AuthorPage js-focus-visible" lang="en" data-js-focus-visible="" style="--windowInnerHeight: 524px;"><head>
     <meta charset="UTF-8">
 
     
@@ -8,6 +8,10 @@
     </style>
 
     
+
+    <meta property="fb:app_id" content="oceanstatemedia.net">
+
+
     <meta property="og:title" content="Ian Donnis">
 
     <meta property="og:url" content="https://www.oceanstatemedia.org/people/ian-donnis">
@@ -27,8 +31,10 @@
     <meta property="og:site_name" content="Ocean State Media">
 
 
-
-
+<meta name="disqus.shortname" content="npr-oceanstatemedia">
+<meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
+<meta name="disqus.title" content="Ian Donnis">
+<meta name="disqus.identifier" content="0000019f-1e17-d3a7-afdf-7edfa50e0006">
     
     <meta name="twitter:card" content="summary_large_image">
     
@@ -46,12 +52,6 @@
     
     <meta name="twitter:title" content="Ian Donnis">
     
-<meta name="disqus.shortname" content="npr-oceanstatemedia">
-<meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
-<meta name="disqus.title" content="Ian Donnis">
-<meta name="disqus.identifier" content="0000019f-1e17-d3a7-afdf-7edfa50e0006">
-    <meta property="fb:app_id" content="oceanstatemedia.net">
-
 
 
     <link data-cssvarsponyfill="true" class="Webpack-css" rel="stylesheet" href="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.2e3c393e3f0d115e0280905c97c4e28f.gz.css">
@@ -127,7 +127,7 @@ body,
   &quot;wordCount&quot; : 0,
   &quot;series&quot; : null
 }">
-    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="brightspot-dataLayer">
+    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script id="brightspot-dataLayer">
         (function () {
             var dataValue = document.head.querySelector('meta[name="brightspot-dataLayer"]').content;
             if (dataValue) {
@@ -151,7 +151,7 @@ body,
     <script src="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.b574178186f8dca4ba5d7a5aa51a76a0.gz.js" async=""></script>
     
 
-    <!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script type="text/javascript">
     // Google tag setup
     var googletag = googletag || {};
@@ -171,6 +171,26 @@ body,
         googletag.pubads().disableInitialLoad()
         googletag.enableServices()
     })
+</script>
+<script>
+
+  window.fbAsyncInit = function() {
+      FB.init({
+          
+              appId : 'oceanstatemedia.net',
+          
+          xfbml : true,
+          version : 'v2.9'
+      });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 <meta name="gtm-dataLayer" content="{
   &quot;gtmAuthor&quot; : &quot;Ian Donnis&quot;,
@@ -208,27 +228,7 @@ body,
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N39QFDR');</script><script>
-
-  window.fbAsyncInit = function() {
-      FB.init({
-          
-              appId : 'oceanstatemedia.net',
-          
-          xfbml : true,
-          version : 'v2.9'
-      });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<script>window.addEventListener('DOMContentLoaded', (event) => {
+})(window,document,'script','dataLayer','GTM-N39QFDR');</script><!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script>window.addEventListener('DOMContentLoaded', (event) => {
     window.nulldurationobserver = new MutationObserver(function (mutations) {
         document.querySelectorAll('.StreamPill-duration').forEach(pill => { 
       if (pill.innerText == "LISTENNULL") {
@@ -1168,15 +1168,15 @@ body,
     </div>
     <div class="BrightspotPersistentPlayer-streamInfo">
         <div class="BrightspotPersistentPlayer-name" data-stream-name="">Ocean State Media</div>
-        <div class="BrightspotPersistentPlayer-programName" data-stream-program-name="">Weekend All Things Considered</div>
+        <div class="BrightspotPersistentPlayer-programName" data-stream-program-name="">Return to the Source</div>
         <div class="BrightspotPersistentPlayer-name" data-secondary-info="">Ocean State Media</div>
-        <div class="BrightspotPersistentPlayer-programName" data-primary-info="">Weekend All Things Considered</div>
+        <div class="BrightspotPersistentPlayer-programName" data-primary-info="">Return to the Source</div>
     </div>
     <div class="BrightspotPersistentPlayer-tabletDesktopExtraInfo">
         <div class="BrightspotPersistentPlayer-schedule">
             <span class="BrightspotPersistentPlayer-schedule-next">Next Up:</span>
-            <span class="BrightspotPersistentPlayer-schedule-startTime" data-schedule-start-time="">6:00 PM</span>
-            <span class="BrightspotPersistentPlayer-schedule-programName" data-schedule-program-name="">LA Theater Works</span>
+            <span class="BrightspotPersistentPlayer-schedule-startTime" data-schedule-start-time="">10:00 PM</span>
+            <span class="BrightspotPersistentPlayer-schedule-programName" data-schedule-program-name="">The Soul Show</span>
         </div>
         <div class="BrightspotPersistentPlayer-songInfo">
             <span class="BrightspotPersistentPlayer-songInfo-text">
@@ -1204,7 +1204,7 @@ body,
         <div class="BrightspotPersistentPlayer-drawerMain">
             <div class="BrightspotPersistentPlayer-currentPlaying">
                 <div class="BrightspotPersistentPlayer-drawerImage" data-drawer-image=""></div>
-                <div class="BrightspotPersistentPlayer-primaryInfo" data-primary-info="">Weekend All Things Considered</div>
+                <div class="BrightspotPersistentPlayer-primaryInfo" data-primary-info="">Return to the Source</div>
                 <div class="BrightspotPersistentPlayer-secondaryInfo" data-secondary-info="">Ocean State Media</div>
                  <div class="BrightspotPersistentPlayer-trackSlider drawer">
                     <div class="BrightspotPersistentPlayer-trackSlider-wrapper">
