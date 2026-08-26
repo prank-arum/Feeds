@@ -8,10 +8,6 @@
     </style>
 
     
-
-    <meta property="fb:app_id" content="oceanstatemedia.net">
-
-
     
     <meta name="twitter:card" content="summary_large_image">
     
@@ -29,6 +25,13 @@
     
     <meta name="twitter:title" content="Ian Donnis">
     
+<meta name="disqus.shortname" content="npr-oceanstatemedia">
+<meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
+<meta name="disqus.title" content="Ian Donnis">
+<meta name="disqus.identifier" content="0000019f-1e17-d3a7-afdf-7edfa50e0006">
+
+    <meta property="fb:app_id" content="oceanstatemedia.net">
+
 
     <meta property="og:title" content="Ian Donnis">
 
@@ -49,10 +52,7 @@
     <meta property="og:site_name" content="Ocean State Media">
 
 
-<meta name="disqus.shortname" content="npr-oceanstatemedia">
-<meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
-<meta name="disqus.title" content="Ian Donnis">
-<meta name="disqus.identifier" content="0000019f-1e17-d3a7-afdf-7edfa50e0006">
+
 
     <link data-cssvarsponyfill="true" class="Webpack-css" rel="stylesheet" href="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.2e3c393e3f0d115e0280905c97c4e28f.gz.css">
 
@@ -127,7 +127,7 @@ body,
   &quot;wordCount&quot; : 0,
   &quot;series&quot; : null
 }">
-    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="brightspot-dataLayer">
+    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script id="brightspot-dataLayer">
         (function () {
             var dataValue = document.head.querySelector('meta[name="brightspot-dataLayer"]').content;
             if (dataValue) {
@@ -151,7 +151,27 @@ body,
     <script src="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.b574178186f8dca4ba5d7a5aa51a76a0.gz.js" async=""></script>
     
 
-    <meta name="gtm-dataLayer" content="{
+    <!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script>
+
+  window.fbAsyncInit = function() {
+      FB.init({
+          
+              appId : 'oceanstatemedia.net',
+          
+          xfbml : true,
+          version : 'v2.9'
+      });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<meta name="gtm-dataLayer" content="{
   &quot;gtmAuthor&quot; : &quot;Ian Donnis&quot;,
   &quot;gtmBspStoryId&quot; : null,
   &quot;gtmCategory&quot; : null,
@@ -187,27 +207,7 @@ body,
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N39QFDR');</script><script>
-
-  window.fbAsyncInit = function() {
-      FB.init({
-          
-              appId : 'oceanstatemedia.net',
-          
-          xfbml : true,
-          version : 'v2.9'
-      });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+})(window,document,'script','dataLayer','GTM-N39QFDR');</script><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script type="text/javascript">
     // Google tag setup
     var googletag = googletag || {};
@@ -228,7 +228,7 @@ body,
         googletag.enableServices()
     })
 </script>
-<!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script>window.addEventListener('DOMContentLoaded', (event) => {
+<script>window.addEventListener('DOMContentLoaded', (event) => {
     window.nulldurationobserver = new MutationObserver(function (mutations) {
         document.querySelectorAll('.StreamPill-duration').forEach(pill => { 
       if (pill.innerText == "LISTENNULL") {
@@ -1168,15 +1168,15 @@ body,
     </div>
     <div class="BrightspotPersistentPlayer-streamInfo">
         <div class="BrightspotPersistentPlayer-name" data-stream-name="">Ocean State Media</div>
-        <div class="BrightspotPersistentPlayer-programName" data-stream-program-name="">Fresh Air</div>
+        <div class="BrightspotPersistentPlayer-programName" data-stream-program-name="">All Things Considered</div>
         <div class="BrightspotPersistentPlayer-name" data-secondary-info="">Ocean State Media</div>
-        <div class="BrightspotPersistentPlayer-programName" data-primary-info="">Fresh Air</div>
+        <div class="BrightspotPersistentPlayer-programName" data-primary-info="">All Things Considered</div>
     </div>
     <div class="BrightspotPersistentPlayer-tabletDesktopExtraInfo">
         <div class="BrightspotPersistentPlayer-schedule">
             <span class="BrightspotPersistentPlayer-schedule-next">Next Up:</span>
-            <span class="BrightspotPersistentPlayer-schedule-startTime" data-schedule-start-time="">2:00 PM</span>
-            <span class="BrightspotPersistentPlayer-schedule-programName" data-schedule-program-name="">Think from KERA</span>
+            <span class="BrightspotPersistentPlayer-schedule-startTime" data-schedule-start-time="">6:30 PM</span>
+            <span class="BrightspotPersistentPlayer-schedule-programName" data-schedule-program-name="">Marketplace </span>
         </div>
         <div class="BrightspotPersistentPlayer-songInfo">
             <span class="BrightspotPersistentPlayer-songInfo-text">
@@ -1204,7 +1204,7 @@ body,
         <div class="BrightspotPersistentPlayer-drawerMain">
             <div class="BrightspotPersistentPlayer-currentPlaying">
                 <div class="BrightspotPersistentPlayer-drawerImage" data-drawer-image=""></div>
-                <div class="BrightspotPersistentPlayer-primaryInfo" data-primary-info="">Fresh Air</div>
+                <div class="BrightspotPersistentPlayer-primaryInfo" data-primary-info="">All Things Considered</div>
                 <div class="BrightspotPersistentPlayer-secondaryInfo" data-secondary-info="">Ocean State Media</div>
                  <div class="BrightspotPersistentPlayer-trackSlider drawer">
                     <div class="BrightspotPersistentPlayer-trackSlider-wrapper">
@@ -1847,6 +1847,268 @@ body,
             <div class="PromoB-image-wrapper">
                 
                     
+                        <a aria-label="‘We are putting people to work’: McKee makes his closing pitch" href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories/2026-08-26/we-are-putting-people-to-work-mckee-makes-his-closing-pitch" class="Link"><picture>
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+    
+            <source type="image/webp" width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/31633dc/2147483647/strip/true/crop/5677x3163+0+311/resize/560x312!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F35%2F90%2F29dfc27a4ce78c77f4d4f947ad17%2Fimg-2836.jpg 2x" data-size="promoSmall">
+    
+
+    
+        <source width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/c995072/2147483647/strip/true/crop/5677x3163+0+311/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F35%2F90%2F29dfc27a4ce78c77f4d4f947ad17%2Fimg-2836.jpg" data-size="promoSmall">
+    
+
+        
+    
+
+    
+    <img class="Image" alt="Gov. Dan McKee speaks with Ocean State Media political reporter Ian Donnis ahead of Rhode Island’s Sept. 9 Democratic primary. Credit: Ocean State Media" srcset="https://npr.brightspotcdn.com/dims4/default/aee26a1/2147483647/strip/true/crop/5677x3163+0+311/resize/560x312!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F35%2F90%2F29dfc27a4ce78c77f4d4f947ad17%2Fimg-2836.jpg 2x" width="280" height="156" loading="lazy" src="https://npr.brightspotcdn.com/dims4/default/c995072/2147483647/strip/true/crop/5677x3163+0+311/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F35%2F90%2F29dfc27a4ce78c77f4d4f947ad17%2Fimg-2836.jpg">
+
+
+</picture></a>
+                    
+                
+                
+            </div>
+        </div>
+    
+
+    <div class="PromoA-content">
+        
+    <div class="PromoA-category">
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories" class="Link">One on One with Ian Donnis</a>
+    </div>
+
+        
+    <div class="PromoA-title">
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories/2026-08-26/we-are-putting-people-to-work-mckee-makes-his-closing-pitch" class="Link">‘We are putting people to work’: McKee makes his closing pitch</a>
+    </div>
+
+        
+    <div class="PromoA-byline">
+        
+            <div class="PromoA-authorName">
+                <a href="https://www.oceanstatemedia.org/people/ian-donnis" class="Link">Ian Donnis</a>
+            </div>
+        
+        
+            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1787775403233" data-date="August 26, 2026 at 4:16 PM EDT" data-promo-date="August 26, 2026" data-recent="true" data-show-timestamp="true">, 57 minutes ago</div></div>
+        
+    </div>
+
+        
+            <div class="PromoA-description">The incumbent governor is pointing to his record on jobs, infrastructure and state government as he seeks another term</div>
+        
+        
+            <div class="PromoA-audio-label">
+    
+        
+            
+    
+        <ps-stream data-stream-name="‘We are putting people to work’: McKee makes his closing pitch" data-stream-id="000001a0-3fab-d930-afaf-3fbb72700000" data-stream-duration="8:19" on-demand="" small="" external="">
+
+    
+        
+            
+                <ps-stream-url data-stream-format="audio/mpeg" data-stream-url="https://cpa.ds.npr.org/s1289/audio/2026/08/082626-ooowid-mckeefoulkes.mp3">
+</ps-stream-url>
+            
+        
+    
+
+    <button class="StreamPill">
+        <span class="StreamPill-iconWrapper">
+            <svg class="StreamPill-icon">
+                <use xlink:href="#play-icon"></use>
+            </svg>
+            <svg class="StreamPill-iconPause">
+                <use xlink:href="#pause-icon"></use>
+            </svg>
+        </span>
+        <span class="StreamPill-text">
+            
+            
+                <span class="StreamPill-duration">
+                    Listen <span class="StreamPill-textDivider">•</span> 8:19
+                </span>
+            
+            
+        </span>
+    </button>
+</ps-stream>
+    
+
+
+
+        
+    
+</div>
+        
+    </div>
+</ps-promo>
+                    </li>
+                    
+                    <li class="ListE-items-item">
+                        <ps-promo class="PromoA" data-list="listE" data-content-type="news-story">
+    
+        <div class="PromoA-media">
+            <div class="PromoB-image-wrapper">
+                
+                    
+                        <a aria-label="‘Rhode Islanders are ready for change’: Foulkes makes her closing pitch" href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories/2026-08-26/rhode-islanders-are-ready-for-change-foulkes-makes-her-closing-pitch" class="Link"><picture>
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+    
+            <source type="image/webp" width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/7fc6c41/2147483647/strip/true/crop/6000x3343+0+329/resize/560x312!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2F50%2F674cb471407ea5e90c6d5bd8c37e%2Fimg-2812.jpg 2x" data-size="promoSmall">
+    
+
+    
+        <source width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/2815833/2147483647/strip/true/crop/6000x3343+0+329/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2F50%2F674cb471407ea5e90c6d5bd8c37e%2Fimg-2812.jpg" data-size="promoSmall">
+    
+
+        
+    
+
+    
+    <img class="Image" alt="Democratic gubernatorial candidate Helena Foulkes speaks with Ocean State Media political reporter Ian Donnis ahead of Rhode Island’s Sept. 9 primary. Credit: Ocean State Media" srcset="https://npr.brightspotcdn.com/dims4/default/670baef/2147483647/strip/true/crop/6000x3343+0+329/resize/560x312!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2F50%2F674cb471407ea5e90c6d5bd8c37e%2Fimg-2812.jpg 2x" width="280" height="156" loading="lazy" src="https://npr.brightspotcdn.com/dims4/default/2815833/2147483647/strip/true/crop/6000x3343+0+329/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F5e%2F50%2F674cb471407ea5e90c6d5bd8c37e%2Fimg-2812.jpg">
+
+
+</picture></a>
+                    
+                
+                
+            </div>
+        </div>
+    
+
+    <div class="PromoA-content">
+        
+    <div class="PromoA-category">
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories" class="Link">One on One with Ian Donnis</a>
+    </div>
+
+        
+    <div class="PromoA-title">
+        <a href="https://www.oceanstatemedia.org/one-on-one-with-ian-donnis-stories/2026-08-26/rhode-islanders-are-ready-for-change-foulkes-makes-her-closing-pitch" class="Link">‘Rhode Islanders are ready for change’: Foulkes makes her closing pitch</a>
+    </div>
+
+        
+    <div class="PromoA-byline">
+        
+            <div class="PromoA-authorName">
+                <a href="https://www.oceanstatemedia.org/people/ian-donnis" class="Link">Ian Donnis</a>
+            </div>
+        
+        
+            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1787775268699" data-date="August 26, 2026 at 4:14 PM EDT" data-promo-date="August 26, 2026" data-recent="true" data-show-timestamp="true">, 59 minutes ago</div></div>
+        
+    </div>
+
+        
+            <div class="PromoA-description">The Democratic challenger is emphasizing housing, job creation and economic growth in the final stretch of the campaign</div>
+        
+        
+            <div class="PromoA-audio-label">
+    
+        
+            
+    
+        <ps-stream data-stream-name="‘Rhode Islanders are ready for change’: Foulkes makes her closing pitch" data-stream-id="000001a0-3fab-d930-afaf-3fbb72700000" data-stream-duration="8:19" on-demand="" small="" external="">
+
+    
+        
+            
+                <ps-stream-url data-stream-format="audio/mpeg" data-stream-url="https://cpa.ds.npr.org/s1289/audio/2026/08/082626-ooowid-mckeefoulkes.mp3">
+</ps-stream-url>
+            
+        
+    
+
+    <button class="StreamPill">
+        <span class="StreamPill-iconWrapper">
+            <svg class="StreamPill-icon">
+                <use xlink:href="#play-icon"></use>
+            </svg>
+            <svg class="StreamPill-iconPause">
+                <use xlink:href="#pause-icon"></use>
+            </svg>
+        </span>
+        <span class="StreamPill-text">
+            
+            
+                <span class="StreamPill-duration">
+                    Listen <span class="StreamPill-textDivider">•</span> 8:19
+                </span>
+            
+            
+        </span>
+    </button>
+</ps-stream>
+    
+
+
+
+        
+    
+</div>
+        
+    </div>
+</ps-promo>
+                    </li>
+                    
+                    <li class="ListE-items-item">
+                        <ps-promo class="PromoA" data-list="listE" data-content-type="news-story">
+    
+        <div class="PromoA-media">
+            <div class="PromoB-image-wrapper">
+                
+                    
                         <a aria-label="Foulkes maintains a double-digit lead in WPRI/Emerson poll" href="https://www.oceanstatemedia.org/elections/2026-08-25/foulkes-maintains-a-double-digit-lead-in-wpri-emerson-poll" class="Link"><picture>
     
     
@@ -1915,7 +2177,7 @@ body,
             </div>
         
         
-            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1787691600000" data-date="August 25, 2026 at 5:00 PM EDT" data-promo-date="August 25, 2026" data-show-timestamp="true">, 20 hours ago</div></div>
+            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1787691600000" data-date="August 25, 2026 at 5:00 PM EDT" data-promo-date="August 25, 2026" data-show-timestamp="true">, August 25, 2026</div></div>
         
     </div>
 
@@ -2530,180 +2792,6 @@ body,
 
         
             <div class="PromoA-description">Emergency medicine physician Dr. Emily Shearer explains the pressures straining the state’s healthcare system — and where she sees reasons for optimism</div>
-        
-        
-    </div>
-</ps-promo>
-                    </li>
-                    
-                    <li class="ListE-items-item">
-                        <ps-promo class="PromoA" data-list="listE" data-content-type="news-story">
-    
-        <div class="PromoA-media">
-            <div class="PromoB-image-wrapper">
-                
-                    
-                        <a aria-label="McKee passes over Shekarchi, picks Luis Matos for RI Supreme Court" href="https://www.oceanstatemedia.org/politics/2026-08-12/mckee-passes-over-shekarchi-picks-luis-matos-for-ri-supreme-court" class="Link"><picture>
-    
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-    
-            <source type="image/webp" width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/8527737/2147483647/strip/true/crop/2048x1141+0+112/resize/560x312!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F74%2Fcf%2F13a6c29e4627ad306b6d1298f224%2Fimg-1681-1.jpg 2x" data-size="promoSmall">
-    
-
-    
-        <source width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/f3f9d92/2147483647/strip/true/crop/2048x1141+0+112/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F74%2Fcf%2F13a6c29e4627ad306b6d1298f224%2Fimg-1681-1.jpg" data-size="promoSmall">
-    
-
-        
-    
-
-    
-    <img class="Image" alt="Matos, (left) a Superior Court judge since 2012, must now win confirmation from the General Assembly. Credit: Rose Wheeler/Ocean State Media" srcset="https://npr.brightspotcdn.com/dims4/default/dbf41d7/2147483647/strip/true/crop/2048x1141+0+112/resize/560x312!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F74%2Fcf%2F13a6c29e4627ad306b6d1298f224%2Fimg-1681-1.jpg 2x" width="280" height="156" loading="lazy" src="https://npr.brightspotcdn.com/dims4/default/f3f9d92/2147483647/strip/true/crop/2048x1141+0+112/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F74%2Fcf%2F13a6c29e4627ad306b6d1298f224%2Fimg-1681-1.jpg">
-
-
-</picture></a>
-                    
-                
-                
-            </div>
-        </div>
-    
-
-    <div class="PromoA-content">
-        
-    <div class="PromoA-category">
-        <a href="https://www.oceanstatemedia.org/politics" class="Link">Politics and Justice</a>
-    </div>
-
-        
-    <div class="PromoA-title">
-        <a href="https://www.oceanstatemedia.org/politics/2026-08-12/mckee-passes-over-shekarchi-picks-luis-matos-for-ri-supreme-court" class="Link">McKee passes over Shekarchi, picks Luis Matos for RI Supreme Court</a>
-    </div>
-
-        
-    <div class="PromoA-byline">
-        
-            <div class="PromoA-authorName">
-                <a href="https://www.oceanstatemedia.org/people/ian-donnis" class="Link">Ian Donnis</a>
-            </div>
-        
-        
-            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1786551629348" data-date="August 12, 2026 at 12:20 PM EDT" data-promo-date="August 12, 2026" data-show-timestamp="true">, August 12, 2026</div></div>
-        
-    </div>
-
-        
-            <div class="PromoA-description">The governor made his choice amid a difficult Democratic primary and an unresolved legal fight over former House Speaker Shekarchi’s eligibility</div>
-        
-        
-    </div>
-</ps-promo>
-                    </li>
-                    
-                    <li class="ListE-items-item">
-                        <ps-promo class="PromoA" data-list="listE" data-content-type="news-story">
-    
-        <div class="PromoA-media">
-            <div class="PromoB-image-wrapper">
-                
-                    
-                        <a aria-label="TGIF: Ian Donnis’ Rhode Island politics roundup for Aug. 7, 2026 " href="https://www.oceanstatemedia.org/politics/2026-08-07/tgif-ian-donnis-rhode-island-politics-roundup-for-aug-7-2026" class="Link"><picture>
-    
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-    
-            <source type="image/webp" width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/50c6209/2147483647/strip/true/crop/1366x761+0+3/resize/560x312!/format/webp/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa2%2F27%2F27f55dc2452094d8a64f625fb241%2Fwebsite-sized-images-6.png 2x" data-size="promoSmall">
-    
-
-    
-        <source width="280" height="156" srcset="https://npr.brightspotcdn.com/dims4/default/a86ed6f/2147483647/strip/true/crop/1366x761+0+3/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa2%2F27%2F27f55dc2452094d8a64f625fb241%2Fwebsite-sized-images-6.png" data-size="promoSmall">
-    
-
-        
-    
-
-    
-    <img class="Image" alt="Republican congressional candidates Stephen Skoly, left, and Victor Mellor are facing off in the GOP primary for Rhode Island’s 2nd Congressional District. The primary ends Sept. 9. Credit: Ocean State Media" srcset="https://npr.brightspotcdn.com/dims4/default/1c58e54/2147483647/strip/true/crop/1366x761+0+3/resize/560x312!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa2%2F27%2F27f55dc2452094d8a64f625fb241%2Fwebsite-sized-images-6.png 2x" width="280" height="156" loading="lazy" src="https://npr.brightspotcdn.com/dims4/default/a86ed6f/2147483647/strip/true/crop/1366x761+0+3/resize/280x156!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fa2%2F27%2F27f55dc2452094d8a64f625fb241%2Fwebsite-sized-images-6.png">
-
-
-</picture></a>
-                    
-                
-                
-            </div>
-        </div>
-    
-
-    <div class="PromoA-content">
-        
-    <div class="PromoA-category">
-        <a href="https://www.oceanstatemedia.org/politics" class="Link">Politics and Justice</a>
-    </div>
-
-        
-    <div class="PromoA-title">
-        <a href="https://www.oceanstatemedia.org/politics/2026-08-07/tgif-ian-donnis-rhode-island-politics-roundup-for-aug-7-2026" class="Link">TGIF: Ian Donnis’ Rhode Island politics roundup for Aug. 7, 2026 </a>
-    </div>
-
-        
-    <div class="PromoA-byline">
-        
-            <div class="PromoA-authorName">
-                <a href="https://www.oceanstatemedia.org/people/ian-donnis" class="Link">Ian Donnis</a>
-            </div>
-        
-        
-            <div class="PromoA-date"><div class="PromoA-timestamp" data-timestamp="1786119251442" data-date="August 7, 2026 at 12:14 PM EDT" data-promo-date="August 7, 2026" data-show-timestamp="true">, August 7, 2026</div></div>
-        
-    </div>
-
-        
-            <div class="PromoA-description">Will GOP voters in CD2 go full MAGA or more conventional?</div>
         
         
     </div>
