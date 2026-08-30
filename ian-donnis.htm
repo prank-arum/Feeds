@@ -8,6 +8,9 @@
     </style>
 
     
+    <meta property="fb:app_id" content="oceanstatemedia.net">
+
+
 <meta name="disqus.shortname" content="npr-oceanstatemedia">
 <meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
 <meta name="disqus.title" content="Ian Donnis">
@@ -30,9 +33,6 @@
 
     <meta property="og:site_name" content="Ocean State Media">
 
-
-
-    <meta property="fb:app_id" content="oceanstatemedia.net">
 
 
     
@@ -127,7 +127,7 @@ body,
   &quot;wordCount&quot; : 0,
   &quot;series&quot; : null
 }">
-    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="brightspot-dataLayer">
+    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script id="brightspot-dataLayer">
         (function () {
             var dataValue = document.head.querySelector('meta[name="brightspot-dataLayer"]').content;
             if (dataValue) {
@@ -151,7 +151,27 @@ body,
     <script src="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.b574178186f8dca4ba5d7a5aa51a76a0.gz.js" async=""></script>
     
 
-    <meta name="gtm-dataLayer" content="{
+    <script>
+
+  window.fbAsyncInit = function() {
+      FB.init({
+          
+              appId : 'oceanstatemedia.net',
+          
+          xfbml : true,
+          version : 'v2.9'
+      });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<meta name="gtm-dataLayer" content="{
   &quot;gtmAuthor&quot; : &quot;Ian Donnis&quot;,
   &quot;gtmBspStoryId&quot; : null,
   &quot;gtmCategory&quot; : null,
@@ -207,26 +227,6 @@ body,
         googletag.pubads().disableInitialLoad()
         googletag.enableServices()
     })
-</script>
-<script>
-
-  window.fbAsyncInit = function() {
-      FB.init({
-          
-              appId : 'oceanstatemedia.net',
-          
-          xfbml : true,
-          version : 'v2.9'
-      });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
 </script>
 <script>window.addEventListener('DOMContentLoaded', (event) => {
     window.nulldurationobserver = new MutationObserver(function (mutations) {
