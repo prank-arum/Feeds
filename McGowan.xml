@@ -4,7 +4,12 @@
 <title>Boston Globe scraper 0.1.2607</title>
 <link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
 <description>Boston Globe articles by Dan McGowan</description>
-<lastBuildDate>Tue, 01 Sep 2026 08:17:53 -0400</lastBuildDate>
+<lastBuildDate>Tue, 01 Sep 2026 12:01:51 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/01/metro/health-care-costs-concern-rhode-island-survey-findings/</link>
+<pubDate>Tue, 01 Sep 2026 15:23:48 EDT</pubDate>
+<title><![CDATA[Even with health insurance, some Rhode Islanders can’t afford health care, URI survey finds]]></title>
+</item>
 <item>
 <link>https://www.bostonglobe.com/2026/08/31/metro/julie-casimiro-to-resign-ri-house-seat-south-carolina/</link>
 <pubDate>Mon, 31 Aug 2026 19:56:35 EDT</pubDate>
@@ -24,11 +29,6 @@
 <link>https://www.bostonglobe.com/2026/08/25/metro/dan-mckee-helena-foulkes-poll-ri-governors-race-mcgowan/</link>
 <pubDate>Wed, 26 Aug 2026 15:45:48 EDT</pubDate>
 <title><![CDATA[Governor McKee has 15 days to pull off a political miracle]]></title>
-</item>
-<item>
-<link>https://www.bostonglobe.com/2026/08/25/metro/mayor-brett-smiley-first-day-of-school-providence-ri/</link>
-<pubDate>Tue, 25 Aug 2026 13:39:10 EDT</pubDate>
-<title><![CDATA[The first day of school in Providence is a test for Mayor Brett Smiley, with just two weeks until the primary]]></title>
 </item>
 </channel>
 </rss>
