@@ -4,15 +4,20 @@
 <title>Boston Globe scraper 0.1.2607</title>
 <link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
 <description>Boston Globe articles by Dan McGowan</description>
-<lastBuildDate>Tue, 01 Sep 2026 12:01:51 -0400</lastBuildDate>
+<lastBuildDate>Thu, 03 Sep 2026 09:12:43 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/02/metro/ri-primary-could-signal-political-shift-mckee-smiley-matos/</link>
+<pubDate>Wed, 02 Sep 2026 17:06:56 EDT</pubDate>
+<title><![CDATA[Rhode Island incumbents are staring down a political wipeout]]></title>
+</item>
 <item>
 <link>https://www.bostonglobe.com/2026/09/01/metro/health-care-costs-concern-rhode-island-survey-findings/</link>
-<pubDate>Tue, 01 Sep 2026 15:23:48 EDT</pubDate>
-<title><![CDATA[Even with health insurance, some Rhode Islanders can’t afford health care, URI survey finds]]></title>
+<pubDate>Wed, 02 Sep 2026 16:48:18 EDT</pubDate>
+<title><![CDATA[Even with insurance, some Rhode Islanders can’t afford health care, URI survey finds]]></title>
 </item>
 <item>
 <link>https://www.bostonglobe.com/2026/08/31/metro/julie-casimiro-to-resign-ri-house-seat-south-carolina/</link>
-<pubDate>Mon, 31 Aug 2026 19:56:35 EDT</pubDate>
+<pubDate>Tue, 01 Sep 2026 22:56:53 EDT</pubDate>
 <title><![CDATA[Rhode Island lawmaker will resign, after report of her moving to South Carolina]]></title>
 </item>
 <item>
@@ -24,11 +29,6 @@
 <link>https://www.bostonglobe.com/2026/08/26/metro/rhode-island-lawmaker-continues-term-from-south-carolina/</link>
 <pubDate>Sat, 29 Aug 2026 01:17:26 EDT</pubDate>
 <title><![CDATA[She moved 1,000 miles away. She’s still getting paid as a Rhode Island lawmaker.]]></title>
-</item>
-<item>
-<link>https://www.bostonglobe.com/2026/08/25/metro/dan-mckee-helena-foulkes-poll-ri-governors-race-mcgowan/</link>
-<pubDate>Wed, 26 Aug 2026 15:45:48 EDT</pubDate>
-<title><![CDATA[Governor McKee has 15 days to pull off a political miracle]]></title>
 </item>
 </channel>
 </rss>
