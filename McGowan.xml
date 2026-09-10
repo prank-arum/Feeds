@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<atom:link href="https://prank-arum.github.io/Feeds/feed.xml" rel="self" type="application/rss+xml" />
+<title>Boston Globe scraper 0.1.2607</title>
+<link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
+<description>Boston Globe articles by Dan McGowan</description>
+<lastBuildDate>Thu, 10 Sep 2026 08:27:41 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/09/metro/ri-primary-could-signal-political-shift-mckee-smiley-matos/</link>
+<pubDate>Thu, 10 Sep 2026 02:28:48 EDT</pubDate>
+<title><![CDATA[Rhode Island incumbents projected to lose Democratic primaries for governor and Providence mayor]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/09/metro/ri-primary-providence-mayor-morales/</link>
+<pubDate>Thu, 10 Sep 2026 03:20:38 EDT</pubDate>
+<title><![CDATA[David Morales to unseat Providence Mayor Brett Smiley, AP projects]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/02/metro/ri-primary-could-signal-political-shift-mckee-smiley-matos/</link>
+<pubDate>Wed, 09 Sep 2026 19:52:37 EDT</pubDate>
+<title><![CDATA[Rhode Island incumbents are staring down a political wipeout]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/09/metro/rhode-island-primary-guide-governor-providence-mayor/</link>
+<pubDate>Wed, 09 Sep 2026 15:31:38 EDT</pubDate>
+<title><![CDATA[A guide to which Rhode Island primary races you should be watching ]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/08/metro/primary-candidates-text-messages-to-rhode-island-voters/</link>
+<pubDate>Wed, 09 Sep 2026 16:13:03 EDT</pubDate>
+<title><![CDATA[Rhode Island candidates text their final pitch to voters]]></title>
+</item>
+</channel>
+</rss>
