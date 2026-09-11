@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:frss="https://freshrss.org/opml" version="2.0">
+	<head>
+		<title>FreshRSS</title>
+		<dateCreated>Thu, 10 Sep 2026 07:59:08 -0400</dateCreated>
+	</head>
+	<body>
+		<outline text="ellecordova" type="rss" xmlUrl="https://prank-arum.github.io/Feeds/Instagram/ellecordova/feed.xml" htmlUrl="https://pixnoy.com/ellecordova"/>
+	</body>
+</opml>
