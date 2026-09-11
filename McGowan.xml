@@ -4,10 +4,20 @@
 <title>Boston Globe scraper 0.1.2607</title>
 <link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
 <description>Boston Globe articles by Dan McGowan</description>
-<lastBuildDate>Thu, 10 Sep 2026 11:06:25 -0400</lastBuildDate>
+<lastBuildDate>Fri, 11 Sep 2026 07:04:09 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/10/metro/rhode-island-primary-video-analysis-foulkes-morales-providence/</link>
+<pubDate>Thu, 10 Sep 2026 21:25:22 EDT</pubDate>
+<title><![CDATA[R.I. primary upsets: Watch Globe Rhode Island reporters discuss the races for governor and Providence mayor]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/10/metro/ri-providence-david-morales-mayoral-primary/</link>
+<pubDate>Thu, 10 Sep 2026 20:10:13 EDT</pubDate>
+<title><![CDATA[David Morales will be Providence’s next mayor. His rise will test Rhode Island’s political establishment.]]></title>
+</item>
 <item>
 <link>https://www.bostonglobe.com/2026/09/10/metro/rhode-island-primary-analysis-foulkes-morales-providence/</link>
-<pubDate>Thu, 10 Sep 2026 14:45:30 EDT</pubDate>
+<pubDate>Thu, 10 Sep 2026 20:24:02 EDT</pubDate>
 <title><![CDATA[New political leaders emerge in Rhode Island as old guard falls in primary upsets]]></title>
 </item>
 <item>
@@ -17,18 +27,8 @@
 </item>
 <item>
 <link>https://www.bostonglobe.com/2026/09/10/metro/rhode-island-primary-foulkes-morales-matos-ahern/</link>
-<pubDate>Thu, 10 Sep 2026 14:49:29 EDT</pubDate>
+<pubDate>Thu, 10 Sep 2026 19:45:35 EDT</pubDate>
 <title><![CDATA[A political earthquake in Rhode Island: Governor, Providence mayor ousted in primary]]></title>
-</item>
-<item>
-<link>https://www.bostonglobe.com/2026/09/09/metro/ri-primary-could-signal-political-shift-mckee-smiley-matos/</link>
-<pubDate>Thu, 10 Sep 2026 02:28:48 EDT</pubDate>
-<title><![CDATA[Rhode Island incumbents projected to lose Democratic primaries for governor and Providence mayor]]></title>
-</item>
-<item>
-<link>https://www.bostonglobe.com/2026/09/09/metro/ri-primary-providence-mayor-morales/</link>
-<pubDate>Thu, 10 Sep 2026 12:56:04 EDT</pubDate>
-<title><![CDATA[David Morales unseats Providence Mayor Brett Smiley]]></title>
 </item>
 </channel>
 </rss>
