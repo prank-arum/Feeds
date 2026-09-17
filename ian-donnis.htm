@@ -8,6 +8,8 @@
     </style>
 
     
+    <meta property="fb:app_id" content="oceanstatemedia.net">
+
 <meta name="disqus.shortname" content="npr-oceanstatemedia">
 <meta name="disqus.url" content="https://www.oceanstatemedia.org/people/ian-donnis">
 <meta name="disqus.title" content="Ian Donnis">
@@ -29,8 +31,6 @@
     
     <meta name="twitter:title" content="Ian Donnis">
     
-
-    <meta property="fb:app_id" content="oceanstatemedia.net">
 
 
     <meta property="og:title" content="Ian Donnis">
@@ -127,7 +127,7 @@ body,
   &quot;wordCount&quot; : 0,
   &quot;series&quot; : null
 }">
-    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="brightspot-dataLayer">
+    <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-N39QFDR"></script><script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script><script id="brightspot-dataLayer">
         (function () {
             var dataValue = document.head.querySelector('meta[name="brightspot-dataLayer"]').content;
             if (dataValue) {
@@ -151,7 +151,48 @@ body,
     <script src="https://npr.brightspotcdn.com/resource/00000177-1bc0-debb-a57f-dfcf4a950000/styleguide/All.min.d0b48546a3604e3e4fcbde204d3afaa2.gz.js" async=""></script>
     
 
-    <meta name="gtm-dataLayer" content="{
+    <script>
+
+  window.fbAsyncInit = function() {
+      FB.init({
+          
+              appId : 'oceanstatemedia.net',
+          
+          xfbml : true,
+          version : 'v2.9'
+      });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script type="text/javascript">
+    // Google tag setup
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+
+    googletag.cmd.push(function () {
+        // @see https://developers.google.com/publisher-tag/reference#googletag.PubAdsService_enableLazyLoad
+        googletag.pubads().enableLazyLoad({
+            fetchMarginPercent: 100, // fetch and render ads within this % of viewport
+            renderMarginPercent: 100,
+            mobileScaling: 1  // Same on mobile.
+        });
+
+        googletag.pubads().enableSingleRequest()
+        googletag.pubads().enableAsyncRendering()
+        googletag.pubads().collapseEmptyDivs()
+        googletag.pubads().disableInitialLoad()
+        googletag.enableServices()
+    })
+</script>
+<!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><meta name="gtm-dataLayer" content="{
   &quot;gtmAuthor&quot; : &quot;Ian Donnis&quot;,
   &quot;gtmBspStoryId&quot; : null,
   &quot;gtmCategory&quot; : null,
@@ -187,48 +228,7 @@ body,
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N39QFDR');</script><!-- no longer used, moved disqus script to be loaded by ps-disqus-comment-module.js to avoid errors --><script async="async" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-<script type="text/javascript">
-    // Google tag setup
-    var googletag = googletag || {};
-    googletag.cmd = googletag.cmd || [];
-
-    googletag.cmd.push(function () {
-        // @see https://developers.google.com/publisher-tag/reference#googletag.PubAdsService_enableLazyLoad
-        googletag.pubads().enableLazyLoad({
-            fetchMarginPercent: 100, // fetch and render ads within this % of viewport
-            renderMarginPercent: 100,
-            mobileScaling: 1  // Same on mobile.
-        });
-
-        googletag.pubads().enableSingleRequest()
-        googletag.pubads().enableAsyncRendering()
-        googletag.pubads().collapseEmptyDivs()
-        googletag.pubads().disableInitialLoad()
-        googletag.enableServices()
-    })
-</script>
-<script>
-
-  window.fbAsyncInit = function() {
-      FB.init({
-          
-              appId : 'oceanstatemedia.net',
-          
-          xfbml : true,
-          version : 'v2.9'
-      });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-<script>window.addEventListener('DOMContentLoaded', (event) => {
+})(window,document,'script','dataLayer','GTM-N39QFDR');</script><script>window.addEventListener('DOMContentLoaded', (event) => {
     window.nulldurationobserver = new MutationObserver(function (mutations) {
         document.querySelectorAll('.StreamPill-duration').forEach(pill => { 
       if (pill.innerText == "LISTENNULL") {
