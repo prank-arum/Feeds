@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:frss="https://freshrss.org/opml" version="2.0">
+	<head>
+		<title>FreshRSS</title>
+		<dateCreated>Thu, 10 Sep 2026 08:05:49 -0400</dateCreated>
+	</head>
+	<body>
+		<outline text="hotblockchain2" type="rss" xmlUrl="https://prank-arum.github.io/Feeds/Instagram/hotblockchain2/feed.xml" htmlUrl="https://pixnoy.com/hotblockchain2"/>
+	</body>
+</opml>
