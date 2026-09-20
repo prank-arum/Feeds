@@ -1,0 +1,34 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+<channel>
+<atom:link href="https://prank-arum.github.io/Feeds/feed.xml" rel="self" type="application/rss+xml" />
+<title>Boston Globe scraper 0.1.2607</title>
+<link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
+<description>Boston Globe articles by Dan McGowan</description>
+<lastBuildDate>Sun, 20 Sep 2026 08:49:25 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/17/metro/ri-providence-david-morales-inner-circle-brett-smiley/</link>
+<pubDate>Fri, 18 Sep 2026 13:08:57 EDT</pubDate>
+<title><![CDATA[The wildly unconventional inner circle that built David Morales’s mayoral campaign in Providence]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/16/metro/tyrelle-stephens-faces-providence-school-board-removal-vote-ri/</link>
+<pubDate>Wed, 16 Sep 2026 16:10:44 EDT</pubDate>
+<title><![CDATA[Majority seeks to oust Providence school board president]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/15/metro/morales-wins-providence-mayoral-race-impact-blazejewski-ri/</link>
+<pubDate>Wed, 16 Sep 2026 14:10:44 EDT</pubDate>
+<title><![CDATA[Will progressive wins in R.I. speaker’s backyard pull Blazejewski to the left?]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/11/metro/rhode-island-cianci-milkovits-9-11-ground-zero/</link>
+<pubDate>Fri, 11 Sep 2026 13:20:55 EDT</pubDate>
+<title><![CDATA[Remembering Ground Zero, 25 years later]]></title>
+</item>
+<item>
+<link>https://www.bostonglobe.com/2026/09/10/metro/rhode-island-primary-video-analysis-foulkes-morales-providence/</link>
+<pubDate>Thu, 10 Sep 2026 21:25:22 EDT</pubDate>
+<title><![CDATA[R.I. primary upsets: Watch Globe Rhode Island reporters discuss the races for governor and Providence mayor]]></title>
+</item>
+</channel>
+</rss>
