@@ -4,7 +4,12 @@
 <title>Boston Globe scraper 0.1.2607</title>
 <link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
 <description>Boston Globe articles by Dan McGowan</description>
-<lastBuildDate>Mon, 21 Sep 2026 07:12:02 -0400</lastBuildDate>
+<lastBuildDate>Mon, 21 Sep 2026 09:46:33 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/21/metro/rhode-map-pick-em-contest-general-election-ri/</link>
+<pubDate>Mon, 21 Sep 2026 13:36:30 EDT</pubDate>
+<title><![CDATA[Contest: So you think you know Rhode Island politics? Pick the general election winners.]]></title>
+</item>
 <item>
 <link>https://www.bostonglobe.com/2026/09/17/metro/ri-providence-david-morales-inner-circle-brett-smiley/</link>
 <pubDate>Fri, 18 Sep 2026 13:08:57 EDT</pubDate>
@@ -24,11 +29,6 @@
 <link>https://www.bostonglobe.com/2026/09/11/metro/rhode-island-cianci-milkovits-9-11-ground-zero/</link>
 <pubDate>Fri, 11 Sep 2026 13:20:55 EDT</pubDate>
 <title><![CDATA[Remembering Ground Zero, 25 years later]]></title>
-</item>
-<item>
-<link>https://www.bostonglobe.com/2026/09/10/metro/rhode-island-primary-video-analysis-foulkes-morales-providence/</link>
-<pubDate>Thu, 10 Sep 2026 21:25:22 EDT</pubDate>
-<title><![CDATA[R.I. primary upsets: Watch Globe Rhode Island reporters discuss the races for governor and Providence mayor]]></title>
 </item>
 </channel>
 </rss>
