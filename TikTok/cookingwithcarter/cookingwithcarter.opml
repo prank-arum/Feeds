@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:frss="https://freshrss.org/opml" version="2.0">
+	<head>
+		<title>FreshRSS</title>
+		<dateCreated>Sat, 19 Sep 2026 17:02:44 -0400</dateCreated>
+	</head>
+	<body>
+		<outline text="cookingwithcarter" type="rss" xmlUrl="https://prank-arum.GIThub.io/Feeds/TikTok/cookingwithcarter/feed.xml" htmlUrl="https://tiktok.com/@cookingwithcarter"/>
+	</body>
+</opml>
