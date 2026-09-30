@@ -4,7 +4,12 @@
 <title>Boston Globe scraper 0.1.2607</title>
 <link>https://www.bostonglobe.com/about/staff-list/staff/dan-mcgowan/</link>
 <description>Boston Globe articles by Dan McGowan</description>
-<lastBuildDate>Tue, 29 Sep 2026 09:51:06 -0400</lastBuildDate>
+<lastBuildDate>Wed, 30 Sep 2026 08:49:48 -0400</lastBuildDate>
+<item>
+<link>https://www.bostonglobe.com/2026/09/29/metro/ri-gilkey-postsecondary-education-contract/</link>
+<pubDate>Tue, 29 Sep 2026 18:43:33 EDT</pubDate>
+<title><![CDATA[Rhode Island’s higher ed chief gets 3-year contract extension]]></title>
+</item>
 <item>
 <link>https://www.bostonglobe.com/2026/09/28/metro/ri-brown-university-governors-iowa-maine/</link>
 <pubDate>Mon, 28 Sep 2026 17:46:29 EDT</pubDate>
@@ -24,11 +29,6 @@
 <link>https://www.bostonglobe.com/2026/09/23/metro/providence-schools-turmoil-mayoral-election-teachers-ri/</link>
 <pubDate>Wed, 23 Sep 2026 15:40:46 EDT</pubDate>
 <title><![CDATA[Turmoil is brewing across the Providence school system ]]></title>
-</item>
-<item>
-<link>https://www.bostonglobe.com/2026/09/22/metro/impact-of-mckee-departure-on-local-mayors-ri/</link>
-<pubDate>Wed, 23 Sep 2026 15:53:29 EDT</pubDate>
-<title><![CDATA[These Rhode Island mayors stand to benefit from a new governor ]]></title>
 </item>
 </channel>
 </rss>
