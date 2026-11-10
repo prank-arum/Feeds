@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml xmlns:frss="https://freshrss.org/opml" version="2.0">
+	<head>
+		<title>FreshRSS</title>
+		<dateCreated>Tue, 10 Nov 2026 07:43:50 -0500</dateCreated>
+	</head>
+	<body>
+		<outline text="susi.vidal" type="rss" xmlUrl="https://prank-arum.GIThub.io/Feeds/TikTok/susi.vidal/feed.xml" htmlUrl="https://tiktok.com/@susi.vidal"/>
+	</body>
+</opml>
